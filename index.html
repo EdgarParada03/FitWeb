@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>FitWeb</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="caja">
+            <div class="logo">
+                <img src="imagenes/logo_FITWEB4.jpg">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#section1">¿Quienes somos?</a></li>
+                    <li><a href="#section2">Contacto</a></li>
+                    <li><a href="login.html">Ingresar</a></li>
+                    <li> / </li>
+                    <li><a href="login.html">Registrarse</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <div id="slider">
+        <img class="active" src="imagenes/imagenReferencia1.jpg" alt="Imagen 1">
+        <img src="imagenes/imagenReferencia2.jpg" alt="Imagen 2">
+        <img src="imagenes/imagenReferencia3.jpg" alt="Imagen 3">
+        
+    </div>
+
+    <script>
+        var sliderImages = Array.from(document.querySelectorAll('#slider img'));
+        var index = 0;
+
+        function slideShow() {
+            sliderImages[index].classList.remove('active');
+            index = (index + 1) % sliderImages.length;
+            sliderImages[index].classList.add('active');
+        }
+
+        setInterval(slideShow, 3000); // Cambia la imagen cada 2 segundos
+    </script>
+
+    <main>
+
+        <section class="principal">
+
+            <h1 class="quienes-somos-title" id="section1"> ¿Quienes somos? </h1>
+
+            <img class="utensilios" src="imagenes/imagenQuienesSomos.jpg" alt="utensilios de un barbero">
+
+            <p>
+                Somos una comunidad dedicada a la salud y el bienestar, comprometida con la ayuda a nuestros miembros a
+                alcanzar sus metas y vivir su mejor vida.
+                <strong>Fundado en 2010, Prime Gym</strong> ha crecido hasta convertirse en un líder en la industria del
+                fitness, conocido por nuestro enfoque personalizado y nuestro compromiso con la innovación. Ofrecemos
+                una variedad de clases de fitness, desde yoga y pilates hasta entrenamiento de fuerza y cardio de alta
+                intensidad. Nuestros entrenadores certificados están aquí para guiarte, motivarte y asegurarse de que
+                estás progresando en tu camino hacia la salud y el bienestar.
+            </p>
+
+        </section>
+
+        <section class="mapa">
+            <h3 class="titulo-principal">Nuestra Ubicacion</h3>
+            <p>Nuestro establecimiento esta ubicado en el corazon de la ciudad</p>
+
+
+            <div class="mapa-contenido">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.84491286811!2d-72.50429670321044!3d7.911264600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e664541acb5d8a9%3A0x6b5948aee0db1950!2sUniversidad%20de%20Santander%20sede%20C%C3%BAcuta!5e0!3m2!1ses-419!2sco!4v1711325862039!5m2!1ses-419!2sco" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+            </div>
+
+        </section>
+
+        <section class="diferenciales">
+            <h1 class="contacto-title" id="section2"> Contacto </h1>
+
+            <div class="contenido-diferenciales">
+                <ul class="lista-diferenciales">
+                    <li class="items">Nuestros metodos de contacto</li>
+                    <li class="items">Telefono: +57 3058405336</li>
+                    <li class="items">Numero fijo: 555-2648</li>
+                    <li class="items">correo electronico: PrimeGym@gmail.com</li>
+                </ul>
+            
+           <p >
+               <ul class="lista-diferenciales">
+                <p>
+                    Nuestro horario de atención al cliente es de lunes a viernes, de 9:00 a 17:00. Intentamos responder a todas las consultas en un plazo de 24 horas. <strong> ¡Esperamos verte pronto en Prime Gym!</strong>
+                </p>
+               </ul> 
+           </p>
+        </div>
+
+            <div class="video">
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EykWcFEtFqo?si=Jj5-b55gmRdkR53G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="copyright">&copy;Copyright FitWeb COMPANY - 2024</p>
+    </footer>
+</body>
