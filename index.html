@@ -1,121 +1,220 @@
 <!DOCTYPE html>
-
-<html lang="es">
+<html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>FitWeb</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitWeb | Colombia</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <header>
-        <div class="caja">
-            <div class="logo">
-                <img src="imagenes/logo_FITWEB4.jpg">
-            </div>
-            <nav>
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo">Logo</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="/imagenes/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
                 <ul>
-                    <li><a href="#section1">¿Quienes somos?</a></li>
-                    <li><a href="#section2">Contacto</a></li>
-                    <li><a href="login.html">Ingresar</a></li>
-                    <li> / </li>
-                    <li><a href="login.html">Registrarse</a></li>
+                    <li><a href="#Seccion1">Blog</a></li>
+                    <li><a href="#Seccion2">Servicios</a></li>
+                    <li><a href="#Seccion3">Ubicación</a></li>
+                    <li><a href="#Seccion4">¿Quienes Somos?</a></li>
+                    <li><a href="#Seccion5">Iniciar Sesión</a></li>
+                    <li><a href="#Seccion6">Registrarse</a></li>
                 </ul>
             </nav>
-
         </div>
-    </header>
-
-
-    <div id="slider">
-        <img class="active" src="imagenes/imagenReferencia1.jpg" alt="Imagen 1">
-        <img src="imagenes/imagenReferencia2.jpg" alt="Imagen 2">
-        <img src="imagenes/imagenReferencia3.jpg" alt="Imagen 3">
+        <div class="header-content container">
+            <h1>FitWeb</h1>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="/images/F1.jpg" alt="Imagen 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="/images/F2.jpg" alt="Imagen 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="/images/F3.jpg" alt="Imagen 3">
+                </div>
+            </div>
+             <a href="#" class="btn-1">¡Regístrate Ya!</a>
+             
+        </div>
         
-    </div>
-
-    <script>
-        var sliderImages = Array.from(document.querySelectorAll('#slider img'));
-        var index = 0;
-
-        function slideShow() {
-            sliderImages[index].classList.remove('active');
-            index = (index + 1) % sliderImages.length;
-            sliderImages[index].classList.add('active');
-        }
-
-        setInterval(slideShow, 3000); // Cambia la imagen cada 2 segundos
-    </script>
-
-    <main>
-
-        <section class="principal">
-
-            <h1 class="quienes-somos-title" id="section1"> ¿Quienes somos? </h1>
-
-            <img class="utensilios" src="imagenes/imagenQuienesSomos.jpg" alt="utensilios de un barbero">
-
-            <p>
-                Somos una comunidad dedicada a la salud y el bienestar, comprometida con la ayuda a nuestros miembros a
-                alcanzar sus metas y vivir su mejor vida.
-                <strong>Fundado en 2010, Prime Gym</strong> ha crecido hasta convertirse en un líder en la industria del
-                fitness, conocido por nuestro enfoque personalizado y nuestro compromiso con la innovación. Ofrecemos
-                una variedad de clases de fitness, desde yoga y pilates hasta entrenamiento de fuerza y cardio de alta
-                intensidad. Nuestros entrenadores certificados están aquí para guiarte, motivarte y asegurarse de que
-                estás progresando en tu camino hacia la salud y el bienestar.
+    </header>
+    <section class="coffe">
+        <img class="coffe-img" src="/imagenes/bg2.png" alt="">
+        <div class="coffe-content container" id="#Seccion1">
+            <h2>Los diferentes tipos de café</h2>
+            <p class="txt-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem libero inventore, earum
+                quo error sunt
+                ipsa alias odio,
+                maxime nostrum est officiis et voluptatibus perspiciatis sequi voluptate veritatis porro hic?
             </p>
-
-        </section>
-
-        <section class="mapa">
-            <h3 class="titulo-principal">Nuestra Ubicacion</h3>
-            <p>Nuestro establecimiento esta ubicado en el corazon de la ciudad</p>
-
-
-            <div class="mapa-contenido">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.84491286811!2d-72.50429670321044!3d7.911264600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e664541acb5d8a9%3A0x6b5948aee0db1950!2sUniversidad%20de%20Santander%20sede%20C%C3%BAcuta!5e0!3m2!1ses-419!2sco!4v1711325862039!5m2!1ses-419!2sco" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                
+            <div class="coffe-group">
+                <div class="coffe-1">
+                    <img src="/imagenes/c1.png" alt="">
+                    <h3>Cafe Lorem</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem libero inventore, earum quo
+                        error sunt
+                        ipsa alias odio,
+                        maxime nostrum est officiis et voluptatibus perspiciatis sequi voluptate veritatis porro hic?
+                    </p>
+                </div>
+                <div class="coffe-1">
+                    <img src="/imagenes/c2.png" alt="">
+                    <h3>Cafe Lorem</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem libero inventore, earum quo
+                        error sunt
+                        ipsa alias odio,
+                        maxime nostrum est officiis et voluptatibus perspiciatis sequi voluptate veritatis porro hic?
+                    </p>
+                </div>
+                <div class="coffe-1">
+                    <img src="/imagenes/c3.png" alt="">
+                    <h3>Cafe Lorem</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem libero inventore, earum quo
+                        error sunt
+                        ipsa alias odio,
+                        maxime nostrum est officiis et voluptatibus perspiciatis sequi voluptate veritatis porro hic?
+                    </p>
+                </div>
             </div>
-
-        </section>
-
-        <section class="diferenciales">
-            <h1 class="contacto-title" id="section2"> Contacto </h1>
-
-            <div class="contenido-diferenciales">
-                <ul class="lista-diferenciales">
-                    <li class="items">Nuestros metodos de contacto</li>
-                    <li class="items">Telefono: +57 3058405336</li>
-                    <li class="items">Numero fijo: 555-2648</li>
-                    <li class="items">correo electronico: PrimeGym@gmail.com</li>
-                </ul>
-            
-           <p >
-               <ul class="lista-diferenciales">
-                <p>
-                    Nuestro horario de atención al cliente es de lunes a viernes, de 9:00 a 17:00. Intentamos responder a todas las consultas en un plazo de 24 horas. <strong> ¡Esperamos verte pronto en Prime Gym!</strong>
-                </p>
-               </ul> 
-           </p>
+            <a href="#" class="btn-1">Registrate Ya!!</a>
         </div>
-
-            <div class="video">
-
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/EykWcFEtFqo?si=Jj5-b55gmRdkR53G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    <main class="services">
+        <div class="services-content container" id="Seccion2">
+            <h2>Servicios</h2>
+            <div class="services-group">
+                <div class="services-1">
+                    <img src="/images/Maquinas.jpg" alt="">
+                    <h3>Equipos Profesionales</h3>
+                </div>
+                <div class="services-1">
+                    <img src="/images/SalonGrupal.jpg" alt="">
+                    <h3>Clases Digidas</h3>
+                </div>
+                <div class="services-1">
+                    <img src="/images/planAlimentacion.jpg" alt="">
+                    <h3>Planes de Alimentación</h3>
+                </div>
+                <div class="services-1">
+                    <img src="/images/personalizado.webp" alt="">
+                    <h3>Entrenamientos Perzonalizados</h3>
+                </div>
             </div>
-        </section>
+            <a href="#" class="btn-1">Registrate Ya!!</a>
+        </div>
     </main>
-
-    <footer>
-        <p class="copyright">&copy;Copyright FitWeb COMPANY - 2024</p>
+    <section class="general">
+        <div class="general-1">
+            <section class="mapa"  id="Seccion3">
+                <h2 class="titulo-principal">Nuestra Ubicación</h2>
+                <p>Nos ubicamos en el corazón de la ciudad</p>
+                <div class="mapa-contenido">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.84491286811!2d-72.50429670321044!3d7.911264600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e664541acb5d8a9%3A0x6b5948aee0db1950!2sUniversidad%20de%20Santander%20sede%20C%C3%BAcuta!5e0!3m2!1ses-419!2sco!4v1711325862039!5m2!1ses-419!2sco" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+            <a href="#" class="btn-1">Registrate Ya!!</a>
+        </div>
+        <div class="general-2"></div>
+    </section>
+    <section class="general">
+        <div class="general-3"></div>
+        <div class="general-1">
+            <h2>¿Quienes Somos?</h2>
+            <p>
+                En FitWeb, somos un gimnasio comprometido con tu transformación personal hacia una vida más 
+                saludable y vibrante. Ofrecemos servicios diseñados para cultivar la belleza tanto física como 
+                mental, con instalaciones modernas y un equipo de entrenadores expertos. Más que un lugar para 
+                ejercitarse, somos una comunidad que te apoya, desafía y celebra en cada paso del camino hacia 
+                tu mejor versión. Únete a nosotros en este viaje hacia una vida más saludable, más fuerte y más 
+                hermosa.            </p>
+            <a href="#" class="btn-1">Registrate Ya!!</a>
+        </div>
+    </section>
+    <section class="blog container">
+        <h2>Blog</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem libero inventore, earum quo error sunt
+            ipsa alias odio,
+            maxime nostrum est officiis et voluptatibus perspiciatis sequi voluptate veritatis porro hic?
+        </p>
+        <div class="blog-content">
+            <div class="blog-1">
+                <img src="/imagenes/blog1.jpg" alt="">
+                <h3>blog 1</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem libero inventore, earum quo error
+                    sunt
+                    ipsa alias odio,
+                    maxime nostrum est officiis et voluptatibus perspiciatis sequi voluptate veritatis porro hic?
+                </p>
+            </div>
+            <div class="blog-1">
+                <img src="/imagenes/blog2.jpg" alt="">
+                <h3>blog 2</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem libero inventore, earum quo error
+                    sunt
+                    ipsa alias odio,
+                    maxime nostrum est officiis et voluptatibus perspiciatis sequi voluptate veritatis porro hic?
+                </p>
+            </div>
+            <div class="blog-1">
+                <img src="/imagenes/blog3.jpg" alt="">
+                <h3>blog 3</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem libero inventore, earum quo error
+                    sunt
+                    ipsa alias odio,
+                    maxime nostrum est officiis et voluptatibus perspiciatis sequi voluptate veritatis porro hic?
+                </p>
+            </div>
+        </div>
+        <a href="#" class="btn-1">Informacion</a>
+    </section>
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>Lorem</h3>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                    <li><a href="#">Item 4</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Lorem</h3>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Lorem</h3>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Lorem</h3>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
+    <script src="/js/scripts.js"></script>
 </body>
+
+</html>
