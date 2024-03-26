@@ -17,14 +17,40 @@ header {
     margin-top: 50px;
 }
 
-.boton {
-    margin: 10px;
-}
 
-.boton img {
+
+.zoom-shadow {
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .zoom-shadow img {
+    transition: transform 0.3s ease;
     width: 300px;
-    height: auto; 
-}
+    height: auto;
+  }
+  
+  .zoom-shadow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 50;
+    transition: opacity 0.3s ease;
+  }
+  
+  .zoom-shadow:hover img {
+    transform: scale(1.1);
+  }
+  
+  .zoom-shadow:hover::before {
+    opacity: 1;
+  }
 
 .contact-info p {
     margin: 5px 0;
