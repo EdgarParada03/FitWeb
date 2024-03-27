@@ -20,7 +20,7 @@ body{
     background-image: linear-gradient(
         rgba(0,0,0,0.7),
         rgba(0,0,0,0.7)), 
-        url(/Pagina-Principal/images/menu.jpg);
+        url(/Modulo-No-Miembros/Pagina-Principal/images/menu.jpg);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,18 +32,18 @@ body{
     display: flex;
     justify-content: center;
     overflow: hidden;
-    width: 100%; /* Ancho del carrusel casi del ancho de la ventana */
-    max-width: 800px; /* Ancho máximo del carrusel */
-    height: 300px; /* Altura del carrusel */
-    margin: 0 auto; /* Centra horizontalmente */
-    border: 1px solid transparent; /* Borde sutil */
-    border-radius: 10px; /* Bordes redondeados */
-    margin-bottom: 20px; /* Espacio inferior */
+    width: 100%; 
+    max-width: 800px; 
+    height: 300px; 
+    margin: 0 auto; 
+    border: 1px solid transparent; 
+    border-radius: 10px; 
+    margin-bottom: 20px; 
 }
 .carousel-slide {
     flex: 0 0 auto;
-    width: 400px; /* Ancho de las imágenes */
-    display: none; /* Oculta todas las imágenes al principio */
+    width: 400px; 
+    display: none; 
 }
 .carousel-slide img {
     width: 100%;
@@ -183,7 +183,7 @@ body{
     background-image: linear-gradient(
         rgba(0,0,0,0.7),
         rgba(0,0,0,0.7)),
-        url(/Pagina-Principal/images/fondo.jpg);
+        url(/Modulo-No-Miembros/Pagina-Principal/images/fondo.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -261,7 +261,7 @@ body{
     margin-right: auto; 
 }
 .general-2{
-    background-image: url(/Pagina-Principal/images/udesG.jpg);
+    background-image: url(/Modulo-No-Miembros/Pagina-Principal/images/udesG.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -269,7 +269,7 @@ body{
     height: 600px; 
 }
 .general-3{
-    background-image: url(/Pagina-Principal/images/quienesSomos.jpg);
+    background-image: url(/Modulo-No-Miembros/Pagina-Principal/images/quienesSomos.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
