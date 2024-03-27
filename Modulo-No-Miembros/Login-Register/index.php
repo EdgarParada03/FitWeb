@@ -43,14 +43,14 @@
                 </form>
 
                 <!--Registro-->
-                <form action="/Modulo-No-Miembros/Login-Register/php/registro_usuario_be.php" method="POST"
+                <form action="/Modulo-No-Miembros/Login-Register/php/registrarUsuarios.php" method="POST"
                     class="formulario__register">
                     <h2>Regístrarse</h2>
                     <input type="text" placeholder="Nombre Completo" name="nombre_completo">
-                    <input type="text" placeholder="Numero de identificación" name="documento_identidad">
+                    <input type="text" placeholder="Numero de identificación" name="numero_identificacion">
                     <input type="text" placeholder="Fecha nacimiento" onfocus="(this.type='date')"
                         name="fecha_nacimiento">
-                    <input type="email" placeholder="Correo Electrónico" name="correo">
+                    <input type="email" placeholder="Correo" name="correo">
                     <input type="text" placeholder="Teléfono" name="telefono">
                     <select name="sexo" placeholder="Sexo" name="sexo">
                         <option value="" disabled selected>Selecciona tu sexo</option>
@@ -60,7 +60,12 @@
                         <option value="no_decir">Prefiero no decirlo</option>
                     </select>
                     <input type="password" placeholder="Contraseña" name="contrasena">
-                    <button>Regístrarse</button>
+                    <a href="/index.html">
+                    <input type="submit" value="Registrarse" name="registrar">
+                    </a>
+                    
+                    
+                    
                 </form>
             </div>
 
@@ -69,7 +74,9 @@
     </main>
     <script src="/Modulo-No-Miembros/Login-Register/Todo/js/script.js"></script>
 
-    
+    <?php
+    include("../Login-Register/php/registrarUsuarios.php");
+    ?>
 </body>
 
 </html>
