@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('https://image.freepik.com/foto-gratis/resumen-desenfoque-y-gimnasio-de-fitness-defocused-para-el-fondo_1339-24814.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+header {
+  background-color: #333;
+  padding: 20px;
+  color: #fff; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+.botones-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.zoom-shadow {
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border: none; 
+    border-radius: 30px; 
+  }
+  
+  .zoom-shadow img {
+    transition: transform 0.3s ease;
+    width: 300px;
+    height: auto;
+  }
+  
+  .zoom-shadow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 50;
+    transition: opacity 0.3s ease;
+  }
+  
+  .zoom-shadow:hover img {
+    transform: scale(1.1);
+  }
+  
+  .zoom-shadow:hover::before {
+    opacity: 1;
+  }
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.pie{
+
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.fondo{
+    
+    background-image: url('images/Captura\ de\ pantalla\ 2024-03-26\ 191829.png');
+
+}
+
+.logo-container {
+  display: flex; 
+  align-items: center;
+}
+
+.logo {
+  max-width: 150px; 
+  height: auto;
+}
