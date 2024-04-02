@@ -4,6 +4,7 @@ include("conexion.php");
 
 if (isset($_POST['registrar'])) {
     
+    
     $nombre_completo = isset($_POST['nombre_completo']) ? $_POST['nombre_completo'] : null;
     $numero_identificacion = isset($_POST['numero_identificacion']) ? $_POST['numero_identificacion'] : null;
     $fecha_nacimiento = isset($_POST['fecha_nacimiento']) ? $_POST['fecha_nacimiento'] : null;

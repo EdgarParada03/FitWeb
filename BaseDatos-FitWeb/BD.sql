@@ -46,10 +46,3 @@ BEGIN
 END//
 
 DELIMITER ;
-
-
-
-USE FITWEB;
-DELETE FROM Persona;
-
-SELECT * FROM Persona;
