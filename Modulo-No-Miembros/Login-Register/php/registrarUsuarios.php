@@ -17,7 +17,7 @@ if (isset($_POST['registrar'])) {
         echo "<script>alert('Todos los campos deben estar llenos.');</script>";
         echo "<script>window.location.href='/Modulo-No-Miembros/Login-Register/index.php';</script>";
     } else {
-        // Consulta para verificar si ya existe un usuario con el mismo número de identificación
+        
         $consulta_existencia = "SELECT * FROM persona WHERE numeroIdentificacion = '$numero_identificacion'";
         $resultado_existencia = mysqli_query($conexion, $consulta_existencia);
         
@@ -25,7 +25,7 @@ if (isset($_POST['registrar'])) {
             echo "<script>alert('Usuario con la cédula $numero_identificacion ya existe.');</script>";
             echo "<script>window.location.href='/Modulo-No-Miembros/Login-Register/index.php';</script>";
         } else {
-            // No es necesario incluir la edad en la consulta, ya que se calculará automáticamente en la base de datos
+            
             $consulta = "INSERT INTO persona(nombreCompleto, numeroIdentificacion, fechaNacimiento, correo, telefono, sexo, contraseña) VALUES ('$nombre_completo', '$numero_identificacion', '$fecha_nacimiento', '$correo', '$telefono', '$sexo', '$contrasena')";
             $resultado = mysqli_query($conexion, $consulta);
             
