@@ -37,7 +37,19 @@ CREATE TABLE MembresiaPagar (
     tarjeta VARCHAR(50)
 );
 
-CREATE TABLE prueba(
-    id INT PRIMARY KEY,
-    nombre VARCHAR(50)
-);
+DELIMITER //
+
+CREATE TRIGGER calcular_edad BEFORE INSERT ON Persona
+FOR EACH ROW
+BEGIN
+    SET NEW.edad = TIMESTAMPDIFF(YEAR, NEW.fechaNacimiento, CURDATE());
+END//
+
+DELIMITER ;
+
+
+
+USE FITWEB;
+DELETE FROM Persona;
+
+SELECT * FROM Persona;
