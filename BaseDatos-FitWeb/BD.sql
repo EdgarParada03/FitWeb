@@ -45,4 +45,21 @@ BEGIN
     SET NEW.edad = TIMESTAMPDIFF(YEAR, NEW.fechaNacimiento, CURDATE());
 END//
 
+CREATE TRIGGER llenar_miembro AFTER INSERT ON Persona
+FOR EACH ROW
+BEGIN
+    INSERT INTO Miembro (persona_id, estado)
+    VALUES (NEW.id, true);
+END//
+
 DELIMITER ;
+
+USE FITWEB;
+
+
+
+USE FITWEB;
+
+SELECT * FROM Persona;
+SELECT * FROM Miembro;
+
