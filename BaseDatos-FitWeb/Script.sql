@@ -3,15 +3,14 @@ CREATE DATABASE FITWEB;
 USE FITWEB;
 
 CREATE TABLE Persona (
-
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombreCompleto VARCHAR(50),
     numeroIdentificacion VARCHAR(20),
     fechaNacimiento DATE,
     edad INT,
-    correo   VARCHAR(50),
+    correo VARCHAR(50),
     telefono VARCHAR(15),
-    sexo     VARCHAR(15),
+    sexo VARCHAR(15),
     contraseña VARCHAR(50)
 );
 
@@ -31,24 +30,9 @@ CREATE TABLE Miembro (
 
 CREATE TABLE MembresiaPagar (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    numeroIdentificacion VARCHAR NOT NULL,
+    numeroIdentificacion VARCHAR(20),
     fecha_inicio DATE,
     plan VARCHAR(25),
     fecha_fin DATE,
-    tarjeta INT NOT NULL
+    tarjeta VARCHAR(20)
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
