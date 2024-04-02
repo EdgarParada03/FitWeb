@@ -131,19 +131,19 @@ body{
 .btn-1:hover{
     background-color: #854f39;
 }
-.coffe{
+.gym{
     padding: 100px 0;
     background-color: #E1E2E6;
     position: relative;
 }
-.coffe-content{
+.gym-content{
     text-align: center;
 }
-.coffe-group img {
+.gym-group img {
     border-radius: 50%;
 }
 
-.coffe-content h2{
+.gym-content h2{
     font-size: 55px;
     line-height: 70px;
     color: #323337;
@@ -157,24 +157,24 @@ body{
     padding: 0 250px;
     margin-bottom: 35px;
 }
-.coffe-group{
+.gym-group{
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
 }
 
-.coffe-1 img{
+.gym-1 img{
     width: 200px;
 }
-.coffe-img{
+.gym-img{
     position:absolute;
     top: 0;
     right: 0;
 }
-.coffe-1{
+.gym-1{
     padding: 0 25px;
 }
-.coffe-1 h3{
+.gym-1 h3{
     color: #323337;
     font-size: 20px;
     margin-bottom: 15px;
@@ -383,20 +383,20 @@ p{
     }
 
     
-    .coffe{
+    gym.{
         padding: 30px;
     }
-    .coffe-content h2{
+    .gym-content h2{
         padding: 0;
     }
     .txt-p{
         padding: 0;
     }
-    .coffe-group{
+    .gym-group{
         flex-direction: column;
         margin-bottom: 0;
     }
-    .coffe-img{
+    .gym-img{
         display: none;
     }
 
