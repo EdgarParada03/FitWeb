@@ -54,12 +54,4 @@ END//
 
 DELIMITER ;
 
-USE FITWEB;
-
-
-
-USE FITWEB;
-
-SELECT * FROM Persona;
-SELECT * FROM Miembro;
 
