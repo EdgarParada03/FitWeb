@@ -34,5 +34,5 @@ CREATE TABLE MembresiaPagar (
     fecha_inicio DATE,
     plan VARCHAR(25),
     fecha_fin DATE,
-    tarjeta VARCHAR(20)
+    tarjeta VARCHAR(50)
 );
