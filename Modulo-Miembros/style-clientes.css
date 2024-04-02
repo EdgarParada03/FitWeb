@@ -1,0 +1,264 @@
+/* Diseño de la pagina pricnipal del miembro */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('https://image.freepik.com/foto-gratis/resumen-desenfoque-y-gimnasio-de-fitness-defocused-para-el-fondo_1339-24814.jpg');
+    /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botones-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.zoom-shadow {
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 30px;
+}
+
+.zoom-shadow img {
+    transition: transform 0.3s ease;
+    width: 300px;
+    height: auto;
+}
+
+.zoom-shadow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 50;
+    transition: opacity 0.3s ease;
+}
+
+.zoom-shadow:hover img {
+    transform: scale(1.1);
+}
+
+.zoom-shadow:hover::before {
+    opacity: 1;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.pie {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.fondo {
+    background-image: url('images/Captura\ de\ pantalla\ 2024-03-26\ 191829.png');
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Fin del diseño pagina principal del miembro */
+
+
+/* Diseño de la seccion membresias */
+.parrafo-membresia p{
+    text-align: center;
+    font-size: 30px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+h2 span , p span{
+    background-color: white;
+}
+
+.imagen-con-texto {
+    width: 30%;
+    float: left;
+    padding: 5px;
+    text-align: center;
+}
+
+.imagen-con-texto img {
+    width: 100%;
+    height: auto;
+}
+
+.coffe{
+    padding: 100px 0;
+    background-color: #E1E2E6;
+    position: relative;
+}
+
+.coffe-content{
+    text-align: center;
+}
+
+.coffe-group img {
+    border-radius: 50%;
+}
+
+.coffe-content h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: #323337;
+    text-transform: uppercase;
+    padding: 0 250px;
+    margin-bottom: 15px;
+}
+
+.txt-p{
+    font-size: 16px;
+    color: #414247;
+    padding: 0 250px;
+    margin-bottom: 35px;
+}
+
+.coffe-group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.coffe-1 img{
+    width: 200px;
+}
+
+.coffe-img{
+    position:absolute;
+    top: 0;
+    right: 0;
+}
+
+.coffe-1{
+    padding: 0 25px;
+    
+}
+
+.coffe-1 h3{
+    color: #323337;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.formulario {
+    width: 300px;
+    padding: 16px;
+    background-color: #f1f1f1;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.formulario input[type=text], .formulario input[type=date], .formulario input[type=number], .formulario select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.formulario input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.formulario input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Fin del diseño seccion membresias */
+
+
+/* Diseño de la seccion diagnostico */
+.contenedor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: antiquewhite;
+}
+
+.imagen {
+    width: 100%;
+    height: 70%;
+}
+
+.texto {
+    width: 100%;
+    height: 30%;
+}
+/* Fin del diseño seccion diagnostico */
+
+
+/* Diseño de la seccion entrenamiento */
+.container-video {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.video {
+    width: 100%;
+    margin-bottom: 20px;
+}
+/* Fin del diseño seccion entrenamiento */

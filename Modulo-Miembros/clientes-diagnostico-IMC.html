@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMBRESIAS</title>
+    <link rel="stylesheet" href="style-clientes.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img class="logo"
+                src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
+                alt="Logo de la empresa">
+        </div>
+        <h1 class="title">SECCION DE DIAGNOSTICO</h1>
+    </header>
+
+    <div class="formulario">
+        <form id="formularioIMC" onsubmit="event.preventDefault(); calcularIMC();">
+            <label for="documento">Documento de Identificación:</label>
+            <input type="text" id="documento" name="documento" required>
+        
+            <label for="peso">Peso (en kg):</label>
+            <input type="number" id="peso" name="peso" min="0" required>
+        
+            <label for="altura">Altura (en cm):</label>
+            <input type="number" id="altura" name="altura" min="0" required>
+        
+            <button type="submit">Calcular IMC</button>
+        </form>
+        <div id="resultado"></div>
+        </div>
+
+    <script>
+        function calcularIMC() {
+            var peso = document.getElementById('peso').value;
+            var altura = document.getElementById('altura').value / 100; // Convertir a metros
+            var imc = peso / (altura * altura);
+            var resultado = document.getElementById('resultado');
+            if (imc < 18.5) {
+                resultado.innerHTML = 'Tu IMC es ' + imc.toFixed(2) + '. Estás bajo de peso.';
+            } else if (imc >= 18.5 && imc < 24.9) {
+                resultado.innerHTML = 'Tu IMC es ' + imc.toFixed(2) + '. Tienes un peso normal.';
+            } else {
+                resultado.innerHTML = 'Tu IMC es ' + imc.toFixed(2) + '. Estás en la categoría de Sobre Peso.';
+            }
+
+            alert('Tus datos fueron guardados correctamente');
+            setTimeout(function () {
+                window.history.back();
+            }, 5000); // Redirige después de 5 segundos
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALUD</title>
+    <link rel="stylesheet" href="style-clientes.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img class="logo"
+                src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
+                alt="Logo de la empresa">
+        </div>
+        <h1 class="title">SECCION DE DIAGNOSTICO</h1>
+    </header>
+
+    <div class="formulario">
+        <form id="formularioSalud" onsubmit="event.preventDefault(); enviarFormulario();">
+            <label for="documento">Documento de Identificación:</label>
+            <input type="text" id="documento" name="documento" required>
+    
+            <label for="complicaciones">¿Has tenido complicaciones con la salud?</label>
+            <select id="complicaciones" name="complicaciones" required>
+                <option value="">Seleccione uno</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="diabetes">¿Tienes diabetes?</label>
+            <select id="diabetes" name="diabetes" required>
+                <option value="">Seleccione uno</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="hipertension">¿Tienes hipertension?</label>
+            <select id="hipertension" name="hipertension" required>
+                <option value="">Seleccione uno</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="asma">¿Tienes asma?</label>
+            <select id="asma" name="asma" required>
+                <option value="">Seleccione uno</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+    
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function enviarFormulario() {
+            alert('Tus datos fueron guardados correctamente');
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

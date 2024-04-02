@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMBRESIAS</title>
+    <link rel="stylesheet" href="style-clientes.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img class="logo"
+                src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
+                alt="Logo de la empresa">
+        </div>
+        <h1 class="title">SECCION DE MEMBRESIAS</h1>
+    </header>
+
+    <div class="parrafo-membresia">
+        <h2><span>Bienvenidos a la seccion de Membresias</span></h2>
+        <p><span>Selecciona tu plan: </span></p>
+    </div>
+    
+    <div class="coffe-group">
+        <div class="coffe-1">
+            <img src="imagenes-clientes/plan-basico-logo.jpeg" alt="">
+            <h3>Basico</h3>
+            <p>
+                Este plan semanal de entrenamiento en el gimnasio ofrece una variedad de ejercicios 
+                diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por 
+                un precio accesible de 20.000 pesos colombianos por semana. Maximiza tus resultados 
+                con un enfoque completo en tu bienestar físico y mental.
+            </p>
+        </div>
+        <div class="coffe-1">
+            <img src="imagenes-clientes/plan-general-logo.jpeg" alt="">
+            <h3>General</h3>
+            <p>Este completo plan quincenal de entrenamiento en el gimnasio ofrece una 
+                variedad de ejercicios diseñados para mejorar la fuerza, resistencia, hipertrofia 
+                y flexibilidad, todo por un precio accesible de 30.000 pesos colombiano durante 15 días. 
+                Maximiza tus resultados con un enfoque completo en tu bienestar físico y mental.
+            </p>
+        </div>
+        <div class="coffe-1">
+            <img src="imagenes-clientes/plan-general-logo.jpeg" alt="">
+            <h3>Elite</h3>
+            <p> 
+             Este plan mensual de entrenamiento en el gimnasio ofrece una variedad de ejercicios
+              diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por 
+              un precio accesible de 55.000 pesos colombianos por mes. Maximiza tus resultados con 
+              un enfoque completo en tu bienestar físico y mental.
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        function calcularFechaFin() {
+            var inicio = new Date(document.getElementById('fecha_inicio').value);
+            var plan = document.getElementById('plan').value;
+            var duracion;
+    
+            switch(plan) {
+                case 'basico':
+                    duracion = 7;
+                    break;
+                case 'general':
+                    duracion = 15;
+                    break;
+                case 'elite':
+                    duracion = 30;
+                    break;
+            }
+    
+            var fin = new Date(inicio);
+            fin.setDate(inicio.getDate() + duracion);
+    
+            document.getElementById('fecha_fin').value = fin.toISOString().split('T')[0];
+        }
+    
+        function establecerFechaMinima() {
+            var fechaHoy = new Date();
+            var dia = String(fechaHoy.getDate()).padStart(2, '0');
+            var mes = String(fechaHoy.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript empiezan desde 0
+            var ano = fechaHoy.getFullYear();
+    
+            fechaHoy = ano + '-' + mes + '-' + dia;
+            document.getElementById('fecha_inicio').min = fechaHoy;
+        }
+    
+        window.onload = establecerFechaMinima;
+
+    </script>
+    
+    <div class="formulario">
+        <form action="/ruta/a/servidor" method="post" id="formularioMembresia"
+        onsubmit="event.preventDefault(); enviarFormulario();">
+            <label for="identificacion">Número de Identificación:</label>
+            <input type="number" id="identificacion" name="identificacion" min="" required>
+    
+            <label for="fecha_inicio">Fecha de inicio de la membresía:</label><br>
+            <input type="date" id="fecha_inicio" name="fecha_inicio"><br>
+
+            <label for="plan">Plan de Membresía:</label>
+            <select id="plan" name="plan" onchange="calcularFechaFin()">
+                <option value="seleccione-uno">Seleccione uno</option>
+                <option value="basico">Plan Básico</option>
+                <option value="general">Plan General</option>
+                <option value="elite">Plan Elite</option>
+            </select>
+    
+            <label for="fecha_fin">Fecha de Fin de la Membresía:</label>
+            <input type="date" id="fecha_fin" name="fecha_fin" readonly>
+    
+            <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+            <input type="number" id="tarjeta" name="tarjeta" required>
+            
+            <input type="submit" value="Comprar Membresía">
+        </form>
+    </div>
+
+    <script>
+        function enviarFormulario() {
+            alert('Tu membresia fue comprada correctamente');
+            alert('¡Bienvenido al gimnasio!');
+            window.location.href='clientes.html';
+        }
+    </script>
+    
+</body>
+
+</html>
