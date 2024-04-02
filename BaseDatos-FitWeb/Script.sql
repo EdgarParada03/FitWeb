@@ -36,3 +36,8 @@ CREATE TABLE MembresiaPagar (
     fecha_fin DATE,
     tarjeta VARCHAR(50)
 );
+
+CREATE TABLE prueba(
+    id INT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
