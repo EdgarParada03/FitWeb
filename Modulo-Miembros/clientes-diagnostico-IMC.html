@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEMBRESIAS</title>
+    <title>IMC</title>
     <link rel="stylesheet" href="style-clientes.css">
 </head>
 
@@ -19,7 +19,7 @@
     </header>
 
     <div class="formulario">
-        <form id="formularioIMC" onsubmit="event.preventDefault(); calcularIMC();">
+        <form id="formularioIMC" action="codigos-php/registrar-diagnostico-imc.php" method="post" onsubmit="event.preventDefault(); calcularIMC();">
             <label for="documento">Documento de Identificación:</label>
             <input type="text" id="documento" name="documento" required>
         
@@ -32,29 +32,47 @@
             <button type="submit">Calcular IMC</button>
         </form>
         <div id="resultado"></div>
-        </div>
+    </div>
 
     <script>
         function calcularIMC() {
-            var peso = document.getElementById('peso').value;
-            var altura = document.getElementById('altura').value / 100; // Convertir a metros
+            var peso = parseFloat(document.getElementById('peso').value);
+            var altura = parseFloat(document.getElementById('altura').value) / 100; // Convertir a metros
             var imc = peso / (altura * altura);
             var resultado = document.getElementById('resultado');
+            
+            // Mostrar el resultado en la página
             if (imc < 18.5) {
                 resultado.innerHTML = 'Tu IMC es ' + imc.toFixed(2) + '. Estás bajo de peso.';
             } else if (imc >= 18.5 && imc < 24.9) {
                 resultado.innerHTML = 'Tu IMC es ' + imc.toFixed(2) + '. Tienes un peso normal.';
             } else {
-                resultado.innerHTML = 'Tu IMC es ' + imc.toFixed(2) + '. Estás en la categoría de Sobre Peso.';
+                resultado.innerHTML = 'Tu IMC es ' + imc.toFixed(2) + '. Estás en la categoría de Sobrepeso.';
             }
 
-            alert('Tus datos fueron guardados correctamente');
-            setTimeout(function () {
-                window.history.back();
-            }, 5000); // Redirige después de 5 segundos
+            // Guardar el IMC en la base de datos (ajusta la consulta según tu estructura de tabla)
+            var documento = document.getElementById('documento').value;
+            var url = 'registrar-imc.php'; // Cambia la URL al archivo PHP que procesará el formulario
+
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify({ documento: documento, imc: imc }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message); // Mensaje de confirmación (puedes mostrarlo en la página si lo deseas)
+                alert('Tus datos fueron guardados correctamente');
+                setTimeout(function () {
+                    window.history.back();
+                }, 5000); // Redirige después de 5 segundos
+            })
+            .catch(error => {
+                console.error('Error al guardar los datos:', error);
+            });
         }
-
-
     </script>
 
 </body>

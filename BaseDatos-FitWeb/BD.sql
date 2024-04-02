@@ -63,4 +63,11 @@ CREATE TABLE diagnosticosalud(
     asma ENUM('Sí', 'No') NOT NULL
 );
 
+CREATE TABLE diagnosticoimc (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    documento VARCHAR(255) NOT NULL,
+    imc DECIMAL(5, 2) NOT NULL,
+    estado VARCHAR(50) NOT NULL
+);
+
 
