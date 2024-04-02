@@ -41,3 +41,5 @@ CREATE TABLE prueba(
     id INT PRIMARY KEY,
     nombre VARCHAR(50)
 );
+
+DROP TABLE prueba;
