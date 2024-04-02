@@ -54,5 +54,13 @@ END//
 
 DELIMITER ;
 
+CREATE TABLE diagnosticosalud(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    documento VARCHAR(255) NOT NULL,
+    complicaciones ENUM('Sí', 'No') NOT NULL,
+    diabetes ENUM('Sí', 'No') NOT NULL,
+    hipertension ENUM('Sí', 'No') NOT NULL,
+    asma ENUM('Sí', 'No') NOT NULL
+);
 
 
