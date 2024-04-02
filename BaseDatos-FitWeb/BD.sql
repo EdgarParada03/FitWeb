@@ -78,6 +78,5 @@ END//
 -- Restauramos el delimitador
 DELIMITER ;
 
--- Insertamos un entrenador especificando el rol
-INSERT INTO Persona (nombreCompleto, numeroIdentificacion, fechaNacimiento, correo, telefono, sexo, contraseña, rol) 
-VALUES ('Entrenador Explicíto', '2', '1985-12-15', 'entrenadorexplicito@mail.com', '555-6789', 'Femenino', '2', 'entrenador');
+
+
