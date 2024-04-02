@@ -1,3 +1,3 @@
 <?php
-$conexion = mysqli_connect("localhost","root","","gimnasio");
+$conexion = mysqli_connect("localhost","root","","fitweb");
 ?>

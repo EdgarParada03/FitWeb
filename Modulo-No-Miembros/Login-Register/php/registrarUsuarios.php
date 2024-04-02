@@ -4,6 +4,7 @@ include("conexion.php");
 
 if (isset($_POST['registrar'])) {
     
+    
     $nombre_completo = isset($_POST['nombre_completo']) ? $_POST['nombre_completo'] : null;
     $numero_identificacion = isset($_POST['numero_identificacion']) ? $_POST['numero_identificacion'] : null;
     $fecha_nacimiento = isset($_POST['fecha_nacimiento']) ? $_POST['fecha_nacimiento'] : null;
@@ -20,8 +21,12 @@ if (isset($_POST['registrar'])) {
         echo "<script>window.location.href='/Modulo-No-Miembros/Login-Register/index.php';</script>";
     } else {
         
-        $consulta = "INSERT INTO registro_usuarios(nombre_completo, numero_identificacion, fecha_nacimiento, correo, telefono, sexo, contraseña) VALUES ('$nombre_completo', '$numero_identificacion', '$fecha_nacimiento', '$correo', '$telefono', '$sexo', '$contrasena')";
+        // No es necesario incluir la edad en la consulta, ya que se calculará automáticamente en la base de datos
+        
+        $consulta = "INSERT INTO persona(nombreCompleto, numeroIdentificacion, fechaNacimiento, correo, telefono, sexo, contraseña) VALUES ('$nombre_completo', '$numero_identificacion', '$fecha_nacimiento', '$correo', '$telefono', '$sexo', '$contrasena')";
+        
         $resultado = mysqli_query($conexion, $consulta);
+        
         if ($resultado) {
             echo "<script>alert('Usuario creado correctamente');</script>";
             
