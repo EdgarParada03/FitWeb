@@ -32,24 +32,30 @@
             <div class="contenedor__login-register">
 
                 <!--Login-->
-                <form action="" class="formulario__login">
-
+                <form action="/Modulo-No-Miembros/Login-Register/php/iniciarSesion.php" method="POST" class="formulario__login">
                     <h2>Iniciar Sesión</h2>
-                    <input type="text" placeholder="Numero de identificación">
-                    <input type="password" placeholder="Contraseña">
-                    <a href="#" class="btn-1">Recuperar contraseña</a>
-                    <button>Entrar</button>
+                    <input type="text" name="numero_identificacion" placeholder="Número de identificación" required>
+                    <input type="password" name="contrasena" placeholder="Contraseña" required>
 
+                    <!-- Agregar lista desplegable de roles -->
+                    <select name="rol" required>
+                        <option value="">Seleccione su rol...</option>
+                        <option value="miembro">Miembro</option>
+                        <option value="entrenador">Entrenador</option>
+                    </select>
+
+                    <a href="#" class="btn-1">Recuperar contraseña</a>
+                    <button type="submit" name="login">Entrar</button>
                 </form>
 
+
+
                 <!--Registro-->
-                <form action="/Modulo-No-Miembros/Login-Register/php/registrarUsuarios.php" method="POST"
-                    class="formulario__register">
+                <form action="/Modulo-No-Miembros/Login-Register/php/registrarUsuarios.php" method="POST" class="formulario__register">
                     <h2>Regístrarse</h2>
                     <input type="text" placeholder="Nombre Completo" name="nombre_completo">
                     <input type="text" placeholder="Numero de identificación" name="numero_identificacion">
-                    <input type="text" placeholder="Fecha nacimiento" onfocus="(this.type='date')"
-                        name="fecha_nacimiento">
+                    <input type="text" placeholder="Fecha nacimiento" onfocus="(this.type='date')" name="fecha_nacimiento">
                     <input type="email" placeholder="Correo" name="correo">
                     <input type="text" placeholder="Teléfono" name="telefono">
                     <select name="sexo" placeholder="Sexo" name="sexo">
@@ -61,11 +67,11 @@
                     </select>
                     <input type="password" placeholder="Contraseña" name="contrasena">
                     <a href="/index.html">
-                    <input type="submit" value="Registrarse" name="registrar">
+                        <input type="submit" value="Registrarse" name="registrar">
                     </a>
-                    
-                    
-                    
+
+
+
                 </form>
             </div>
 
