@@ -55,13 +55,12 @@
         </div>
     </div>
 
-
     <script>
         function calcularFechaFin() {
             var inicio = new Date(document.getElementById('fecha_inicio').value);
             var plan = document.getElementById('plan').value;
             var duracion;
-    
+
             switch(plan) {
                 case 'basico':
                     duracion = 7;
@@ -73,35 +72,21 @@
                     duracion = 30;
                     break;
             }
-    
+
             var fin = new Date(inicio);
             fin.setDate(inicio.getDate() + duracion);
-    
+
             document.getElementById('fecha_fin').value = fin.toISOString().split('T')[0];
         }
-    
-        function establecerFechaMinima() {
-            var fechaHoy = new Date();
-            var dia = String(fechaHoy.getDate()).padStart(2, '0');
-            var mes = String(fechaHoy.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript empiezan desde 0
-            var ano = fechaHoy.getFullYear();
-    
-            fechaHoy = ano + '-' + mes + '-' + dia;
-            document.getElementById('fecha_inicio').min = fechaHoy;
-        }
-    
-        window.onload = establecerFechaMinima;
-
     </script>
     
     <div class="formulario">
-        <form action="codigos-php/registrar.php" method="post" id="formularioMembresia"
-        onsubmit="event.preventDefault(); enviarFormulario();">
-            <label for="identificacion">Número de Identificación:</label>
+        <form action="codigos-php/registrar.php" method="post" id="formularioMembresia">
+            <label for="numeroIdentificacion">Número de Identificación:</label>
             <input type="number" id="numeroIdentificacion" name="numeroIdentificacion" min="" required>
-    
-            <label for="fecha_inicio">Fecha de inicio de la membresía:</label><br>
-            <input type="date" id="fecha_inicio" name="fecha_inicio"><br>
+
+            <label for="fecha_inicio">Fecha de inicio de la membresía:</label>
+            <input type="date" id="fecha_inicio" name="fecha_inicio">
 
             <label for="plan">Plan de Membresía:</label>
             <select id="plan" name="plan" onchange="calcularFechaFin()">
@@ -110,16 +95,17 @@
                 <option value="general">Plan General</option>
                 <option value="elite">Plan Elite</option>
             </select>
-    
+
             <label for="fecha_fin">Fecha de Fin de la Membresía:</label>
             <input type="date" id="fecha_fin" name="fecha_fin" readonly>
-    
+
             <label for="tarjeta">Número de Tarjeta de Crédito:</label>
             <input type="number" id="tarjeta" name="tarjeta" required>
-            
-            <input type="submit" value="Comprar Membresía">
+
+            <input type="submit" value="Comprar Membresía" onclick="enviarFormulario()">
         </form>
     </div>
+
 
     <script>
         function enviarFormulario() {

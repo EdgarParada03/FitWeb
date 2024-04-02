@@ -1,7 +1,8 @@
 <?php
+// Archivo: registrar.php
 
 // Incluye el archivo de conexión a la base de datos
-require_once('connection.php'); // Asegúrate de que el nombre del archivo sea correcto
+require_once('conexion.php'); // Asegúrate de que el nombre del archivo sea correcto
 
 // Recibe los valores del formulario
 $numeroIdentificacion = $_POST['numeroIdentificacion'];
@@ -15,12 +16,17 @@ $sql = "INSERT INTO membresiapagar (numeroIdentificacion, fecha_inicio, plan, fe
           VALUES ('$numeroIdentificacion', '$fecha_inicio', '$plan', '$fecha_fin', '$tarjeta')";
 
 // Ejecuta la consulta
-if ($conexion->query($query) === TRUE) {
-    echo "Datos insertados correctamente en la base de datos.";
+if (mysqli_query($conn, $sql)) {
+
+    echo "Los datos se han guardado correctamente.";
+
+    echo "<script>window.location.href='/Modulo-Miembros/clientes.html';</script>";
+    //REDIRECCIONA A UNA PAGINA QUE NOSOTROS QUERRAMOS
+    exit;
 } else {
-    echo "Error al insertar datos en la base de datos: " . $conexion->error;
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-// Cierra la conexión
-$conexion->close();
+// Cerrar la conexión
+mysqli_close($conn);
 ?>
