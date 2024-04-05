@@ -93,4 +93,15 @@ CREATE TABLE diagnosticoimc (
     estado VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE Rutinas (
+ 
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(30),
+    zona_muscular VARCHAR(30),
+    ejercicios VARCHAR(100),
+    series VARCHAR(50),
+    descripcion VARCHAR(100),
+    video TEXT
+ 
+);
 
