@@ -106,7 +106,7 @@ main{
     margin-top: 20px;
     padding: 10px;
     border: none;
-    background: #a1a1a1;
+    background: #dad8d8;
     font-size: 16px;
     outline: none;
 }
@@ -116,15 +116,14 @@ main{
     margin-top: 20px;
     padding: 10px;
     border: none;
-    background: #a1a1a1;
+    background: #dad8d8;
     font-size: 16px;
     outline: none;
     border-radius: 20px; 
 }
 ::placeholder {
-    color: #0a0a0a; /* Color negro para todos los placeholders */
+    color: #080808; /* Color negro para todos los placeholders */
 }
-
 
 .contenedor__login-register form button{
     padding: 10px 40px;

@@ -32,10 +32,10 @@
             <div class="contenedor__login-register">
 
                 <!--Login-->
-                <form action="/Modulo-No-Miembros/Login-Register/php/iniciarSesion.php" method="POST" class="formulario__login">
+                <form action="/Modulo-No-Miembros/Login-Register/php/iniciarSesion.php" method="POST" class="formulario__login" >
                     <h2>Iniciar Sesión</h2>
-                    <input type="text" name="numero_identificacion" placeholder="Número de identificación" required>
-                    <input type="password" name="contrasena" placeholder="Contraseña" required>
+                    <input type="text" name="numero_identificacion" placeholder="Número de identificación" required="" pattern="[0-9]+">
+                    <input type="password" name="contrasena" placeholder="Contraseña" required="">
 
                     <!-- Agregar lista desplegable de roles -->
                     <select name="rol" required>
@@ -53,12 +53,12 @@
                 <!--Registro-->
                 <form action="/Modulo-No-Miembros/Login-Register/php/registrarUsuarios.php" method="POST" class="formulario__register">
                     <h2>Regístrarse</h2>
-                    <input type="text" placeholder="Nombre Completo" name="nombre_completo">
-                    <input type="text" placeholder="Numero de identificación" name="numero_identificacion">
+                    <input type="text" placeholder="Nombre Completo" name="nombre_completo" required="" pattern="[a-zA-Z]+">
+                    <input type="text" placeholder="Numero de identificación" name="numero_identificacion" required="" pattern="[0-9]+">
                     <input type="text" placeholder="Fecha nacimiento" onfocus="(this.type='date')" name="fecha_nacimiento">
                     <input type="email" placeholder="Correo" name="correo">
                     <input type="text" placeholder="Teléfono" name="telefono">
-                    <select name="sexo" placeholder="Sexo" name="sexo">
+                    <select name="sexo"  name="sexo">
                         <option value="" disabled selected>Selecciona tu sexo</option>
                         <option value="hombre">Hombre</option>
                         <option value="mujer">Mujer</option>
