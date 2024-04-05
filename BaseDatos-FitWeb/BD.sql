@@ -101,7 +101,5 @@ CREATE TABLE Rutinas (
     ejercicios VARCHAR(100),
     series VARCHAR(50),
     descripcion VARCHAR(100),
-    video TEXT
- 
+    video TEXT  
 );
-
