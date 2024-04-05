@@ -143,12 +143,15 @@ body{
     margin-bottom: 25px;
 
 }
+
+
 .btn-1{
     display: inline-block;
     padding: 11px 35px;
     background-color: #CE967B;
     color: #F9FAFC;
     text-transform: uppercase;
+    text-decoration: none;
     
 }
 .header-content.container .btn-1 {
