@@ -25,7 +25,9 @@ $sql = "INSERT INTO diagnosticoimc (documento, imc, estado)
 
 if (mysqli_query($conn, $sql)) {
     echo json_encode(['message' => 'Datos guardados correctamente']);
+    echo mysqli_error($conn);
     echo "<script>window.location.href='/Modulo-Miembros/clientes-diagnostico.html';</script>";
+    exit;
 } else {
     echo json_encode(['message' => 'Error al guardar los datos: ' . mysqli_error($conn)]);
 }
