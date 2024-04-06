@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitWeb | Colombia</title>
     <link rel="stylesheet" href="/Modulo-No-Miembros/Pagina-Principal/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -14,7 +17,7 @@
             <a href="#" class="logo">Logo</a>
             <input type="checkbox" id="menu">
             <label for="menu">
-                <img src="/Modulo-No-Miembros/Pagina-Principal/images/menu.jpg" class="menu-icono" alt="menu">
+                <img src="/Modulo-No-Miembros/Pagina-Principal/images/menu.png" class="menu-icono" alt="menu">
             </label>
             <nav class="navbar">
                 <ul>
@@ -25,67 +28,88 @@
                     <li><a href="#Seccion5">Blog</a></li>
                     <li><a href="#Seccion6">Contacto</a></li>
                     <li><a href="/Modulo-No-Miembros/Login-Register/index.php">Tu Espacio</a></li>
-                    
+
                 </ul>
             </nav>
         </div>
-        <div class="header-content container">
-            <h1>FitWeb</h1>
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="/Modulo-No-Miembros/Pagina-Principal/images/F1.jpg" alt="Imagen 1">
-                </div>
-                <div class="carousel-slide">
-                    <img src="/Modulo-No-Miembros/Pagina-Principal/images/F2.jpg" alt="Imagen 2">
-                </div>
-                <div class="carousel-slide">
-                    <img src="/Modulo-No-Miembros/Pagina-Principal/images/F3.jpg" alt="Imagen 3">
-                </div>
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-             <a href="/Modulo-No-Miembros/Login-Register/index.html" class="btn-1">¡Regístrate Ya!</a>
-             
-        </div>
-        
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/Modulo-No-Miembros/Pagina-Principal/images/F4.jpg" class="d-block w-100" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <button class="btn btn-primary">Regístrate ya!!</button>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/Modulo-No-Miembros/Pagina-Principal/images/F2.jpg" class="d-block w-100" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <button class="btn btn-primary">Regístrate ya!!</button>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/Modulo-No-Miembros/Pagina-Principal/images/F3.jpg" class="d-block w-100" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <button class="btn btn-primary">Regístrate ya!!</button>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          
+
+
     </header>
     <section class="gym">
-        
+
         <div class="gym-content container" id="Seccion1">
             <h2>Los diferentes tipos de planes</h2>
             <p class="txt-p">
-                En Fitweb, ofrecemos una variedad de planes diseñados para adaptarse a tu estilo de vida. 
-                Desde nuestro Plan Basico, con acceso completo a nuestras instalaciones, hasta nuestro Plan 
-                Estudiante, perfecto para aquellos con un presupuesto ajustado. Además, nuestro exclusivo Plan 
+                En Fitweb, ofrecemos una variedad de planes diseñados para adaptarse a tu estilo de vida.
+                Desde nuestro Plan Basico, con acceso completo a nuestras instalaciones, hasta nuestro Plan
+                Estudiante, perfecto para aquellos con un presupuesto ajustado. Además, nuestro exclusivo Plan
                 Ejecutivo brinda beneficios premium para quienes llevan un ritmo de vida más exigente. En Fitweb,
-                 estamos comprometidos a ser tu compañero en el camino hacia una vida más saludable y activa.
+                estamos comprometidos a ser tu compañero en el camino hacia una vida más saludable y activa.
             </p>
             <div class="gym-group">
                 <div class="gym-1">
                     <img src="/Modulo-No-Miembros/Pagina-Principal/images/basico.jpeg" alt="">
                     <h3>Basico</h3>
                     <p>
-                        Este plan semanal de entrenamiento en el gimnasio ofrece una variedad de ejercicios 
-                        diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por 
-                        un precio accesible de 20.000 pesos colombianos por semana. Maximiza tus resultados 
+                        Este plan semanal de entrenamiento en el gimnasio ofrece una variedad de ejercicios
+                        diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por
+                        un precio accesible de 20.000 pesos colombianos por semana. Maximiza tus resultados
                         con un enfoque completo en tu bienestar físico y mental.
                     </p>
                 </div>
                 <div class="gym-1">
                     <img src="/Modulo-No-Miembros/Pagina-Principal/images/general.jpeg" alt="">
                     <h3>General</h3>
-                    <p>Este completo plan quincenal de entrenamiento en el gimnasio ofrece una 
-                        variedad de ejercicios diseñados para mejorar la fuerza, resistencia, hipertrofia 
-                        y flexibilidad, todo por un precio accesible de 30.000 pesos colombiano durante 15 días. 
+                    <p>Este completo plan quincenal de entrenamiento en el gimnasio ofrece una
+                        variedad de ejercicios diseñados para mejorar la fuerza, resistencia, hipertrofia
+                        y flexibilidad, todo por un precio accesible de 30.000 pesos colombiano durante 15 días.
                         Maximiza tus resultados con un enfoque completo en tu bienestar físico y mental.
                     </p>
                 </div>
                 <div class="gym-1">
                     <img src="/Modulo-No-Miembros/Pagina-Principal/images/elite.jpeg" alt="">
                     <h3>Elite</h3>
-                    <p> 
-                     Este plan mensual de entrenamiento en el gimnasio ofrece una variedad de ejercicios
-                      diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por 
-                      un precio accesible de 55.000 pesos colombianos por mes. Maximiza tus resultados con 
-                      un enfoque completo en tu bienestar físico y mental.
+                    <p>
+                        Este plan mensual de entrenamiento en el gimnasio ofrece una variedad de ejercicios
+                        diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por
+                        un precio accesible de 55.000 pesos colombianos por mes. Maximiza tus resultados con
+                        un enfoque completo en tu bienestar físico y mental.
                     </p>
                 </div>
             </div>
@@ -118,11 +142,14 @@
     </main>
     <section class="general">
         <div class="general-1">
-            <section class="mapa"  id="Seccion3">
+            <section class="mapa" id="Seccion3">
                 <h2 class="titulo-principal">Nuestra Ubicación</h2>
                 <p>Nos ubicamos en el corazón de la ciudad</p>
                 <div class="mapa-contenido">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.84491286811!2d-72.50429670321044!3d7.911264600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e664541acb5d8a9%3A0x6b5948aee0db1950!2sUniversidad%20de%20Santander%20sede%20C%C3%BAcuta!5e0!3m2!1ses-419!2sco!4v1711325862039!5m2!1ses-419!2sco" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.84491286811!2d-72.50429670321044!3d7.911264600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e664541acb5d8a9%3A0x6b5948aee0db1950!2sUniversidad%20de%20Santander%20sede%20C%C3%BAcuta!5e0!3m2!1ses-419!2sco!4v1711325862039!5m2!1ses-419!2sco"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
             <a href="/Modulo-No-Miembros/Login-Register/index.html" class="btn-1">Registrate Ya!!</a>
@@ -134,44 +161,45 @@
         <div class="general-1" id="Seccion4">
             <h2>¿Quienes Somos?</h2>
             <p>
-                En FitWeb, somos un gimnasio comprometido con tu transformación personal hacia una vida más 
-                saludable y vibrante. Ofrecemos servicios diseñados para cultivar la belleza tanto física como 
-                mental, con instalaciones modernas y un equipo de entrenadores expertos. Más que un lugar para 
-                ejercitarse, somos una comunidad que te apoya, desafía y celebra en cada paso del camino hacia 
-                tu mejor versión. Únete a nosotros en este viaje hacia una vida más saludable, más fuerte y más 
-                hermosa.            </p>
+                En FitWeb, somos un gimnasio comprometido con tu transformación personal hacia una vida más
+                saludable y vibrante. Ofrecemos servicios diseñados para cultivar la belleza tanto física como
+                mental, con instalaciones modernas y un equipo de entrenadores expertos. Más que un lugar para
+                ejercitarse, somos una comunidad que te apoya, desafía y celebra en cada paso del camino hacia
+                tu mejor versión. Únete a nosotros en este viaje hacia una vida más saludable, más fuerte y más
+                hermosa. </p>
             <a href="/Modulo-No-Miembros/Login-Register/index.html" class="btn-1">Registrate Ya!!</a>
         </div>
     </section>
     <section class="blog container" id="Seccion5">
         <h2>Blog: Resultados - Opiniones y Más</h2>
-        <p>Bienvenidos a nuestro espacio dedicado a compartir con ustedes, 
-            nuestra querida comunidad, todo lo que acontece en nuestro gimnasio. 
-            Desde transformaciones inspiradoras hasta consejos prácticos para llevar 
-            una vida más saludable, este blog es un reflejo de nuestro compromiso con el bienestar 
+        <p>Bienvenidos a nuestro espacio dedicado a compartir con ustedes,
+            nuestra querida comunidad, todo lo que acontece en nuestro gimnasio.
+            Desde transformaciones inspiradoras hasta consejos prácticos para llevar
+            una vida más saludable, este blog es un reflejo de nuestro compromiso con el bienestar
             y el progreso personal. Hoy, queremos abrir las páginas de nuestro diario de logros para
-             mostrarles exactamente por qué nuestro gimnasio es un lugar donde los resultados hablan por 
-             í mismos.
+            mostrarles exactamente por qué nuestro gimnasio es un lugar donde los resultados hablan por
+            í mismos.
         </p>
         <div class="blog-content">
             <div class="blog-1">
-                <img src="/Modulo-No-Miembros/Pagina-Principal/images/persona.jpeg"alt="">
+                <img src="/Modulo-No-Miembros/Pagina-Principal/images/persona.jpeg" alt="">
                 <h3>Martin Guevara</h3>
                 <p>
                     Como Martin Guevara, te doy una calificación de 4 estrellas al gimnasio.
-                     He encontrado que las instalaciones son modernas y bien equipadas, con una 
-                     amplia variedad de equipos para satisfacer diferentes necesidades de entrenamiento. 
-                     El personal es amable y profesional, siempre dispuesto a ayudar y brindar asesoramiento 
-                     cuando se necesita. Sin embargo, he observado que en horas pico puede estar un poco abarrotado, 
-                     lo que a veces dificulta el acceso a ciertos equipos. En general, es un excelente lugar para mantenerse 
-                     en forma y alcanzar tus objetivos de fitness.
+                    He encontrado que las instalaciones son modernas y bien equipadas, con una
+                    amplia variedad de equipos para satisfacer diferentes necesidades de entrenamiento.
+                    El personal es amable y profesional, siempre dispuesto a ayudar y brindar asesoramiento
+                    cuando se necesita. Sin embargo, he observado que en horas pico puede estar un poco abarrotado,
+                    lo que a veces dificulta el acceso a ciertos equipos. En general, es un excelente lugar para
+                    mantenerse
+                    en forma y alcanzar tus objetivos de fitness.
                 </p>
             </div>
             <div class="blog-1">
                 <img src="/Modulo-No-Miembros/Pagina-Principal/images/persona2.jpg" alt="">
                 <h3>Julian Caceres</h3>
-                <p>Como Julian Caceres, le asigno 5 estrellas al gimnasio. 
-                    Instalaciones modernas y equipo variado. Personal amable y servicial. 
+                <p>Como Julian Caceres, le asigno 5 estrellas al gimnasio.
+                    Instalaciones modernas y equipo variado. Personal amable y servicial.
                     Ambiente motivador y limpio. Ideal para alcanzar metas de fitness.
                 </p>
             </div>
@@ -179,9 +207,9 @@
                 <img src="/Modulo-No-Miembros/Pagina-Principal/images/persona3.jpeg" alt="">
                 <h3>Carol Martinez</h3>
                 <p>
-                    Como Carol Martinez, le doy al gimnasio 4 estrellas. 
-                    Las instalaciones son adecuadas y limpias, pero el personal 
-                    podría ser más atento. El equipo es variado y bien mantenido. 
+                    Como Carol Martinez, le doy al gimnasio 4 estrellas.
+                    Las instalaciones son adecuadas y limpias, pero el personal
+                    podría ser más atento. El equipo es variado y bien mantenido.
                     En general, es un buen lugar para entrenar, aunque podría mejorar en algunos aspectos.
                 </p>
             </div>
@@ -190,14 +218,14 @@
     </section>
     <footer class="footer">
         <div class="footer-content container" id="Seccion6">
-            
+
             <div class="link">
                 <h3>Telefonia</h3>
                 <ul>
                     <li><a href="#">+57 320-4795796</a></li>
                     <li><a href="#">+57 305-8405336</a></li>
                     <li><a href="#">+57 322-4598497</a></li>
-                    
+
                 </ul>
             </div>
             <div class="link">
@@ -206,7 +234,7 @@
                     <li><a href="https://www.whatsapp.com/?lang=es_LA">@Whatsapp</a></li>
                     <li><a href="https://www.facebook.com">@Facebook</a></li>
                     <li><a href="https://www.tiktok.com/es/">@Tik Tok</a></li>
-                    
+
                 </ul>
             </div>
             <div class="link">
@@ -215,14 +243,17 @@
                     <li><a href="#">cristianestrada1609@gmail.com</a></li>
                     <li><a href="#">edgarparada@gmail.com</a></li>
                     <li><a href="#">josesandoval@gmail.com</a></li>
-                    
+
                 </ul>
             </div>
-            
-            
+
+
         </div>
     </footer>
-    <script src="/Modulo-No-Miembros/Pagina-Principal/js/scripts.js"></script>
+    <!--<script src="/Modulo-No-Miembros/Pagina-Principal/js/scripts.js"></script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
