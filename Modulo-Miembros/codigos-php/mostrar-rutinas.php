@@ -39,7 +39,7 @@ if (mysqli_num_rows($resultado) > 0) {
     echo "</body>";
     echo "</html>";
 } else {
-    echo "No se encontraron registros.";
+    echo "No se encontraron rutinas :( ";
 }
 
 // Cierra la conexión a la base de datos
