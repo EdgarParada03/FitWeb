@@ -9,9 +9,6 @@ body {
     background-size: cover; 
     background-repeat: no-repeat; 
 }
-
-
-
 header {
   background-color: #333; 
   padding: 20px;
@@ -25,7 +22,6 @@ header {
     margin-top: 50px;
 }
 
-
 .zoom-shadow {
     margin: 10px;
     display: inline-block;
@@ -34,7 +30,7 @@ header {
     border: none; 
     border-radius: 30px; 
   }
-  
+
   .zoom-shadow img {
     transition: transform 0.3s ease;
     width: 300px;
