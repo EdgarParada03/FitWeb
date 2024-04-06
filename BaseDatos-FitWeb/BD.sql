@@ -110,7 +110,8 @@ CREATE TABLE Personalizados (
     id_entrenador INT,
     id_miembro INT,
     video TEXT,
-    plan_alimentacion VARCHAR(100),
+    plan_alimentacion VARCHAR(255),
+    documento VARCHAR(255) NOT NULL, 
     FOREIGN KEY (id_entrenador) REFERENCES Entrenador(id), 
     FOREIGN KEY (id_miembro) REFERENCES Miembro(id) 
 
