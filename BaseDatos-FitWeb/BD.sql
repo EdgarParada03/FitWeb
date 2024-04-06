@@ -103,3 +103,16 @@ CREATE TABLE Rutinas (
     descripcion VARCHAR(100),
     video TEXT  
 );
+
+CREATE TABLE Personalizados (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_entrenador INT,
+    id_miembro INT,
+    video TEXT,
+    plan_alimentacion VARCHAR(100),
+    FOREIGN KEY (id_entrenador) REFERENCES Entrenador(id), 
+    FOREIGN KEY (id_miembro) REFERENCES Miembro(id) 
+
+
+)
