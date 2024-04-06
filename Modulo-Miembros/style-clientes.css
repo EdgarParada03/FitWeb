@@ -107,11 +107,38 @@ header {
 
 
 /* Diseño de la seccion membresias */
-.parrafo-membresia p{
+
+.membresia-group img{
+    height: 190px;
+    width: 150px;
+    margin-top: 15px;
     text-align: center;
-    font-size: 30px;
+   
 }
 
+.membresia-1{
+    text-align: center;
+    background-color: white;
+    padding: 5px;
+    margin-left: 60px;
+    margin-right: 30px;
+    border-radius: 20px;
+    padding: 5%;
+    margin-inline: 10px;
+    
+    
+}
+
+.membresia-group p{
+    text-align: justify;
+}
+
+.membresia-group img:hover{
+    background-color: #e0e2e4;
+    transition: ease;
+    transform: scale(1.06);
+    
+}
 h2 {
     text-align: center;
     font-size: 50px;
@@ -133,21 +160,21 @@ h2 span , p span{
     height: auto;
 }
 
-.coffe{
+.membresia{
     padding: 100px 0;
     background-color: #E1E2E6;
     position: relative;
 }
 
-.coffe-content{
+.membresia-content{
     text-align: center;
 }
 
-.coffe-group img {
+.membresia-group img {
     border-radius: 50%;
 }
 
-.coffe-content h2{
+.membresia-content h2{
     font-size: 55px;
     line-height: 70px;
     color: #323337;
@@ -162,29 +189,28 @@ h2 span , p span{
     padding: 0 250px;
     margin-bottom: 35px;
 }
-
-.coffe-group{
+.membresia-group{
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
 }
 
-.coffe-1 img{
+.membresia-1 img{
     width: 200px;
 }
 
-.coffe-img{
+.membresia-img{
     position:absolute;
     top: 0;
     right: 0;
 }
 
-.coffe-1{
+.membresia-1{
     padding: 0 25px;
     
 }
 
-.coffe-1 h3{
+.membresia-1 h3{
     color: #323337;
     font-size: 20px;
     margin-bottom: 15px;
@@ -274,43 +300,57 @@ th {
 
 
 /* Diseño de la seccion diagnostico */
-.contenedor {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.general {
+    width: 400px; 
+    height: 400px; 
+    position: absolute; 
+    top: 60%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    display: inline-flex;
+    
+    
+}
+.contenedor-1:hover{
+    transition: ease-in-out;
+    transform: scale(1.06);
+    
+}
+.contenedor-2:hover{
+
+    
+    transition: ease;
+    transform: scale(1.06);
+    
+}
+
+.pie-2 {
+    position: relative;
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin-top: 24%;
+    
 }
 
 .boton {
-    display: inline-block;
-    width: 120px;
-    height: 120px;
-    margin: 10px;
-    background-color: white;
-    color: black;
+    width: 200px;
+    height: 200px;
+    margin: 15px;   
     border: none;
     text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    transition-duration: 0.4s;
     cursor: pointer;
-}
-
-.boton:hover {
-    background-color: antiquewhite;
+    border-radius: 20px;
 }
 
 .imagen {
-    width: 100%;
-    height: 70%;
+    width: 170px;
+    height: 170px;
 }
 
 .texto {
-    width: 100%;
-    height: 30%;
+   font-size: 18px;
 }
 /* Fin del diseño seccion diagnostico */
 

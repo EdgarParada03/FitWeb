@@ -18,41 +18,40 @@
         <h1 class="title">SECCION DE MEMBRESIAS</h1>
     </header>
 
-    <div class="parrafo-membresia">
-        <h2><span>Bienvenidos a la seccion de Membresias</span></h2>
-        <p><span>Selecciona tu plan: </span></p>
-    </div>
-    
-    <div class="coffe-group">
-        <div class="coffe-1">
-            <img src="imagenes-clientes/plan-basico-logo.jpeg" alt="">
+    <div class="membresia-group">
+
+        <div class="membresia-1">
+            <img src="imagenes-clientes/planBasico.png" alt="">
             <h3>Basico</h3>
             <p>
-                Este plan semanal de entrenamiento en el gimnasio ofrece una variedad de ejercicios 
+                Este <a href="#Seccion1">plan semanal</a> de entrenamiento en el gimnasio ofrece una variedad de ejercicios 
                 diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por 
                 un precio accesible de 20.000 pesos colombianos por semana. Maximiza tus resultados 
                 con un enfoque completo en tu bienestar físico y mental.
             </p>
         </div>
-        <div class="coffe-1">
-            <img src="imagenes-clientes/plan-general-logo.jpeg" alt="">
+
+        <div class="membresia-1">
+            <img src="imagenes-clientes/planGeneral.png" alt="">
             <h3>General</h3>
-            <p>Este completo plan quincenal de entrenamiento en el gimnasio ofrece una 
+            <p>Este completo <a href="#Seccion1">plan quincenal</a> de entrenamiento en el gimnasio ofrece una 
                 variedad de ejercicios diseñados para mejorar la fuerza, resistencia, hipertrofia 
                 y flexibilidad, todo por un precio accesible de 30.000 pesos colombiano durante 15 días. 
                 Maximiza tus resultados con un enfoque completo en tu bienestar físico y mental.
             </p>
         </div>
-        <div class="coffe-1">
-            <img src="imagenes-clientes/plan-general-logo.jpeg" alt="">
+
+        <div class="membresia-1">
+            <img src="imagenes-clientes/Planelite.png" alt="">
             <h3>Elite</h3>
             <p> 
-             Este plan mensual de entrenamiento en el gimnasio ofrece una variedad de ejercicios
+             Este <a href="#Seccion1">plan mensual</a> de entrenamiento en el gimnasio ofrece una variedad de ejercicios
               diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por 
               un precio accesible de 55.000 pesos colombianos por mes. Maximiza tus resultados con 
               un enfoque completo en tu bienestar físico y mental.
             </p>
         </div>
+
     </div>
 
     <script>
@@ -80,7 +79,8 @@
         }
     </script>
     
-    <div class="formulario">
+    <div class="formulario" id="Seccion1">
+
         <form action="codigos-php/registrar.php" method="post" id="formularioMembresia">
             <label for="numeroIdentificacion">Número de Identificación:</label>
             <input type="number" id="numeroIdentificacion" name="numeroIdentificacion" min="" required>
@@ -104,6 +104,7 @@
 
             <input type="submit" value="Comprar Membresía" onclick="enviarFormulario()">
         </form>
+
     </div>
 
 
