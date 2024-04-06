@@ -17,26 +17,45 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 5%;
 }
 
 .botones-container {
+    transform: scale;
+    height: 80px; 
+    display: inline-block; 
+    margin: 0 10px; 
+    background-color: white;
+    padding: 15px;
+    height: 190px;
+    width: 190px;
     text-align: center;
-    margin-top: 50px;
+    margin-right: 10px;
+    margin-left: 90px;
+    border-radius: 25px;
 }
+
+.botones-container:hover{
+
+    background-color: #e0e2e4;
+    transition: ease;
+    transform: scale(1.045)
+    
+}
+
 
 .zoom-shadow {
     margin: 10px;
-    display: inline-block;
+    display: inline-flex;
     position: relative;
-    overflow: hidden;
-    border: none;
-    border-radius: 30px;
+    overflow: hidden;   
+    border-radius: 25px;
 }
 
 .zoom-shadow img {
-    transition: transform 0.3s ease;
-    width: 300px;
-    height: auto;
+    transition: transform 0.3s ease-in;
+    width: 170px;
+    height: 170px;
 }
 
 .zoom-shadow::before {
@@ -50,12 +69,10 @@ header {
     transition: opacity 0.3s ease;
 }
 
-.zoom-shadow:hover img {
-    transform: scale(1.1);
-}
+
 
 .zoom-shadow:hover::before {
-    opacity: 1;
+    opacity: 0;
 }
 
 .contact-info p {
@@ -63,10 +80,13 @@ header {
 }
 
 .pie {
+    position: relative;
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
+    margin-top: 5%;
+    
 }
 
 .fondo {
