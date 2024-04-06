@@ -104,16 +104,29 @@ CREATE TABLE Rutinas (
     video TEXT  
 );
 
+/*cambiar tabla de personalizados por esta */
 CREATE TABLE Personalizados (
 
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_entrenador INT,
-    id_miembro INT,
     video TEXT,
     plan_alimentacion VARCHAR(255),
-    documento VARCHAR(255) NOT NULL, 
-    FOREIGN KEY (id_entrenador) REFERENCES Entrenador(id), 
-    FOREIGN KEY (id_miembro) REFERENCES Miembro(id) 
+    documento VARCHAR(255) NOT NULL 
+
+
+);
+
+/*nueva tabla*/
+CREATE TABLE clase (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    sitio VARCHAR(50),
+    duracion VARCHAR(20),
+    tipoClase VARCHAR(50),
+    fecha DATE,
+    instructor VARCHAR(50)
+
+
 
 );
 

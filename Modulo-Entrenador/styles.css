@@ -1,90 +1,95 @@
 /*PAGINA PRINCIPAL ENTRENADOR*/
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-image: url('https://image.freepik.com/foto-gratis/resumen-desenfoque-y-gimnasio-de-fitness-defocused-para-el-fondo_1339-24814.jpg'); /* Ruta de la imagen de fondo */
-    background-size: cover; 
-    background-repeat: no-repeat; 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url('https://image.freepik.com/foto-gratis/resumen-desenfoque-y-gimnasio-de-fitness-defocused-para-el-fondo_1339-24814.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover; 
+  background-repeat: no-repeat; 
 }
+
+
+
 header {
-  background-color: #333; 
-  padding: 20px;
-  color: #fff;
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
+background-color: #333; 
+padding: 20px;
+color: #fff;
+display: flex; 
+justify-content: space-between; 
+align-items: center; 
 }
 .botones-container {
-    text-align: center;
-    margin-top: 50px;
+  text-align: center;
+  margin-top: 50px;
 }
 
-.zoom-shadow {
-    margin: 10px;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    border: none; 
-    border-radius: 30px; 
-  }
 
-  .zoom-shadow img {
-    transition: transform 0.3s ease;
-    width: 300px;
-    height: auto;
-  }
+.zoom-shadow {
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border: none; 
+  border-radius: 30px; 
+}
+
+.zoom-shadow img {
+  transition: transform 0.3s ease;
+  width: 300px;
+  height: auto;
+}
+
+.zoom-shadow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   
-  .zoom-shadow::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    opacity: 50;
-    transition: opacity 0.3s ease;
-  }
-  
-  .zoom-shadow:hover img {
-    transform: scale(1.1);
-  }
-  
-  .zoom-shadow:hover::before {
-    opacity: 1;
-  }
+  opacity: 50;
+  transition: opacity 0.3s ease;
+}
+
+.zoom-shadow:hover img {
+  transform: scale(1.1);
+}
+
+.zoom-shadow:hover::before {
+  opacity: 1;
+}
 
 .contact-info p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 .pie{
 
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+
+  
 
 }
 
 .fondo{
-    
-    background-image: url('images/Captura\ de\ pantalla\ 2024-03-26\ 191829.png');
+  
+  background-image: url('images/Captura\ de\ pantalla\ 2024-03-26\ 191829.png');
 
 }
 
 .logo-container {
-  display: flex; 
-  align-items: center;
+display: flex; 
+align-items: center;
 }
 
 .logo {
-  max-width: 150px; 
-  height: auto;
+max-width: 150px; 
+height: auto;
 }
 
 
@@ -92,78 +97,225 @@ header {
 
 
 .content {
-  text-align: center; 
-  margin-top: 50px; 
+text-align: center; 
+margin-top: 50px; 
 }
 
 .search-box {
-  margin-bottom: 20px; 
+margin-bottom: 20px; 
 }
 
 .search-box input[type="text"] {
-  padding: 8px;
-  margin-right: 5px; 
+padding: 8px;
+margin-right: 5px; 
 }
 
 .search-button, .generate-list-button {
-  padding: 8px 16px; 
-  background-color: #303030; 
-  color: white;
-  border: none; 
-  border-radius: 4px; 
-  cursor: pointer;
-  font-size: 16px; 
+padding: 8px 16px; 
+background-color: #303030; 
+color: white;
+border: none; 
+border-radius: 4px; 
+cursor: pointer;
+font-size: 16px; 
 }
 
 .back-button {
+
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border: none; 
+  border-radius: 50px; 
   
-    margin: 10px;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    border: none; 
-    border-radius: 50px; 
-    
-    
+  
 }
 
 .back-button img {
-  transition: transform 0.3s ease;
-  width: 60px;
-  height: auto;
+transition: transform 0.3s ease;
+width: 60px;
+height: auto;
 }
 
 .result-box {
-    border: 1px solid #ffffff; /* Añade un borde a la caja de resultados */
-    padding: 10px; /* Añade relleno a la caja de resultados */
-    min-height: 100px; /* Altura mínima de la caja de resultados */
-    overflow-y: auto; /* Añade una barra de desplazamiento vertical si es necesario */
-    margin: 0 auto; /* Centra el cuadro */
-    max-width: 900px; /* Ancho máximo del cuadro */
-    background-color: #ffffff;
+  border: 1px solid #ffffff; /* Añade un borde a la caja de resultados */
+  padding: 10px; /* Añade relleno a la caja de resultados */
+  min-height: 100px; /* Altura mínima de la caja de resultados */
+  overflow-y: auto; /* Añade una barra de desplazamiento vertical si es necesario */
+  margin: 0 auto; /* Centra el cuadro */
+  max-width: 900px; /* Ancho máximo del cuadro */
+  background-color: #ffffff;
 }
 
 .ulClientes {
-  list-style-type: none; /* Quita los puntos */
-  font-family: Arial, sans-serif; /* Cambia la fuente */
-  font-size: 16px; /* Cambia el tamaño de la letra */
+list-style-type: none; /* Quita los puntos */
+font-family: Arial, sans-serif; /* Cambia la fuente */
+font-size: 16px; /* Cambia el tamaño de la letra */
 }
 
 .ulClientes li {
-  margin-bottom: 5px; /* Espacio entre elementos de la lista */
+margin-bottom: 5px; /* Espacio entre elementos de la lista */
 }
 
 .titlecli{
 
-  text-align: center; 
-  background-color: #1f1f1f;
-  margin: 0 auto; /* Centra el cuadro */
-  color: #ffffff;
+text-align: center; 
+background-color: #1f1f1f;
+margin: 0 auto; /* Centra el cuadro */
+color: #ffffff;
 }
 
 
 
 
 /*PAGINA PERSONALIZADOS ENTRENADOR*/
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f2f2f2;
+margin: 0;
+padding: 0;
+}
+
+.container {
+max-width: 900px;
+margin: 25px auto;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+text-align: center;
+}
+
+.button {
+display: inline-block;
+padding: 10px 20px;
+background-color: #007bff;
+color: #fff;
+text-decoration: none;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.button:hover {
+background-color: #0056b3;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+width: 100%;
+padding: 8px;
+border-radius: 5px;
+border: 1px solid #ccc;
+}
+
+.form-group input[type="submit"] {
+background-color: #28a745;
+color: #fff;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+.table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+.table th, .table td {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+.table th {
+background-color: #f2f2f2;
+font-weight: bold;
+text-align: left;
+}
+
+a {
+color: #007bff;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+input, button {
+margin: 5px;
+padding: 10px;
+}
+.videos {
+font-family: Arial, sans-serif;
+text-align: center;
+
+max-width: 800px;
+margin: 20px auto;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+#myIframe{
+
+  display: none;
+}
+
+.form-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px; /* ajusta el ancho según tu preferencia */
+}
+
+/* Estilos adicionales para los elementos del formulario si es necesario */
+.form-container form {
+  margin-bottom: 15px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.form-container input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
 
 /*PAGINA ENTRENAMIENTO ENTRENADOR*/
