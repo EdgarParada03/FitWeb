@@ -17,7 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 .botones-container {
@@ -192,7 +192,8 @@ h2 span , p span{
 .membresia-group{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
+   
 }
 
 .membresia-1 img{
@@ -216,14 +217,22 @@ h2 span , p span{
     margin-bottom: 15px;
 }
 
-.formulario {
-    width: 300px;
+.formulario { 
+    width: 400px;
     padding: 16px;
     background-color: #f1f1f1;
-    margin: 0 auto;
-    margin-top: 50px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin: 0 auto ;
+    transform: translate(-1%, -9%); 
+    border-radius: 20px;
+}
+.pie-3 {
+    position: relative;
+    background-color: #333;
+    color: #fff;
+    padding: 70px;
+    text-align: center;
+    margin-top: 2%;
+    
 }
 
 .formulario input[type=text], .formulario input[type=date], .formulario input[type=number], .formulario select {
@@ -234,6 +243,7 @@ h2 span , p span{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    
 }
 
 .formulario input[type=submit] {
@@ -259,13 +269,13 @@ h2 span , p span{
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 20px auto;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 /* Estilos para los campos de entrada */
 .busqueda-input {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
