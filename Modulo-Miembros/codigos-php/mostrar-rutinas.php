@@ -4,6 +4,17 @@
 // Incluye el archivo de conexión a la base de datos
 include("conexion.php");
 
+function convertir_a_iframe_embebido($url) {
+    // Reemplaza la URL base con la URL de YouTube
+    $url_base = 'https://www.youtube.com/watch?v=';
+    $video_id = substr($url, strlen($url_base));
+
+    // Genera el código del iframe embebido
+    $iframe_code = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $video_id . '" frameborder="0" allowfullscreen></iframe>';
+
+    return $iframe_code;
+}
+
 // Consulta para obtener los valores específicos de la tabla "Rutinas"
 $sql = "SELECT nombre, zona_muscular, ejercicios, series, descripcion, video FROM Rutinas";
 
@@ -31,7 +42,7 @@ if (mysqli_num_rows($resultado) > 0) {
         echo "<td>" . $fila['ejercicios'] . "</td>";
         echo "<td>" . $fila['series'] . "</td>";
         echo "<td>" . $fila['descripcion'] . "</td>";
-        echo "<td><iframe width=\"560\" height=\"315\" src=\"" . $fila['video'] . "\" frameborder=\"0\" allowfullscreen></iframe></td>";
+        echo "<td>" . convertir_a_iframe_embebido($fila['video']) . "</td>";
         echo "</tr>";
     }
 
