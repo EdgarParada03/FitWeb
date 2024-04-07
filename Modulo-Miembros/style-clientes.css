@@ -20,6 +20,11 @@ header {
     margin-bottom: 2%;
 }
 
+.btn10{
+    margin-left: 38%;
+    margin-top: -1.5%;
+    display: flex;
+}
 .botones-container {
     transform: scale;
     height: 80px; 
