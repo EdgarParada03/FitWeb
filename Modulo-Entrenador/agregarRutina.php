@@ -1,6 +1,21 @@
 <?php
 include 'conexion.php';
 
+
+// Incluir la función convertir_a_iframe_embebido
+function convertir_a_iframe_embebido($url) {
+    // Reemplaza la URL base con la URL de YouTube
+    $url_base = 'https://www.youtube.com/watch?v=';
+    $video_id = substr($url, strlen($url_base));
+
+    // Genera el código del iframe embebido
+    $iframe_code = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $video_id . '" frameborder="0" allowfullscreen></iframe>';
+
+    return $iframe_code;
+}
+
+
+
 // Recibir datos del formulario
 $nombre = $_POST['nombre'];
 $zonaMuscular = $_POST['zonaMuscular'];
@@ -9,8 +24,10 @@ $series = $_POST['series'];
 $descripcion = $_POST['descripcion'];
 $video = $_POST['video'];
 
+$video_iframe = convertir_a_iframe_embebido($video);
+
 // Insertar datos en la tabla
-$sql = "INSERT INTO Rutinas (nombre, zona_muscular, ejercicios, series, descripcion, video) VALUES ('$nombre', '$zonaMuscular ', '$ejercicios', '$series ', '$descripcion', '$video')";
+$sql = "INSERT INTO Rutinas (nombre, zona_muscular, ejercicios, series, descripcion, video) VALUES ('$nombre', '$zonaMuscular ', '$ejercicios', '$series ', '$descripcion', '$video_iframe')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Registro guardado exitosamente";
