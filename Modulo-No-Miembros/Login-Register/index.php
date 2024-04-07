@@ -53,7 +53,7 @@
                 <!--Registro-->
                 <form action="/Modulo-No-Miembros/Login-Register/php/registrarUsuarios.php" method="POST" class="formulario__register">
                     <h2>Regístrarse</h2>
-                    <input type="text" placeholder="Nombre Completo" name="nombre_completo" pattern="[a-zA-Z]+" >
+                    <input type="text" placeholder="Nombre Completo" name="nombre_completo">
                     <input type="text" placeholder="Numero de identificación" name="numero_identificacion" required="" pattern="[0-9]+">
                     <input type="text" placeholder="Fecha nacimiento" onfocus="(this.type='date')" name="fecha_nacimiento">
                     <input type="email" placeholder="Correo" name="correo">
