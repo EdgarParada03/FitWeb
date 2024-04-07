@@ -25,26 +25,28 @@
         </div>
 
         <div class="container">
+
             <h2>Agregar Rutinas</h2>
 
             <form action="agregarRutina.php" method="post">
                 <div class="form-group">
-                <label for="nombre">Nombre de Rutina:</label><br>
-                <input type="text" id="nombre" name="nombre"><br>
-                <label for="zonaMuscular">Zona Muscular:</label><br>
-                <input type="text" id="zonaMuscular" name="zonaMuscular"><br><br>
-                <label for="ejercicios">Ejercicios:</label><br>
-                <input type="text" id="ejercicios" name="ejercicios"><br>
-                <label for="series">Series:</label><br>
-                <input type="text" id="series" name="series"><br>
-                <label for="descripcion">Descripcion:</label><br>
-                <input type="text" id="descripcion" name="descripcion"><br>
-                <label for="video">Link de video:</label><br>
-                <input type="text" id="video" name="video"><br>
-                <input type="submit" value="Guardar Registro">
+                    <label for="nombre">Nombre de Rutina:</label><br>
+                    <input type="text" id="nombre" name="nombre"><br>
+                    <label for="zonaMuscular">Zona Muscular:</label><br>
+                    <input type="text" id="zonaMuscular" name="zonaMuscular"><br><br>
+                    <label for="ejercicios">Ejercicios:</label><br>
+                    <input type="text" id="ejercicios" name="ejercicios"><br>
+                    <label for="series">Series:</label><br>
+                    <input type="text" id="series" name="series"><br>
+                    <label for="descripcion">Descripcion:</label><br>
+                    <input type="text" id="descripcion" name="descripcion"><br>
+                    <label for="video">Link de video:</label><br>
+                    <input type="text" id="video" name="video"><br>
+
+                    <input type="submit" value="Guardar Registro">
                 </div>
             </form>
-            
+
         </div>
 
         <div class="container">
@@ -62,35 +64,22 @@
             </table>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="container">
             <h2>Modificar y Editar Rutinas</h2>
-
             <form action="editarRutinas.php" method="GET">
                 <label for="id_registro">Ingrese el ID de Rutina:</label><br>
                 <input type="text" id="id_registro" name="id_registro"><br><br>
-                <input type="submit" value="Editar" class="button">
+                <input type="submit" value="Editar" class="button1">
             </form>
 
             <form action="eliminarRutina.php" method="GET">
                 <label for="id_eliminar">ID de Rutina a eliminar:</label><br>
                 <input type="text" id="id_eliminar" name="id_eliminar"><br><br>
-                <input type="submit" value="Eliminar" class="button">
+                <input type="submit" value="Eliminar" class="button2">
+
             </form>
 
         </div>
-
 
         <div class="content">
             <a href="entrenador-entrenamientos.html" class="back-button"><img src="images/retroceso-rapido.gif"></a>

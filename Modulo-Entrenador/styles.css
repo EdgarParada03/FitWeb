@@ -197,7 +197,7 @@ padding: 0;
 max-width: 900px;
 margin: 25px auto;
 background-color: #fff;
-padding: 20px;
+padding: 45px;
 border-radius: 8px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -206,23 +206,58 @@ h1 {
 text-align: center;
 }
 
-.button {
+.button1 {
 display: inline-block;
-padding: 10px 20px;
-background-color: #007bff;
-color: #fff;
+padding: 18px;
+background-color: #f7ff0f;
+color: #000000;
 text-decoration: none;
 border: none;
 border-radius: 5px;
 cursor: pointer;
+display: inline-block;
+position: absolute;
+margin-left: 30%;
+margin-top: -5%;
+width: 100px;
+
 }
 
-.button:hover {
-background-color: #0056b3;
+.button2 {
+  display: inline-block;
+  padding: 18px;
+  background-color: #ff0000;
+  color: #000000;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  margin-left: 30%;
+  margin-top: -5%;
+  width: 100px;
+  }
+
+.button1:hover{
+  transform: scale(1.1);
+  
 }
+.button2:hover{
+  transform: scale(1.1);
+  
+}
+
 
 .form-group {
-margin-bottom: 20px;
+margin-bottom: 30px;
+margin-top: 30px;
+}
+
+.form-group input{
+  margin-top: 8px;
+  margin-bottom: 25px;
+  margin-left: -8px;
 }
 
 .form-group label {
@@ -239,12 +274,17 @@ border: 1px solid #ccc;
 }
 
 .form-group input[type="submit"] {
-background-color: #28a745;
+background-color: #00ff3c;
 color: #fff;
 border: none;
 border-radius: 5px;
 padding: 10px 20px;
 cursor: pointer;
+margin-left: 40%;
+}
+
+.form-group input[type="submit"]:hover{
+  transform: scale(1.2);
 }
 
 .table {
