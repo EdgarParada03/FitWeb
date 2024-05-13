@@ -40,14 +40,16 @@ CREATE TABLE Miembro (
     FOREIGN KEY (persona_id) REFERENCES Persona(id) 
 );
 
-
+use FITWEB;
+drop table MembresiaPagar;
 CREATE TABLE MembresiaPagar (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    numeroIdentificacion VARCHAR(20),
+    id_miembro INT,
     fecha_inicio DATE,
     plan VARCHAR(25),
     fecha_fin DATE,
-    tarjeta VARCHAR(50)
+    tarjeta VARCHAR(50),
+    FOREIGN KEY (id_miembro) REFERENCES Miembro(id)
 );
 
 DELIMITER //
@@ -77,6 +79,8 @@ END//
 
 DELIMITER ;
 
+use FITWEB;
+drop table diagnosticosalud;
 CREATE TABLE diagnosticosalud (
     id INT AUTO_INCREMENT PRIMARY KEY,
     documento VARCHAR(255) NOT NULL,
@@ -86,6 +90,10 @@ CREATE TABLE diagnosticosalud (
     asma ENUM('Sí', 'No') NOT NULL
 );
 
+
+
+use FITWEB;
+drop table diagnosticoimc;
 CREATE TABLE diagnosticoimc (
     id INT AUTO_INCREMENT PRIMARY KEY,
     documento VARCHAR(255) NOT NULL,
