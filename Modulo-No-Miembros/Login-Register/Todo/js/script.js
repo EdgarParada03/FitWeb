@@ -65,6 +65,14 @@ function anchopagina() {
     }
 }
 
-
+// Obtener el número de identificación del formulario y enviarlo al campo en clientes.php
+function cargarNumeroIdentificacion() {
+    // Obtener el valor del número de identificación ingresado por el usuario
+    var numeroIdentificacion = document.getElementById("numero_identificacion").value;
+    // Asignar el valor del número de identificación al campo correspondiente en el formulario de clientes.php
+    document.getElementById("loginForm").action = "/Modulo-Miembros/clientes.html?numero_identificacion=" + numeroIdentificacion;
+}
 // Llamar a la función anchopagina() cuando se cargue la página
 anchopagina();
+
+
