@@ -1,13 +1,13 @@
-
+-- Eliminar la base de datos si existe
 DROP DATABASE IF EXISTS FITWEB;
 
-
+-- Crear la base de datos FITWEB
 CREATE DATABASE FITWEB;
 
-
+-- Usar la base de datos FITWEB
 USE FITWEB;
 
-
+-- Crear la tabla Persona
 CREATE TABLE Persona (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombreCompleto VARCHAR(50),
@@ -21,66 +21,58 @@ CREATE TABLE Persona (
     rol VARCHAR(20) DEFAULT 'miembro'
 );
 
-
+-- Modificar la columna rol de la tabla Persona
 ALTER TABLE Persona MODIFY COLUMN rol VARCHAR(20) DEFAULT 'miembro' NULL;
 
-
+-- Crear la tabla Entrenador
 CREATE TABLE Entrenador (
     id INT AUTO_INCREMENT PRIMARY KEY,
     persona_id INT,
     especialidad VARCHAR(50),
-    FOREIGN KEY (persona_id) REFERENCES Persona(id) 
+    FOREIGN KEY (persona_id) REFERENCES Persona(id)
 );
 
-
+-- Crear la tabla Miembro
 CREATE TABLE Miembro (
     id INT AUTO_INCREMENT PRIMARY KEY,
     persona_id INT,
     estado BOOLEAN,
-    FOREIGN KEY (persona_id) REFERENCES Persona(id) 
+    FOREIGN KEY (persona_id) REFERENCES Persona(id)
 );
 
-use FITWEB;
-drop table MembresiaPagar;
+-- Crear la tabla MembresiaPagar
 CREATE TABLE MembresiaPagar (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_miembro INT,
+    numeroIdentificacion VARCHAR(20),
     fecha_inicio DATE,
     plan VARCHAR(25),
     fecha_fin DATE,
-    tarjeta VARCHAR(50),
-    FOREIGN KEY (id_miembro) REFERENCES Miembro(id)
+    tarjeta VARCHAR(50)
 );
 
+-- Crear el trigger calcular_edad
 DELIMITER //
-
-
 CREATE TRIGGER calcular_edad BEFORE INSERT ON Persona
 FOR EACH ROW
 BEGIN
     SET NEW.edad = TIMESTAMPDIFF(YEAR, NEW.fechaNacimiento, CURDATE());
 END//
+DELIMITER ;
 
-
-DROP TRIGGER IF EXISTS llenar_entrenador;
+-- Crear el trigger llenar_entrenador
+DELIMITER //
 CREATE TRIGGER llenar_entrenador AFTER INSERT ON Persona
 FOR EACH ROW
 BEGIN
-   
     IF NEW.rol = 'entrenador' THEN
-       
         INSERT INTO Entrenador (persona_id, especialidad) VALUES (NEW.id, 'Especificar especialidad');
     ELSE
-        
         INSERT INTO Miembro (persona_id, estado) VALUES (NEW.id, TRUE);
     END IF;
 END//
-
-
 DELIMITER ;
 
-use FITWEB;
-drop table diagnosticosalud;
+-- Crear la tabla diagnosticosalud
 CREATE TABLE diagnosticosalud (
     id INT AUTO_INCREMENT PRIMARY KEY,
     documento VARCHAR(255) NOT NULL,
@@ -90,10 +82,7 @@ CREATE TABLE diagnosticosalud (
     asma ENUM('Sí', 'No') NOT NULL
 );
 
-
-
-use FITWEB;
-drop table diagnosticoimc;
+-- Crear la tabla diagnosticoimc
 CREATE TABLE diagnosticoimc (
     id INT AUTO_INCREMENT PRIMARY KEY,
     documento VARCHAR(255) NOT NULL,
@@ -101,31 +90,27 @@ CREATE TABLE diagnosticoimc (
     estado VARCHAR(50) NOT NULL
 );
 
+-- Crear la tabla Rutinas
 CREATE TABLE Rutinas (
- 
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(30),
     zona_muscular VARCHAR(30),
     ejercicios VARCHAR(100),
     series VARCHAR(50),
     descripcion VARCHAR(100),
-    video TEXT  
+    video TEXT
 );
 
-/*cambiar tabla de personalizados por esta */
+-- Crear la tabla Personalizados
 CREATE TABLE Personalizados (
-
     id INT AUTO_INCREMENT PRIMARY KEY,
     video TEXT,
     plan_alimentacion VARCHAR(255),
-    documento VARCHAR(255) NOT NULL 
-
-
+    documento VARCHAR(255) NOT NULL
 );
 
-/*nueva tabla*/
+-- Crear la tabla clase
 CREATE TABLE clase (
-
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50),
     sitio VARCHAR(50),
@@ -133,13 +118,10 @@ CREATE TABLE clase (
     tipoClase VARCHAR(50),
     fecha DATE,
     instructor VARCHAR(50)
-
-
-
 );
 
+-- Crear la función ConvertToEmbeddedLink
 DELIMITER //
-
 CREATE FUNCTION ConvertToEmbeddedLink(normal_link TEXT) RETURNS TEXT
 BEGIN
     DECLARE video_id VARCHAR(50);
@@ -153,10 +135,8 @@ BEGIN
 
     RETURN embedded_link;
 END;
-
 //
 
+-- Actualizar la columna video de la tabla Personalizados usando la función ConvertToEmbeddedLink
 DELIMITER ;
-
 UPDATE Personalizados SET video = ConvertToEmbeddedLink(video);
-
