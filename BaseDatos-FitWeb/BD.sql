@@ -101,4 +101,62 @@ CREATE TABLE diagnosticoimc (
     estado VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE Rutinas (
+ 
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(30),
+    zona_muscular VARCHAR(30),
+    ejercicios VARCHAR(100),
+    series VARCHAR(50),
+    descripcion VARCHAR(100),
+    video TEXT  
+);
+
+/*cambiar tabla de personalizados por esta */
+CREATE TABLE Personalizados (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    video TEXT,
+    plan_alimentacion VARCHAR(255),
+    documento VARCHAR(255) NOT NULL 
+
+
+);
+
+/*nueva tabla*/
+CREATE TABLE clase (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    sitio VARCHAR(50),
+    duracion VARCHAR(20),
+    tipoClase VARCHAR(50),
+    fecha DATE,
+    instructor VARCHAR(50)
+
+
+
+);
+
+DELIMITER //
+
+CREATE FUNCTION ConvertToEmbeddedLink(normal_link TEXT) RETURNS TEXT
+BEGIN
+    DECLARE video_id VARCHAR(50);
+    DECLARE embedded_link TEXT;
+
+    -- Extraer el ID del video de los enlaces normales (por ejemplo, de YouTube)
+    SET video_id = SUBSTRING_INDEX(SUBSTRING_INDEX(normal_link, '?v=', -1), '&', 1);
+
+    -- Construir el enlace embebido
+    SET embedded_link = CONCAT('<iframe width="560" height="315" src="https://www.youtube.com/embed/', video_id, '" frameborder="0" allowfullscreen></iframe>');
+
+    RETURN embedded_link;
+END;
+
+//
+
+DELIMITER ;
+
+UPDATE Personalizados SET video = ConvertToEmbeddedLink(video);
 

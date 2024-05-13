@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULO ENTRENADOR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img class="logo" src="images/logo.webp" alt="Logo de la empresa">
+        </div>
+        <h1 class="title">MODULO DE ENTRENADORES</h1>
+    </header>
+
+
+
+    <div>
+
+        <div class="container">
+            <h1>Rutinas</h1>
+        </div>
+
+        <div class="container">
+
+            <h2>Agregar Rutinas</h2>
+
+            <form action="agregarRutina.php" method="post">
+                <div class="form-group">
+                    <label for="nombre">Nombre de Rutina:</label><br>
+                    <input type="text" id="nombre" name="nombre"><br>
+                    <label for="zonaMuscular">Zona Muscular:</label><br>
+                    <input type="text" id="zonaMuscular" name="zonaMuscular"><br><br>
+                    <label for="ejercicios">Ejercicios:</label><br>
+                    <input type="text" id="ejercicios" name="ejercicios"><br>
+                    <label for="series">Series:</label><br>
+                    <input type="text" id="series" name="series"><br>
+                    <label for="descripcion">Descripcion:</label><br>
+                    <input type="text" id="descripcion" name="descripcion"><br>
+                    <label for="video">Link de video:</label><br>
+                    <input type="text" id="video" name="video"><br>
+
+                    <input type="submit" value="Guardar Registro">
+                </div>
+            </form>
+
+        </div>
+
+        <div class="container">
+
+            <table class="table">
+
+                <tbody>
+
+                    <body>
+                        <h2>Mis Rutinas</h2>
+                        <iframe src="visualizarRutinas.php" style="width:100%; height:400px;"></iframe>
+                    </body>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2>Modificar y Editar Rutinas</h2>
+            <form action="editarRutinas.php" method="GET">
+                <label for="id_registro">Ingrese el ID de Rutina:</label><br>
+                <input type="text" id="id_registro" name="id_registro"><br><br>
+                <input type="submit" value="Editar" class="button1">
+            </form>
+
+            <form action="eliminarRutina.php" method="GET">
+                <label for="id_eliminar">ID de Rutina a eliminar:</label><br>
+                <input type="text" id="id_eliminar" name="id_eliminar"><br><br>
+                <input type="submit" value="Eliminar" class="button2">
+
+            </form>
+
+        </div>
+
+        <div class="content">
+            <a href="entrenador-entrenamientos.html" class="back-button"><img src="images/retroceso-rapido.gif"></a>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

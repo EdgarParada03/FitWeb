@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULO ENTRENADOR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <img class="logo" src="images/logo.webp" alt="Logo de la empresa">
+        </div>
+        <h1 class="title">MODULO DE ENTRENADORES</h1>
+    </header>
+
+    <h2 class="titlecli">Bienvenido al area de Personalizados</h2>
+    <div class="content">
+        
+        <div class="container">
+        
+        <tbody>
+
+            <body>
+                <h2>CLIENTES CON IMC ALTO</h2>
+                <iframe src="visualizarClientesIMCAlto.php" style="width:100%; height:400px;"></iframe>
+            </body>
+
+        </tbody>
+
+        </div>
+
+
+
+
+        
+    </div>
+
+    <div class="container">
+        <h2>Agregar Personalizado</h2>
+
+        <form action="agregarPersonalizado.php" method="post">
+            <div class="form-group">    
+            <label for="video">Agregar Video:</label><br>
+            <input type="text" id="video" name="video"><br>
+            <label for="plan_alimentacion">agregar Plan de Alimentacion:</label><br>
+            <input type="text" id="plan_alimentacion" name="plan_alimentacion"><br><br>
+            <label for="documento">Documento de miembro:</label><br>
+            <input type="text" id="documento" name="documento"><br>
+            
+            <input type="submit" value="Guardar Registro">
+            </div>
+        </form>
+        
+    </div>
+
+    <div class="content">
+        <a href="entrenador.html" class="back-button"><img src="images/retroceso-rapido.gif"></a>
+    </div>
+    
+
+</body>
+
+</html>

@@ -10,12 +10,14 @@
 body{
     font-family: "Poppins", sans-serif;
 }
-
+.carousel-inner img{
+    width: 100%;
+    height: 10%;
+}
 .container{
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .header{
     background-image: linear-gradient(
         rgba(0,0,0,0.7),
@@ -28,67 +30,103 @@ body{
     display: flex;
     align-items: center;
 }
-.carousel-container {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%; 
-    max-width: 800px; 
-    height: 300px; 
-    margin: 0 auto; 
-    border: 1px solid transparent; 
-    border-radius: 10px; 
-    margin-bottom: 20px; 
-}
-.carousel-slide {
-    flex: 0 0 auto;
-    width: 400px; 
-    display: none; 
-}
-.carousel-slide img {
+#carouselExampleCaptions {
+    max-height: 350px;
     width: 100%;
-    height: 100%;
+    margin: 50px auto 0; 
+}
+
+.carousel-item img {
+    max-height: 395px;
+    width: 100%;
     object-fit: cover;
 }
-.menu{
-    position: absolute;
-    top: 0;
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 40%; 
+}
+
+.carousel-control-prev {
     left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none; 
+    color: black; 
+    font-size: 2rem; /
+}
+
+
+
+.menu {
+    position: absolute;
+    top: -10px; 
+    left: 150px; 
     right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.logo{
-    color: #FFFDFC;
-    font-size: 25px;
-    font-weight: 800;
+.menu .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
 }
+
 .menu .navbar ul li {
-    position: relative;
-    float: left;
+    display: inline;
+   
 }
-.menu .navbar ul li a:hover{
-    color: #CE967B;
-}
-.menu .navbar ul li a{
+
+.menu .navbar ul li a {
     font-size: 18px;
     padding: 20px;
     color: #FFFDFC;
-    display: block;
+    display: inline-block;
     font-weight: 600;
+    text-decoration: none; 
+    transition: transform 0.3s ease; 
+    
 }
-#menu{
+
+.menu .navbar ul li a:hover {
+    color: #CE967B;
+    transform: scale(1.5); 
+}
+
+#menu {
     display: none;
 }
-.menu-icono{
-    width: 25px;
+
+.menu-icono {
+    width: 30px;
+    
 }
-.menu label{
+
+.menu label {
     cursor: pointer;
     display: none;
 }
+
+
+.logo {
+    margin-left: -150px; 
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+    margin-bottom: -5px;
+}
+
+
 
 .header-content{
     text-align: center;
@@ -108,12 +146,15 @@ body{
     margin-bottom: 25px;
 
 }
+
+
 .btn-1{
     display: inline-block;
     padding: 11px 35px;
     background-color: #CE967B;
     color: #F9FAFC;
     text-transform: uppercase;
+    text-decoration: none;
     
 }
 .header-content.container .btn-1 {
@@ -125,11 +166,11 @@ body{
     border-bottom: 2px solid transparent; 
     margin-bottom: 20px; 
 }
-.header-content.container .btn-1:hover {
-    background-color: #854f39; 
+.header-content.container:hover {
+    background-color: rgb(133, 57, 57); 
 }
 .btn-1:hover{
-    background-color: #854f39;
+    background-color: #ff0000;
 }
 .gym{
     padding: 100px 0;
@@ -348,30 +389,56 @@ p{
     color: white; 
 }
 
-@media(max-width:991px){
+@media(max-width:900px){
     
-    .menu{
-        padding: 30px;
+   .menu img{
+    margin-bottom: 4%;
+    margin-top: 20px;
+   }
+    .menu label {
+        display: initial; 
+        top: 0; 
+        right: 20px; 
+        z-index: 1002;
     }
-    .menu label{
-        display: initial;
-    }
-    .menu .navbar{
+    .menu .navbar {
         position: absolute;
-        top: 100%;
-        left:0;
+        top: 75%; 
+        left: 0;
         right: 0;
-        background-color: #323337;
+        background-color: #2a2a2baa;
         display: none;
+        z-index: 1002; 
     }
-    .menu .navbar ul li{
+    .menu .navbar ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu .navbar ul li {
         width: 100%;
     }
-    #menu:checked ~ .navbar{
-        display: initial;
+    #menu:checked ~ .navbar {
+        display: block; 
     }
-
-   
+    .menu input[type="checkbox"] {
+        position: absolute;
+        opacity: 0; 
+        width: 40px; 
+        height: 40px; 
+        z-index: 1002; 
+        top: 1px; 
+    }
+    
+    .logo {
+        margin-left: -150px; 
+        font-size: 25px;
+        font-weight: 800;
+        text-decoration: none; 
+        margin-bottom: -10px;
+        margin-top: 3%;
+    }
+    
+    
     .header{
         min-height: 0vh;
     }
@@ -446,4 +513,5 @@ p{
         flex-direction: column;
         text-align: center;
     }
+    
 }
