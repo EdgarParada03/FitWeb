@@ -25,11 +25,10 @@ header {
     margin-top: -1.5%;
     display: flex;
 }
+
 .botones-container {
-    transform: scale;
-    height: 80px; 
-    display: inline-block; 
-    margin: 0 10px; 
+    display: inline-block;
+    margin: 0 10px;
     background-color: white;
     padding: 15px;
     height: 190px;
@@ -38,6 +37,22 @@ header {
     margin-right: 10px;
     margin-left: 90px;
     border-radius: 25px;
+    position: relative; /* Agregamos esta propiedad para posicionar el texto */
+}
+
+.botones-container:hover {
+    background-color: #e0e2e4;
+    transition: ease;
+    transform: scale(1.045);
+}
+
+.botones-container p {
+    position: absolute; /* Posicionamos el texto */
+    bottom: 10px; /* Ajustamos la distancia desde la parte inferior */
+    left: 0; /* Centramos horizontalmente */
+    right: 0; /* Centramos horizontalmente */
+    font-weight: bold; /* Opcional: para hacer el texto más visible */
+    color: black;
 }
 
 .botones-container:hover{
@@ -49,12 +64,10 @@ header {
 }
 
 
-.zoom-shadow {
-    margin: 10px;
-    display: inline-flex;
-    position: relative;
-    overflow: hidden;   
-    border-radius: 25px;
+.zoom-shadow img {
+    transition: transform 0.3s ease-in;
+    width: 170px;
+    height: 170px;
 }
 
 .zoom-shadow img {
