@@ -140,3 +140,31 @@ END;
 -- Actualizar la columna video de la tabla Personalizados usando la función ConvertToEmbeddedLink
 DELIMITER ;
 UPDATE Personalizados SET video = ConvertToEmbeddedLink(video);
+
+USE fitweb;
+
+CREATE TABLE gerente(
+    idGerente INT AUTO_INCREMENT PRIMARY KEY,
+    nombreCompleto VARCHAR (255),
+    numeroIdentificacion INT,
+    fechaNacimiento DATE,
+    edad INT,
+    telefono INT,
+    contraseña VARCHAR (50)
+);
+
+DELIMITER //
+CREATE TRIGGER calcular_edad_gerente
+BEFORE INSERT ON gerente
+FOR EACH ROW
+BEGIN
+    DECLARE fecha_nacimiento DATE;
+    DECLARE edad INT;
+
+    SET fecha_nacimiento = NEW.fechaNacimiento;
+    SET edad = TIMESTAMPDIFF(YEAR, fecha_nacimiento, CURDATE());
+
+    SET NEW.edad = edad;
+END;
+//
+DELIMITER ;
