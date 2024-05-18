@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULO GERENTE</title>
+    <link rel="stylesheet" href="style-gerente.css">
+    <style>
+        /* Estilos adicionales para el campo de texto */
+        .identification-input {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <img class="logo"
+                src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
+                alt="Logo de la empresa">
+        </div>
+        <h1 class="title">MODULO DE GERENTE</h1>
+        <!-- Nuevo contenedor para el campo de texto -->
+        <div class="identification-input">
+            <!-- Campo de texto para el número de identificación -->
+            <input type="text" id="numero_identificacion" placeholder="Número de identificación" value="">
+        </div>
+    </header>
+    <div>
+
+        <div class="container">
+            <div class="container-busqueda">
+                <p>Ingrese el nombre completo del cliente al buscar</p>
+                <input type="text" placeholder="nombre cliente...">
+                <button class="boton-descargar">Buscar cliente</button>
+                <button class="boton-descargar">Buscar clientes</button>
+            </div>
+            <div class="container-mostrar">
+                <!-- Aquí puedes mostrar los resultados del cliente -->
+                <!-- Por ahora, solo agregamos un botón de descarga -->
+                <button class="boton-descargar">Descargar</button>
+            </div>
+        </div>
+
+        <script>
+            function miFuncion() {
+                alert("Esta sección se encuentra en construcción");
+            }
+            
+            // Obtener el número de identificación de la URL y establecerlo en el campo de texto
+            window.onload = function() {
+                var urlParams = new URLSearchParams(window.location.search);
+                var numeroIdentificacion = urlParams.get('numero_identificacion');
+                document.getElementById('numero_identificacion').value = numeroIdentificacion;
+            };
+        </script>
+        
+        <!-- Aquí empieza el script adicional -->
+        <script>
+            // Obtener el número de identificación del formulario y enviarlo al campo en clientes.php
+            function cargarNumeroIdentificacion() {
+                // Obtener el valor del número de identificación ingresado por el usuario
+                var numeroIdentificacion = document.getElementById("numero_identificacion").value;
+                // Asignar el valor del número de identificación al campo correspondiente en el formulario de clientes.php
+                document.getElementById("loginForm").action = "/Modulo-Miembros/clientes.php?numero_identificacion=" + numeroIdentificacion;
+            }
+        </script>
+        <!-- Aquí termina el script adicional -->
+    </div>
+
+
+</body>
+
+
+<div class="pie">
+    <footer>
+        <div class="contact-info">
+            <p>Teléfono: 123-456-789</p>
+            <p>Email: FitWeb@email.com</p>
+            <p>Dirección: XXXXXXXXXXXXXXX</p>
+        </div>
+    </footer>
+</div>
+
+</html>
