@@ -1,0 +1,110 @@
+/* Diseño de la pagina pricnipal del gerente */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('https://image.freepik.com/foto-gratis/resumen-desenfoque-y-gimnasio-de-fitness-defocused-para-el-fondo_1339-24814.jpg');
+    /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.btn10{
+    margin-left: 38%;
+    margin-top: -1.5%;
+    display: flex;
+}
+.botones-container {
+    transform: scale;
+    height: 80px; 
+    display: inline-block; 
+    margin: 0 10px; 
+    background-color: white;
+    padding: 15px;
+    height: 190px;
+    width: 190px;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 90px;
+    border-radius: 25px;
+}
+
+.botones-container:hover{
+
+    background-color: #e0e2e4;
+    transition: ease;
+    transform: scale(1.045)
+    
+}
+
+
+.zoom-shadow {
+    margin: 10px;
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;   
+    border-radius: 25px;
+}
+
+.zoom-shadow img {
+    transition: transform 0.3s ease-in;
+    width: 170px;
+    height: 170px;
+}
+
+.zoom-shadow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 50;
+    transition: opacity 0.3s ease;
+}
+
+
+
+.zoom-shadow:hover::before {
+    opacity: 0;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.pie {
+    position: relative;
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin-top: 5%;
+    
+}
+
+.fondo {
+    background-image: url('images/Captura\ de\ pantalla\ 2024-03-26\ 191829.png');
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+/* Fin del diseño pagina principal del gerente */
