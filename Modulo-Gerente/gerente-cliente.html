@@ -33,22 +33,18 @@
     </header>
     <div>
 
-        <div class="botones-container">
-            <a href="gerente-cliente.html" class="zoom-shadow"><img src="imagenes-gerentes/foto_cliente.png"
-                    alt="Botón 1">
-                    <p>Clientes</p></a>
-        </div>
-
-        <div class="botones-container">
-            <a href="clientes-diagnostico.html" class="zoom-shadow"><img src="imagenes-gerentes/entrenador.png"
-                alt="Botón 1">
-                <p>Entrenadores</p></a>
-        </div>
-
-        <div class="botones-container">
-            <a href="clientes-entrenamiento.html" class="zoom-shadow"><img src="imagenes-gerentes/tienda.png"
-                alt="Botón 1">
-                <p>Tienda</p></a>
+        <div class="container">
+            <div class="container-busqueda">
+                <p>Ingrese el nombre completo del cliente al buscar</p>
+                <input type="text" placeholder="nombre cliente...">
+                <button class="boton-descargar">Buscar cliente</button>
+                <button class="boton-descargar">Buscar clientes</button>
+            </div>
+            <div class="container-mostrar">
+                <!-- Aquí puedes mostrar los resultados del cliente -->
+                <!-- Por ahora, solo agregamos un botón de descarga -->
+                <button class="boton-descargar">Descargar</button>
+            </div>
         </div>
 
         <script>
@@ -77,16 +73,18 @@
         <!-- Aquí termina el script adicional -->
     </div>
 
-    <div class="pie">
-        <footer>
-            <div class="contact-info">
-                <p>Teléfono: 123-456-789</p>
-                <p>Email: FitWeb@email.com</p>
-                <p>Dirección: XXXXXXXXXXXXXXX</p>
-            </div>
-        </footer>
-    </div>
 
 </body>
+
+
+<div class="pie">
+    <footer>
+        <div class="contact-info">
+            <p>Teléfono: 123-456-789</p>
+            <p>Email: FitWeb@email.com</p>
+            <p>Dirección: XXXXXXXXXXXXXXX</p>
+        </div>
+    </footer>
+</div>
 
 </html>

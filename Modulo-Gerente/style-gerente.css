@@ -20,7 +20,7 @@ header {
     margin-bottom: 2%;
 }
 
-.btn10{
+.btn10 {
     margin-left: 38%;
     margin-top: -1.5%;
     display: flex;
@@ -37,7 +37,8 @@ header {
     margin-right: 10px;
     margin-left: 90px;
     border-radius: 25px;
-    position: relative; /* Agregamos esta propiedad para posicionar el texto */
+    position: relative;
+    /* Agregamos esta propiedad para posicionar el texto */
 }
 
 .botones-container:hover {
@@ -47,22 +48,26 @@ header {
 }
 
 .botones-container p {
-    position: absolute; /* Posicionamos el texto */
-    bottom: 10px; /* Ajustamos la distancia desde la parte inferior */
-    left: 0; /* Centramos horizontalmente */
-    right: 0; /* Centramos horizontalmente */
-    font-weight: bold; /* Opcional: para hacer el texto más visible */
+    position: absolute;
+    /* Posicionamos el texto */
+    bottom: 10px;
+    /* Ajustamos la distancia desde la parte inferior */
+    left: 0;
+    /* Centramos horizontalmente */
+    right: 0;
+    /* Centramos horizontalmente */
+    font-weight: bold;
+    /* Opcional: para hacer el texto más visible */
     color: black;
     margin-top: 40px;
     margin-bottom: 10px;
 }
 
-.botones-container:hover{
+.botones-container:hover {
 
     background-color: #e0e2e4;
     transition: ease;
     transform: scale(1.045)
-    
 }
 
 
@@ -106,7 +111,7 @@ header {
     padding: 40px;
     text-align: center;
     margin-top: 5%;
-    
+
 }
 
 .fondo {
@@ -122,4 +127,46 @@ header {
     max-width: 150px;
     height: auto;
 }
+
 /* Fin del diseño pagina principal del gerente */
+
+/* Estilo para el contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo para los contenedores de búsqueda y mostrar */
+.container-busqueda,
+.container-mostrar {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+/* Otros estilos según tus necesidades */
+.data-item {
+    margin-bottom: 10px;
+}
+
+.container-busqueda {
+    background-color: #f9f9f9;
+}
+
+.container-mostrar {
+    background-color: #ffffff;
+}
+
+.boton-descargar {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
