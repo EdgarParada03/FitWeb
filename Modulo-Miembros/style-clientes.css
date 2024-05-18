@@ -10,6 +10,31 @@ body {
     background-repeat: no-repeat;
 }
 
+
+.nombre-input,
+.identification-input {
+    display: flex; /* Cambia a display flex */
+    align-items: center; /* Alinea los elementos verticalmente */
+    gap: 20px; /* Espacio entre el label y el input */
+    margin-bottom: 5px; /* Agrega un espacio de 5px entre los elementos */
+    margin-right: 50px;
+    width: 300px;
+}
+
+.nombre-input input,
+.identification-input input {
+    flex: 1; /* Hace que el input ocupe el espacio restante */
+    min-height: 30px; /* Altura mínima para el input */
+    border: none; /* Elimina el borde */
+    background-color: transparent; /* Establece el color de fondo como transparente */
+    font-weight: bold; /* Añade negrita al texto */
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 18px; /* Establece el tamaño de letra a 18px */
+   
+}
+
+
+
 header {
     background-color: #333;
     padding: 20px;
@@ -107,6 +132,14 @@ header {
     max-width: 150px;
     height: auto;
 }
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin-top: 5%;
+}
+
 
 /* Fin del diseño pagina principal del miembro */
 

@@ -17,79 +17,72 @@
 </head>
 
 <body>
-
     <header>
         <div>
             <img class="logo"
                 src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
                 alt="Logo de la empresa">
         </div>
-        <h1 class="title">MODULO DE MIEMBROS</h1>
-        <!-- Nuevo contenedor para el campo de texto -->
-        <div class="identification-input">
-            <!-- Campo de texto para el número de identificación -->
-            <input type="text" id="numero_identificacion" placeholder="Número de identificación" value="">
+        <div>
+            <h1 class="title">MODULO DE MIEMBROS</h1>
         </div>
-    </header>
-    <div>
+        <!-- Nuevo contenedor para el campo de texto y nombre -->
+        <div class="container-general-usuario">
+            <div class="row">
+                <div class="nombre-input">
+                    <input type="text" id="numero_identificacion" placeholder="Nombre" value="" readonly>
+                </div>
+                <div class="identification-input">
+                    <input type="text" id="nombre" placeholder="Número de identificación" value=""readonly>
+                </div>
+            </div>
 
+        </div>
+
+    </header>
+
+    <!-- Contenedores para los botones -->
+    <div class="container-botones">
         <div class="botones-container">
             <a href="clientes-membresias-pagada.html" class="zoom-shadow"><img src="imagenes-clientes/MmbresiaSl.png"
                     alt="Botón 1"></a>
         </div>
-
         <div class="botones-container">
             <a href="clientes-diagnostico.html" class="zoom-shadow"><img src="imagenes-clientes/DiagnosticoSF.png"
                     alt="Botón 2"></a>
         </div>
-
         <div class="botones-container">
-            <a href="clientes-entrenamiento.html" class="zoom-shadow"><img
-                    src="imagenes-clientes/EntrenamientoSF.png" alt="Botón 1"></a>
+            <a href="clientes-entrenamiento.html" class="zoom-shadow"><img src="imagenes-clientes/EntrenamientoSF.png"
+                    alt="Botón 3"></a>
         </div>
-
         <div class="botones-container">
-            <a href="#" class="zoom-shadow"><img src="imagenes-clientes/TiendaSF.png" alt="Botón 2"
+            <a href="#" class="zoom-shadow"><img src="imagenes-clientes/TiendaSF.png" alt="Botón 4"
                     onclick="miFuncion()"></a>
         </div>
-
-
-        <script>
-            function miFuncion() {
-                alert("Esta sección se encuentra en construcción");
-            }
-            
-            // Obtener el número de identificación de la URL y establecerlo en el campo de texto
-            window.onload = function() {
-                var urlParams = new URLSearchParams(window.location.search);
-                var numeroIdentificacion = urlParams.get('numero_identificacion');
-                document.getElementById('numero_identificacion').value = numeroIdentificacion;
-            };
-        </script>
-        
-        <!-- Aquí empieza el script adicional -->
-        <script>
-            // Obtener el número de identificación del formulario y enviarlo al campo en clientes.php
-            function cargarNumeroIdentificacion() {
-                // Obtener el valor del número de identificación ingresado por el usuario
-                var numeroIdentificacion = document.getElementById("numero_identificacion").value;
-                // Asignar el valor del número de identificación al campo correspondiente en el formulario de clientes.php
-                document.getElementById("loginForm").action = "/Modulo-Miembros/clientes.php?numero_identificacion=" + numeroIdentificacion;
-            }
-        </script>
-        <!-- Aquí termina el script adicional -->
     </div>
 
-    <div class="pie">
-        <footer>
-            <div class="contact-info">
-                <p>Teléfono: 123-456-789</p>
-                <p>Email: FitWeb@email.com</p>
-                <p>Dirección: XXXXXXXXXXXXXXX</p>
-            </div>
-        </footer>
-    </div>
+    <script>
+        function miFuncion() {
+            alert("Esta sección se encuentra en construcción");
+        }
 
+        // Obtener los parámetros de la URL y establecerlos en los campos de texto
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var nombre = urlParams.get('nombre');
+            var numeroIdentificacion = urlParams.get('numero_identificacion');
+            document.getElementById('nombre').value = nombre;
+            document.getElementById('numero_identificacion').value = numeroIdentificacion;
+        };
+    </script>
+
+    <footer>
+        <div class="contact-info">
+            <p>Teléfono: 123-456-789</p>
+            <p>Email: FitWeb@email.com</p>
+            <p>Dirección: XXXXXXXXXXXXXXX</p>
+        </div>
+    </footer>
 </body>
 
 </html>
