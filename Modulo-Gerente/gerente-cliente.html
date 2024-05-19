@@ -34,32 +34,34 @@
     <div>
 
         <div class="container">
+
             <div class="container-busqueda">
-                <p>Ingrese el nombre completo del cliente al buscar</p>
-                <input type="text" placeholder="nombre cliente...">
-                <button class="boton-descargar">Buscar cliente</button>
-                <button class="boton-descargar">Buscar clientes</button>
+                <iframe src="codigos-php/buscar-cliente.php" style="width:100%; height:400px;"></iframe>
             </div>
+
             <div class="container-mostrar">
-                <!-- Aquí puedes mostrar los resultados del cliente -->
-                <!-- Por ahora, solo agregamos un botón de descarga -->
-                <button class="boton-descargar">Descargar</button>
+                <iframe src="codigos-php/buscar-clientes.php" style="width:100%; height:400px;"></iframe>
             </div>
+            
+        </div>
+
+        <div class="content">
+            <a href="gerente.html" class="back-button"><img src="imagenes-gerentes/retroceso-rapido.gif"></a>
         </div>
 
         <script>
             function miFuncion() {
                 alert("Esta sección se encuentra en construcción");
             }
-            
+
             // Obtener el número de identificación de la URL y establecerlo en el campo de texto
-            window.onload = function() {
+            window.onload = function () {
                 var urlParams = new URLSearchParams(window.location.search);
                 var numeroIdentificacion = urlParams.get('numero_identificacion');
                 document.getElementById('numero_identificacion').value = numeroIdentificacion;
             };
         </script>
-        
+
         <!-- Aquí empieza el script adicional -->
         <script>
             // Obtener el número de identificación del formulario y enviarlo al campo en clientes.php
