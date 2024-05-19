@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULO ADMINISTRADOR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <img class="logo" src="images/logo.webp" alt="Logo de la empresa">
+        </div>
+        <h1 class="title">MODULO DE ADMINISTRADORES</h1>
+    </header>
+
+
+    <div>
+
+        <div class="container">
+            <h1>Entrenadores</h1>
+        </div>
+
+        <div class="container">
+            <h2>Agregar Clases</h2>
+
+            <form action="agregarGerentes.php" method="post">
+                <div class="form-group">
+                    <label for="nombre_completo">Nombre Completo:</label><br>
+                    <input type="text" id="nombre_completo" name="nombre_completo"><br>
+                    <label for="numero_identificacion">Numero De Identificacion:</label><br>
+                    <input type="text" id="numero_identificacion" name="numero_identificacion"><br><br>
+                    <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br>
+                    <label for="correo">Correo:</label><br>
+                    <input type="text" id="correo" name="correo"><br>
+                    <label for="telefono">Telefono:</label><br>
+                    <input type="text" id="telefono" name="telefono"><br>
+                    <label for="sexo">Sexo:</label><br>
+                    <input type="text" id="sexo" name="sexo"><br>
+                    <label for="contrasena">Contraseña:</label><br>
+                    <input type="text" id="contrasena" name="contrasena"><br>
+                    <label for="rol">Rol:</label><br>
+                    <select id="rol" name="rol" onchange="mostrarFormularioMembresias()">
+                        <option value="seleccionar">Seleccionar</option>
+                        <option value="entrenador">Entrenador</option>
+                        <option value="miembro">Miembro</option>
+                        <option value="gerente">Gerente</option>
+                    </select><br>
+
+                    <script>
+                        function calcularFechaFin() {
+                            var inicio = new Date(document.getElementById('fecha_inicio').value);
+                            var plan = document.getElementById('plan').value;
+                            var duracion;
+
+                            switch (plan) {
+                                case 'basico':
+                                    duracion = 7;
+                                    break;
+                                case 'general':
+                                    duracion = 15;
+                                    break;
+                                case 'elite':
+                                    duracion = 30;
+                                    break;
+                            }
+
+                            var fin = new Date(inicio);
+                            fin.setDate(inicio.getDate() + duracion);
+
+                            document.getElementById('fecha_fin').value = fin.toISOString().split('T')[0];
+                        }
+                    </script>
+
+                    <div class="formulario" id="Seccion1" style="display: none;">
+
+                        <form action="agregarGerentes.php" method="post" id="formularioMembresia">
+                            <label for="numeroIdentificacion">Número de Identificación:</label>
+                            <input type="number" id="numeroIdentificacion" name="numeroIdentificacion" min="" >
+
+                            <label for="fecha_inicio">Fecha de inicio de la membresía:</label>
+                            <input type="date" id="fecha_inicio" name="fecha_inicio">
+
+                            <label for="plan">Plan de Membresía:</label>
+                            <select id="plan" name="plan" onchange="calcularFechaFin()">
+                                <option value="seleccione-uno">Seleccione uno</option>
+                                <option value="basico">Plan Básico</option>
+                                <option value="general">Plan General</option>
+                                <option value="elite">Plan Elite</option>
+                            </select>
+
+                            <label for="fecha_fin">Fecha de Fin de la Membresía:</label>
+                            <input type="date" id="fecha_fin" name="fecha_fin" readonly>
+
+                            <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+                            <input type="number" id="tarjeta" name="tarjeta" >
+
+                        </form>
+
+
+
+
+
+                    </div>
+
+
+                    
+
+                    <label for="especialidad" id="labelEspecialidad" style="display: none;">Especialidad:</label>
+                    <input type="text" id="especialidad" name="especialidad" style="display: none;">
+
+                    <input type="submit" value="Guardar Registro">
+                </div>
+            </form>
+
+
+
+        </div>
+
+        <div class="container">
+
+            <table class="table">
+
+                <tbody>
+
+                    <body>
+                        <h2>Clases Activas</h2>
+                        <iframe src="visualizarClases.php" style="width:100%; height:400px;"></iframe>
+                    </body>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2>Modificar y Editar Clases</h2>
+
+            <form action="editarClases.php" method="GET">
+                <label for="id_registro">Ingrese el ID de Clase:</label><br>
+                <input type="text" id="id_registro" name="id_registro"><br><br>
+                <input type="submit" value="Editar" class="button1">
+            </form>
+
+            <form action="eliminarClases.php" method="GET">
+                <label for="id_eliminar">ID de Clase a eliminar:</label><br>
+                <input type="text" id="id_eliminar" name="id_eliminar"><br><br>
+                <input type="submit" value="Eliminar" class="button2">
+            </form>
+
+        </div>
+
+
+        <div class="content">
+            <a href="entrenador-entrenamientos.html" class="back-button"><img src="images/retroceso-rapido.gif"></a>
+        </div>
+
+    </div>
+
+    <script>
+        function mostrarFormularioMembresias() {
+            var rol = document.getElementById("rol").value;
+            var formularioMembresia = document.getElementById("Seccion1");
+            var labelEspecialidad = document.getElementById("labelEspecialidad");
+            var campoEspecialidad = document.getElementById("especialidad");
+        
+            if (rol === "miembro") {
+                formularioMembresia.style.display = "block";
+                labelEspecialidad.style.display = "none";
+                campoEspecialidad.style.display = "none";
+            } else if (rol === "entrenador") {
+                formularioMembresia.style.display = "none";
+                labelEspecialidad.style.display = "block";
+                campoEspecialidad.style.display = "block";
+            } else {
+                formularioMembresia.style.display = "none";
+                labelEspecialidad.style.display = "none";
+                campoEspecialidad.style.display = "none";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
