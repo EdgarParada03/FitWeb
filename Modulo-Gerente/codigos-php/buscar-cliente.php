@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .busqueda-nombre{
+        .busqueda-nombre {
             width: 400px;
         }
 
-        .boton-buscar-cliente{
+        .boton-buscar-cliente {
             font-weight: bold;
         }
     </style>
@@ -22,14 +22,18 @@
         <button class="boton-buscar-cliente" type="submit">Buscar cliente</button>
     </form>
 
-        <?php
-        // Conexión a la base de datos (asegúrate de que el archivo de conexión esté incluido)
-        include 'conexion.php';
+    <?php
+    // Conexión a la base de datos (asegúrate de que el archivo de conexión esté incluido)
+    include 'conexion.php';
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Obtener el nombre buscado desde el formulario
-            $nombreBuscado = $_POST['nombreBuscado'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Obtener el nombre buscado desde el formulario
+        $nombreBuscado = $_POST['nombreBuscado'];
 
+        // Verificar si el campo de búsqueda está vacío
+        if (empty($nombreBuscado)) {
+            echo "<script>alert('Tienes que ingresar un nombre para buscar');</script>";
+        } else {
             // Consulta SQL para buscar el nombre en la base de datos
             $sql = "SELECT * FROM persona WHERE nombreCompleto LIKE '%$nombreBuscado%'";
             $result = $conn->query($sql);
@@ -40,21 +44,29 @@
 
                 // Construir los resultados (puedes adaptar esto según tus necesidades)
                 while ($row = $result->fetch_assoc()) {
-                    $resultados .=  " Nombre completo: " . $row['nombreCompleto'] ."<br>" .
-                     "Numero identificacion: " . $row['numeroIdentificacion'] ."<br>" .
-                     " Fecha de nacimiento: " . $row['fechaNacimiento'] ."<br>" . 
-                     " Correo electronico: " . $row['correo'] ."<br>" . 
-                     " Telefono: " . $row['telefono'] ."<br>" . 
-                     " Sexo: " . $row['sexo'] ."<br>" . "";
+                    $resultados .=  " Nombre completo: " . $row['nombreCompleto'] . "\n" .
+                        "Numero identificacion: " . $row['numeroIdentificacion'] . "\n" .
+                        " Fecha de nacimiento: " . $row['fechaNacimiento'] . "\n" .
+                        " Correo electronico: " . $row['correo'] . "\n" .
+                        " Telefono: " . $row['telefono'] . "\n" .
+                        " Sexo: " . $row['sexo'] . "\n" . "\n";
                 }
 
                 // Mostrar los resultados en el div
-                echo '<div class="container-mostrar">' . $resultados . '</div>';
+                echo '<div class="container-mostrar">' . nl2br($resultados) . '</div>';
+
+                // Crear un botón para descargar el archivo de texto
+                echo '<form method="post" action="descargar.php">';
+                echo '<button type="submit" name="descargar">Descargar TXT</button>';
+                echo '</form>';
+
+                // Guardar los resultados en un archivo de texto
+                file_put_contents('Lista_Cliente.txt', $resultados);
             } else {
                 echo "No se encontraron resultados.";
             }
         }
-        $conn->close();
-        ?>
-
+    }
+    $conn->close();
+    ?>
 </body>
