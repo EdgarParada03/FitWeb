@@ -392,7 +392,7 @@ button {
 }
 
 /* Estilo para el campo de rol */
-#rol {
+select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -404,10 +404,13 @@ button {
 }
 
 /* Estilo para las opciones del campo de rol */
-#rol option {
+select option {
     font-size: 16px;
     color: #555;
 }
+
+
+
 
 .formulario {
     width: 400px;
@@ -446,5 +449,57 @@ button {
 .formulario input[type=submit]:hover {
     background-color: #45a049;
 }
+
+.valDocumento {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.valDocumento h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.valDocumento label {
+    font-size: 20px;
+}
+
+.valDocumento input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.valDocumento button {
+    padding: 12px 24px;
+    font-size: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.valDocumento button:hover {
+    background-color: #0056b3;
+}
+
+.volver-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    
+}
+
 
 /*PAGINA ENTRENAMIENTO ENTRENADOR*/

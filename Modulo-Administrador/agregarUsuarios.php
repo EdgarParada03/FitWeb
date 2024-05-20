@@ -1,5 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de tu página</title>
+    <link rel="stylesheet" href="stylesss.css"> <!-- Vincula tu archivo CSS externo -->
+</head>
+<body>
+
 <?php
 require_once 'conexion.php';
+
+
 
 // Recibir datos del formulario
 $nombre_completo = isset($_POST['nombre_completo']) ? $_POST['nombre_completo'] : null;
@@ -16,13 +28,11 @@ if (
     empty($correo) || empty($telefono) || empty($sexo) || empty($contrasena) || empty($rol)
 ) {
     echo "<script>alert('Todos los campos deben estar llenos.');</script>";
-    echo "<script>window.location.href='/Modulo-Administrador/Administrador-Entrenadores.html';</script>";
 } else {
     $consulta_existencia = "SELECT * FROM persona WHERE numeroIdentificacion = '$numero_identificacion'";
     $resultado_existencia = mysqli_query($conexion, $consulta_existencia);
 
     if (mysqli_num_rows($resultado_existencia) > 0) {
-        echo "<script>alert('Usuario con la cédula $numero_identificacion ya existe.');</script>";
     } else {
         $consulta = "INSERT INTO persona(nombreCompleto, numeroIdentificacion, fechaNacimiento, correo, telefono, sexo, contraseña, rol) VALUES ('$nombre_completo', '$numero_identificacion', '$fecha_nacimiento', '$correo', '$telefono', '$sexo', '$contrasena', '$rol')";
         $resultado = mysqli_query($conexion, $consulta);
@@ -31,7 +41,6 @@ if (
             echo "<script>alert('Usuario creado correctamente');</script>";
 
             $id_persona = mysqli_insert_id($conexion);
-            echo "<script>alert('id_persona es : $id_persona');</script>";
             $consulta_idMiembro = "SELECT id FROM Miembro WHERE persona_id = '$id_persona'";
             $resultado_idMiembro = mysqli_query($conexion, $consulta_idMiembro);
             $consulta_idEntrenador = "SELECT id FROM Entrenador WHERE persona_id = '$id_persona'";
@@ -40,7 +49,6 @@ if (
             if ($resultado_idMiembro && mysqli_num_rows($resultado_idMiembro) > 0) {
                 $row = mysqli_fetch_assoc($resultado_idMiembro);
                 $id_miembro = $row['id'];
-                echo "<script>alert('ID del miembro: $id_miembro');</script>";
             } else {
                 echo "<script>alert('No se encontró ningún miembro con esa ID');</script>";
             }
@@ -49,7 +57,6 @@ if (
             if ($resultado_idEntrenador && mysqli_num_rows($resultado_idEntrenador) > 0) {
                 $row = mysqli_fetch_assoc($resultado_idEntrenador);
                 $id_entrenador = $row['id'];
-                echo "<script>alert('ID del entrenador: $id_entrenador');</script>";
             } else {
                 echo "<script>alert('No se encontró ningún entrenador con esa ID');</script>";
             }
@@ -108,6 +115,8 @@ if (
             echo "<script>alert('Ha ocurrido un error al crear el usuario.');</script>";
         }
     }
+    echo "<button onclick='window.history.go(-1); return false;' class='volver-btn'>Volver</button>";
+
 }
 
 // Cerrar la conexión

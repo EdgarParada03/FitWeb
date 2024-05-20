@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MODULO ADMINISTRADOR</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesss.css">
 </head>
+
 
 <body>
 
@@ -21,13 +22,13 @@
     <div>
 
         <div class="container">
-            <h1>Entrenadores</h1>
+            <h1>Usuarios</h1>
         </div>
 
         <div class="container">
             <h2>Agregar Clases</h2>
 
-            <form action="agregarGerentes.php" method="post">
+            <form action="agregarUsuarios.php" method="post">
                 <div class="form-group">
                     <label for="nombre_completo">Nombre Completo:</label><br>
                     <input type="text" id="nombre_completo" name="nombre_completo"><br>
@@ -40,15 +41,20 @@
                     <label for="telefono">Telefono:</label><br>
                     <input type="text" id="telefono" name="telefono"><br>
                     <label for="sexo">Sexo:</label><br>
-                    <input type="text" id="sexo" name="sexo"><br>
+                    <select id="sexo" name="sexo">
+                        <option value="seleccionar">Seleccionar</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                    </select><br>
                     <label for="contrasena">Contraseña:</label><br>
                     <input type="text" id="contrasena" name="contrasena"><br>
                     <label for="rol">Rol:</label><br>
-                    <select id="rol" name="rol" onchange="mostrarFormularioMembresias()">
+                    <select id="rol" class="rol" name="rol" onchange="mostrarFormularioMembresias()">
                         <option value="seleccionar">Seleccionar</option>
                         <option value="entrenador">Entrenador</option>
                         <option value="miembro">Miembro</option>
                         <option value="gerente">Gerente</option>
+                        <option value="administrador">Administrador</option>
                     </select><br>
 
                     <script>
@@ -78,9 +84,8 @@
 
                     <div class="formulario" id="Seccion1" style="display: none;">
 
-                        <form action="agregarGerentes.php" method="post" id="formularioMembresia">
-                            <label for="numeroIdentificacion">Número de Identificación:</label>
-                            <input type="number" id="numeroIdentificacion" name="numeroIdentificacion" min="" >
+                        <form action="agregarUsuario.php" method="post" id="formularioMembresia">
+                            
 
                             <label for="fecha_inicio">Fecha de inicio de la membresía:</label>
                             <input type="date" id="fecha_inicio" name="fecha_inicio">
@@ -128,8 +133,8 @@
                 <tbody>
 
                     <body>
-                        <h2>Clases Activas</h2>
-                        <iframe src="visualizarClases.php" style="width:100%; height:400px;"></iframe>
+                        <h2>Üsuarios Activos</h2>
+                        <iframe src="visualizarUsuarios.php" style="width:100%; height:400px;"></iframe>
                     </body>
 
                 </tbody>
@@ -137,16 +142,16 @@
         </div>
 
         <div class="container">
-            <h2>Modificar y Editar Clases</h2>
+            <h2>Modificar y Editar Usuarios</h2>
 
-            <form action="editarClases.php" method="GET">
-                <label for="id_registro">Ingrese el ID de Clase:</label><br>
+            <form action="editarUsuarios.php" method="GET">
+                <label for="id_registro">Ingrese el ID de Usuario:</label><br>
                 <input type="text" id="id_registro" name="id_registro"><br><br>
                 <input type="submit" value="Editar" class="button1">
             </form>
 
-            <form action="eliminarClases.php" method="GET">
-                <label for="id_eliminar">ID de Clase a eliminar:</label><br>
+            <form action="eliminarUsuarios.php" method="GET">
+                <label for="id_eliminar">ID de Usuario a eliminar:</label><br>
                 <input type="text" id="id_eliminar" name="id_eliminar"><br><br>
                 <input type="submit" value="Eliminar" class="button2">
             </form>
@@ -155,7 +160,7 @@
 
 
         <div class="content">
-            <a href="entrenador-entrenamientos.html" class="back-button"><img src="images/retroceso-rapido.gif"></a>
+            <a href="Administrador.html" class="back-button"><img src="images/retroceso-rapido.gif"></a>
         </div>
 
     </div>
