@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Cliente</title>
+    <link rel="stylesheet" href="style-clientes.css">
+</head>
+<body>
+    <h1>Catálogo de Productos</h1>
+    <div id="productos">
+        <!-- Los productos se cargarán aquí -->
+    </div>
+
+    <script>
+        // Función para cargar los productos
+        function cargarProductos() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'codigos-php/mostrar_productos.php', true);
+            xhr.onload = function() {
+                if (this.status == 200) {
+                    var productos = JSON.parse(this.responseText);
+                    var output = '';
+                    for (var i in productos) {
+                        output +=
+                            '<div class="producto">' +
+                            '<img src="' + productos[i].imagen + '" alt="Imagen del producto">' +
+                            '<h4>' + productos[i].nombre + '</h4>' +
+                            '<p>Precio: ' + productos[i].precio + '</p>' +
+                            '<p>Descripción: ' + productos[i].descripcion + '</p>' +
+                            '<p>Cantidad disponible: ' + productos[i].cantidad + '</p>' +
+                            '<form action="codigos-php/comprar_producto.php" method="post">' +
+                            '<input type="hidden" name="id_producto" value="' + productos[i].id + '">' +
+                            '<label for="cantidad">Cantidad:</label><br>' +
+                            '<input type="number" id="cantidad" name="cantidad" min="1" max="' + productos[i].cantidad + '"><br>' +
+                            '<input type="submit" value="Comprar producto">' +
+                            '</form>' +
+                            '</div>';
+                    }
+                    document.getElementById('productos').innerHTML = output;
+                }
+            }
+            xhr.send();
+        }
+
+        // Cargar los productos al cargar la página
+        window.onload = cargarProductos;
+    </script>
+</body>
+</html>

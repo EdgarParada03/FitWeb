@@ -191,3 +191,12 @@ BEGIN
 END;
 //
 DELIMITER ;
+USE FITWEB;
+CREATE TABLE productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    imagen VARCHAR(255),
+    descripcion TEXT,
+    cantidad INT NOT NULL
+);
