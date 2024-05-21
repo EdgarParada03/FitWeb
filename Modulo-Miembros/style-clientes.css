@@ -16,7 +16,7 @@ body {
     display: flex; /* Cambia a display flex */
     align-items: center; /* Alinea los elementos verticalmente */
     gap: 20px; /* Espacio entre el label y el input */
-    margin-bottom: 5px; /* Agrega un espacio de 5px entre los elementos */
+    margin-bottom: 2px; /* Agrega un espacio de 5px entre los elementos */
     margin-right: 50px;
     width: 300px;
 }
@@ -29,10 +29,25 @@ body {
     background-color: transparent; /* Establece el color de fondo como transparente */
     font-weight: bold; /* Añade negrita al texto */
     color: white; /* Cambia el color del texto a blanco */
-    font-size: 18px; /* Establece el tamaño de letra a 18px */
-   
+    font-size: 14px; /* Establece el tamaño de letra a 18px */
 }
-
+/* Estilos para los mensajes de alerta */
+.custom-alert {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f44336;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+}
+.custom-alert.success {
+    background-color: #4CAF50;
+}
 
 
 header {

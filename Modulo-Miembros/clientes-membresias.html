@@ -6,20 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMBRESIAS</title>
     <link rel="stylesheet" href="style-clientes.css">
+   
 </head>
 
 <body>
     <header>
         <div>
-            <img class="logo"
-                src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
-                alt="Logo de la empresa">
+            <img class="logo" src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png" alt="Logo de la empresa">
         </div>
-        <h1 class="title">SECCION DE MEMBRESIAS</h1>
+        <div>
+            <h1 class="title">MODULO DE MIEMBROS</h1>
+        </div>
+        <div class="container-general-usuario">
+            <div class="row">
+                <div class="nombre-input">
+                    <input type="text" id="nombre" placeholder="Nombre" value="" readonly>
+                </div>
+                <div class="identification-input">
+                    <input type="text" id="numero_identificacion" placeholder="Número de identificación" value="" readonly>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="membresia-group">
-
         <div class="membresia-1">
             <img src="imagenes-clientes/planBasico.png" alt="">
             <h3>Basico</h3>
@@ -51,10 +61,71 @@
               un enfoque completo en tu bienestar físico y mental.
             </p>
         </div>
-
     </div>
 
+    <div class="formulario" id="Seccion1">
+        <form action="codigos-php/registrar.php" method="post" id="formularioMembresia">
+            <label for="numeroIdentificacion">Número de Identificación:</label>
+            <input type="number" id="numeroIdentificacion" name="numeroIdentificacion" min="" required readonly>
+
+            <label for="fecha_inicio">Fecha de inicio de la membresía:</label>
+            <input type="date" id="fecha_inicio" name="fecha_inicio">
+
+            <label for="plan">Plan de Membresía:</label>
+            <select id="plan" name="plan" onchange="calcularFechaFin()">
+                <option value="seleccione-uno">Seleccione uno</option>
+                <option value="basico">Plan Básico</option>
+                <option value="general">Plan General</option>
+                <option value="elite">Plan Elite</option>
+            </select>
+
+            <label for="fecha_fin">Fecha de Fin de la Membresía:</label>
+            <input type="date" id="fecha_fin" name="fecha_fin" readonly>
+
+            <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+            <input type="number" id="tarjeta" name="tarjeta" required pattern="\d*">
+
+            <input type="submit" value="Comprar Membresía" onclick="enviarFormulario(event)">
+        </form>
+    </div>
+
+    <div id="alerta" class="custom-alert"></div>
+
     <script>
+        function mostrarAlerta(mensaje, tipo) {
+            var alerta = document.getElementById('alerta');
+            alerta.innerText = mensaje;
+            alerta.className = 'custom-alert ' + tipo;
+            alerta.style.display = 'block';
+            setTimeout(function () {
+                alerta.style.display = 'none';
+            }, 3000);
+        }
+
+        function enviarFormulario(event) {
+            event.preventDefault(); // Prevenir el envío normal del formulario
+            var nombre = document.getElementById('nombre').value;
+            var numeroIdentificacion = document.getElementById('numero_identificacion').value;
+            var fechaInicio = document.getElementById('fecha_inicio').value;
+            var plan = document.getElementById('plan').value;
+            var tarjeta = document.getElementById('tarjeta').value;
+
+            if (!nombre || !numeroIdentificacion || !fechaInicio || plan === 'seleccione-uno' || !tarjeta) {
+                mostrarAlerta('Por favor, completa todos los campos', '');
+                return;
+            }
+
+            mostrarAlerta('Tu membresía fue comprada correctamente', 'success');
+            setTimeout(function () {
+                enviarDatosClientes(nombre, numeroIdentificacion);
+            }, 3000);
+        }
+
+        function enviarDatosClientes(nombre, numeroIdentificacion) {
+            // Redireccionar a la página de clientes con los datos en la URL
+            window.location.href = 'clientes.html?nombre=' + encodeURIComponent(nombre) + '&numero_identificacion=' + encodeURIComponent(numeroIdentificacion);
+        }
+
         function calcularFechaFin() {
             var inicio = new Date(document.getElementById('fecha_inicio').value);
             var plan = document.getElementById('plan').value;
@@ -77,45 +148,20 @@
 
             document.getElementById('fecha_fin').value = fin.toISOString().split('T')[0];
         }
+
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var nombre = urlParams.get('nombre');
+            var numeroIdentificacion = urlParams.get('numero_identificacion');
+            document.getElementById('nombre').value = nombre;
+            document.getElementById('numero_identificacion').value = numeroIdentificacion;
+            document.getElementById('numeroIdentificacion').value = numeroIdentificacion;
+
+            // Establecer la fecha mínima para la fecha de inicio
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById('fecha_inicio').setAttribute('min', today);
+        };
     </script>
-    
-    <div class="formulario" id="Seccion1">
-
-        <form action="codigos-php/registrar.php" method="post" id="formularioMembresia">
-            <label for="numeroIdentificacion">Número de Identificación:</label>
-            <input type="number" id="numeroIdentificacion" name="numeroIdentificacion" min="" required>
-
-            <label for="fecha_inicio">Fecha de inicio de la membresía:</label>
-            <input type="date" id="fecha_inicio" name="fecha_inicio">
-
-            <label for="plan">Plan de Membresía:</label>
-            <select id="plan" name="plan" onchange="calcularFechaFin()">
-                <option value="seleccione-uno">Seleccione uno</option>
-                <option value="basico">Plan Básico</option>
-                <option value="general">Plan General</option>
-                <option value="elite">Plan Elite</option>
-            </select>
-
-            <label for="fecha_fin">Fecha de Fin de la Membresía:</label>
-            <input type="date" id="fecha_fin" name="fecha_fin" readonly>
-
-            <label for="tarjeta">Número de Tarjeta de Crédito:</label>
-            <input type="number" id="tarjeta" name="tarjeta" required>
-
-            <input type="submit" value="Comprar Membresía" onclick="enviarFormulario()">
-        </form>
-
-    </div>
-
-
-    <script>
-        function enviarFormulario() {
-            alert('Tu membresia fue comprada correctamente');
-            alert('¡Bienvenido al gimnasio!');
-            window.location.href='clientes.html';
-        }
-    </script>
-    
 </body>
 
 </html>

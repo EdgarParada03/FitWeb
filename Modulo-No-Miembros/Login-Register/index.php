@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Registro | FitWeb</title>
     <link rel="stylesheet" href="/Modulo-No-Miembros/Login-Register/Todo/css/estilos.css">
 </head>
+
 <body>
     <main>
         <div class="contenedor__todo">
@@ -37,10 +39,10 @@
                     <button type="submit" name="login">Entrar</button>
                 </form>
                 <!--Registro-->
-                <form action="/Modulo-No-Miembros/Login-Register/php/registrarUsuarios.php" method="POST" class="formulario__register">
+                <form action="/Modulo-No-Miembros/Login-Register/php/registrarUsuarios.php" method="POST" class="formulario__register" id="registroForm">
                     <h2>Registrarse</h2>
-                    <input type="text" placeholder="Nombre Completo" name="nombre_completo">
-                    <input type="text" placeholder="Número de identificación" name="numero_identificacion" required pattern="[0-9]+">
+                    <input type="text" placeholder="Nombre Completo" name="nombre_completo" id="nombre_completo">
+                    <input type="text" placeholder="Número de identificación" name="numero_identificacion" required pattern="[0-9]+" id="numero_identificacion_registro">
                     <input type="date" placeholder="Fecha nacimiento" name="fecha_nacimiento">
                     <input type="email" placeholder="Correo" name="correo">
                     <input type="text" placeholder="Teléfono" name="telefono">
@@ -52,11 +54,23 @@
                         <option value="no_decir">Prefiero no decirlo</option>
                     </select>
                     <input type="password" placeholder="Contraseña" name="contrasena">
-                    <input type="submit" value="Registrarse" name="registrar">
+                    <input type="submit" value="Registrarse" name="registrar" onclick="enviarDatosRegistro(event)">
                 </form>
             </div>
         </div>
     </main>
     <script src="/Modulo-No-Miembros/Login-Register/Todo/js/script.js"></script>
+
+    <script>
+        // Función para enviar datos del registro y redireccionar a la página de membresías
+        function enviarDatosRegistro(event) {
+            event.preventDefault(); // Prevenir el envío normal del formulario
+            var nombre = document.getElementById('nombre_completo').value;
+            var numeroIdentificacion = document.getElementById('numero_identificacion_registro').value;
+            // Redireccionar a la página de membresías con los datos en la URL
+            window.location.href = '/Modulo-Miembros/clientes-membresias.html?nombre=' + encodeURIComponent(nombre) + '&numero_identificacion=' + encodeURIComponent(numeroIdentificacion);
+        }
+    </script>
 </body>
+
 </html>

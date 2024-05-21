@@ -40,6 +40,20 @@ CREATE TABLE Miembro (
     FOREIGN KEY (persona_id) REFERENCES Persona(id)
 );
 
+-- Crear la tabla Administrador
+CREATE TABLE Administrador (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    persona_id INT,
+    FOREIGN KEY (persona_id) REFERENCES Persona(id)
+);
+
+-- Crear la tabla Gerente
+CREATE TABLE Gerente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    persona_id INT,
+    FOREIGN KEY (persona_id) REFERENCES Persona(id)
+);
+
 -- Crear la tabla MembresiaPagar
 CREATE TABLE MembresiaPagar (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -59,18 +73,27 @@ BEGIN
 END//
 DELIMITER ;
 
--- Crear el trigger llenar_entrenador
+
+-- TRIGGER PARA LLEGAR LOS ROLES CORRESPONDIENTES AL USUARIO CREADO
 DELIMITER //
-CREATE TRIGGER llenar_entrenador AFTER INSERT ON Persona
+
+CREATE TRIGGER llenar_roles_despues_insertar 
+AFTER INSERT ON Persona
 FOR EACH ROW
 BEGIN
     IF NEW.rol = 'entrenador' THEN
         INSERT INTO Entrenador (persona_id, especialidad) VALUES (NEW.id, 'Especificar especialidad');
+    ELSEIF NEW.rol = 'administrador' THEN
+        INSERT INTO Administrador (persona_id) VALUES (NEW.id);
+    ELSEIF NEW.rol = 'gerente' THEN
+        INSERT INTO Gerente (persona_id) VALUES (NEW.id);
     ELSE
         INSERT INTO Miembro (persona_id, estado) VALUES (NEW.id, TRUE);
     END IF;
 END//
+
 DELIMITER ;
+
 
 -- Crear la tabla diagnosticosalud
 CREATE TABLE diagnosticosalud (
@@ -140,3 +163,40 @@ END;
 -- Actualizar la columna video de la tabla Personalizados usando la función ConvertToEmbeddedLink
 DELIMITER ;
 UPDATE Personalizados SET video = ConvertToEmbeddedLink(video);
+
+USE fitweb;
+
+CREATE TABLE gerente(
+    idGerente INT AUTO_INCREMENT PRIMARY KEY,
+    nombreCompleto VARCHAR (255),
+    numeroIdentificacion INT,
+    fechaNacimiento DATE,
+    edad INT,
+    telefono INT,
+    contraseña VARCHAR (50)
+);
+
+DELIMITER //
+CREATE TRIGGER calcular_edad_gerente
+BEFORE INSERT ON gerente
+FOR EACH ROW
+BEGIN
+    DECLARE fecha_nacimiento DATE;
+    DECLARE edad INT;
+
+    SET fecha_nacimiento = NEW.fechaNacimiento;
+    SET edad = TIMESTAMPDIFF(YEAR, fecha_nacimiento, CURDATE());
+
+    SET NEW.edad = edad;
+END;
+//
+DELIMITER ;
+USE FITWEB;
+CREATE TABLE productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    imagen VARCHAR(255),
+    descripcion TEXT,
+    cantidad INT NOT NULL
+);
