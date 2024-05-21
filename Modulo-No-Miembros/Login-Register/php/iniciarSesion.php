@@ -26,7 +26,10 @@ if (isset($_POST['login'])) {
             } elseif ($rol == 'miembro') {
                 $consulta_rol = $conexion->prepare("SELECT * FROM Miembro WHERE persona_id = ?");
                 $redirect_url = '/Modulo-Miembros/clientes.html';
-            } else {
+            } elseif ($rol == 'gerente') {
+                $consulta_rol = $conexion->prepare("SELECT * FROM Gerente WHERE persona_id = ?");
+                $redirect_url = '/Modulo-Gerente/gerente.html';
+            }else {
                 echo "<script>alert('Rol no reconocido.');</script>";
                 echo "<script>window.location.href='/Modulo-No-Miembros/Login-Register/index.php';</script>";
                 exit;
