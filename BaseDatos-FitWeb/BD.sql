@@ -55,13 +55,15 @@ CREATE TABLE Gerente (
 );
 
 -- Crear la tabla MembresiaPagar
+
 CREATE TABLE MembresiaPagar (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    numeroIdentificacion VARCHAR(20),
+    id_miembro INT,
     fecha_inicio DATE,
     plan VARCHAR(25),
     fecha_fin DATE,
-    tarjeta VARCHAR(50)
+    tarjeta VARCHAR(50),
+    FOREIGN KEY (id_miembro) REFERENCES Miembro(id)
 );
 
 -- Crear el trigger calcular_edad
