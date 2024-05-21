@@ -34,6 +34,7 @@
                         <option value="">Seleccione su rol...</option>
                         <option value="miembro">Miembro</option>
                         <option value="entrenador">Entrenador</option>
+                        <option value="gerente">Gerente</option>
                     </select>
                     <a href="#" class="btn-1">Recuperar contraseña</a>
                     <button type="submit" name="login">Entrar</button>

@@ -1,0 +1,6 @@
+ Nombre: Proteina
+Precio: 10.00
+ Imagen: https://http2.mlstatic.com/proteina-whey-protein-fnt-500-gr-11-lbs-4-sabores-45g-ps-D_NQ_NP_615914-MLM32797475389_112019-F.jpg
+ Descripción: En polvo
+ Cantidad: 2
+
