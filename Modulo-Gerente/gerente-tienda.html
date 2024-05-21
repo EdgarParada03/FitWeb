@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULO GERENTE</title>
+    <link rel="stylesheet" href="style-gerente.css">
+    <style>
+        /* Estilos adicionales para el campo de texto */
+        .identification-input {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <img class="logo"
+                src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
+                alt="Logo de la empresa">
+        </div>
+        <h1 class="title">MODULO DE GERENTE</h1>
+        <!-- Nuevo contenedor para el campo de texto -->
+        <div class="identification-input">
+            <!-- Campo de texto para el número de identificación -->
+            <input type="text" id="numero_identificacion" placeholder="Número de identificación" value="">
+        </div>
+    </header>
+    <div>
+
+        <div class="container">
+
+            <div class="container-busqueda">
+                <h3>Buscar un producto en específico</h3>
+                <iframe src="codigos-php/buscar-producto.php" style="width:100%; height:400px;"></iframe>
+            </div>
+        
+            <div class="container-mostrar">
+                <h3>Buscar todos los productos</h3>
+                <iframe src="codigos-php/buscar-productos.php" style="width:100%; height:400px;"></iframe>
+            </div>
+            
+        </div>
+        
+        <div class="content">
+            <a href="gerente.html" class="back-button"><img src="imagenes-gerentes/retroceso-rapido.gif"></a>
+        </div>
+        
+        <script>
+            function miFuncion() {
+                alert("Esta sección se encuentra en construcción");
+            }
+        
+            // Obtener el nombre del producto de la URL y establecerlo en el campo de texto
+            window.onload = function () {
+                var urlParams = new URLSearchParams(window.location.search);
+                var nombreProducto = urlParams.get('nombre_producto');
+                document.getElementById('nombre_producto').value = nombreProducto;
+            };
+        </script>
+        
+        <!-- Aquí empieza el script adicional -->
+        <script>
+            // Obtener el nombre del producto del formulario y enviarlo al campo en productos.php
+            function cargarNombreProducto() {
+                // Obtener el valor del nombre del producto ingresado por el usuario
+                var nombreProducto = document.getElementById("nombre_producto").value;
+                // Asignar el valor del nombre del producto al campo correspondiente en el formulario de productos.php
+                document.getElementById("loginForm").action = "/Modulo-Miembros/productos.php?nombre_producto=" + nombreProducto;
+            }
+        </script>
+        <!-- Aquí termina el script adicional -->
+        </div>
+        
+
+
+</body>
+
+
+<div class="pie">
+    <footer>
+        <div class="contact-info">
+            <p>Teléfono: 123-456-789</p>
+            <p>Email: FitWeb@email.com</p>
+            <p>Dirección: XXXXXXXXXXXXXXX</p>
+        </div>
+    </footer>
+</div>
+
+</html>
