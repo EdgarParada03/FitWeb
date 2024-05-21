@@ -430,3 +430,46 @@ th {
     margin-bottom: 20px;
 }
 /* Fin del diseño seccion entrenamiento */
+
+/* Diseño seccion tienda*/
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+}
+
+.producto h2, .producto p {
+    margin: 0 0 10px 0;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+/* Fin del diseño seccion tienda */
