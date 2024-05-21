@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MODULO MIEMBROS</title>
     <link rel="stylesheet" href="style-clientes.css">
-    
 </head>
 
 <body>
@@ -26,12 +25,10 @@
                     <input type="text" id="numero_identificacion" placeholder="Nombre" value="" readonly>
                 </div>
                 <div class="identification-input">
-                    <input type="text" id="nombre" placeholder="Número de identificación" value=""readonly>
+                    <input type="text" id="nombre" placeholder="Número de identificación" value="" readonly>
                 </div>
             </div>
-
         </div>
-
     </header>
 
     <!-- Contenedores para los botones -->
@@ -54,21 +51,19 @@
         </div>
     </div>
 
+   
     <script>
-        function miFuncion() {
-            alert("Esta sección se encuentra en construcción");
-        }
+          document.addEventListener('DOMContentLoaded', function () {
+            // Recuperar los valores de sessionStorage
+            var nombre = sessionStorage.getItem('nombre');
+            var identificacion = sessionStorage.getItem('identificacion');
 
-        // Obtener los parámetros de la URL y establecerlos en los campos de texto
-        window.onload = function () {
-            var urlParams = new URLSearchParams(window.location.search);
-            var nombre = urlParams.get('nombre');
-            var numeroIdentificacion = urlParams.get('numero_identificacion');
-            document.getElementById('nombre').value = nombre;
-            document.getElementById('numero_identificacion').value = numeroIdentificacion;
-        };
+            // Mostrar los valores en el HTML
+            document.getElementById('nombre_input').value = nombre ? nombre : 'No disponible';
+            document.getElementById('identificacion_input').value = identificacion ? identificacion : 'No disponible';
+        });
     </script>
-
+    
     <footer>
         <div class="contact-info">
             <p>Teléfono: 123-456-789</p>

@@ -15,7 +15,7 @@
                 <div class="caja__trasera-login">
                     <h3>¿Ya tienes una cuenta?</h3>
                     <p>Inicia sesión para entrar en la página</p>
-                    <button id="btn_iniciar-sesion"> Iniciar Sesión</button>
+                    <button id="btn_iniciar-sesion">Iniciar Sesión</button>
                 </div>
                 <div class="caja__trasera-register">
                     <h3>¿Aún no tienes cuenta?</h3>
@@ -70,10 +70,9 @@
             var nombre = document.getElementById('nombre_completo').value;
             var identificacion = document.getElementById('identificacion_input').value;
 
-            // Redireccionar a la página del segundo formulario con los parámetros de nombre y número de identificación
-            window.location.href = '/Modulo-Miembros/clientes-membresias.html?nombre=' + encodeURIComponent(nombre) + '&identificacion=' + encodeURIComponent(identificacion);
-
-            
+            // Guardar los valores en sessionStorage
+            sessionStorage.setItem('nombre', nombre);
+            sessionStorage.setItem('identificacion', identificacion);
         });
     </script>
 </body>

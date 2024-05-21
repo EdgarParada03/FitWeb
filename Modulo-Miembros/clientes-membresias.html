@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMBRESIAS</title>
     <link rel="stylesheet" href="style-clientes.css">
-   
 </head>
 
 <body>
     <header>
         <div>
-            <img class="logo" src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png" alt="Logo de la empresa">
+            <img class="logo"
+                src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
+                alt="Logo de la empresa">
         </div>
         <div>
             <h1 class="title">MODULO DE MIEMBROS</h1>
@@ -20,10 +21,11 @@
         <div class="container-general-usuario">
             <div class="row">
                 <div class="nombre-input">
-                    <input type="text" id="nombre" placeholder="Nombre" value="" readonly>
+                    <input type="text" id="nombre_input" placeholder="Nombre" value="" readonly>
                 </div>
                 <div class="identification-input">
-                    <input type="text" id="numero_identificacion" placeholder="Número de identificación" value="" readonly>
+                    <input type="text" id="identificacion_input" placeholder="Número de identificación" value=""
+                        readonly>
                 </div>
             </div>
         </div>
@@ -34,9 +36,10 @@
             <img src="imagenes-clientes/planBasico.png" alt="">
             <h3>Basico</h3>
             <p>
-                Este <a href="#Seccion1">plan semanal</a> de entrenamiento en el gimnasio ofrece una variedad de ejercicios 
-                diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por 
-                un precio accesible de 20.000 pesos colombianos por semana. Maximiza tus resultados 
+                Este <a href="#Seccion1">plan semanal</a> de entrenamiento en el gimnasio ofrece una variedad de
+                ejercicios
+                diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por
+                un precio accesible de 20.000 pesos colombianos por semana. Maximiza tus resultados
                 con un enfoque completo en tu bienestar físico y mental.
             </p>
         </div>
@@ -44,9 +47,9 @@
         <div class="membresia-1">
             <img src="imagenes-clientes/planGeneral.png" alt="">
             <h3>General</h3>
-            <p>Este completo <a href="#Seccion1">plan quincenal</a> de entrenamiento en el gimnasio ofrece una 
-                variedad de ejercicios diseñados para mejorar la fuerza, resistencia, hipertrofia 
-                y flexibilidad, todo por un precio accesible de 30.000 pesos colombiano durante 15 días. 
+            <p>Este completo <a href="#Seccion1">plan quincenal</a> de entrenamiento en el gimnasio ofrece una
+                variedad de ejercicios diseñados para mejorar la fuerza, resistencia, hipertrofia
+                y flexibilidad, todo por un precio accesible de 30.000 pesos colombiano durante 15 días.
                 Maximiza tus resultados con un enfoque completo en tu bienestar físico y mental.
             </p>
         </div>
@@ -54,11 +57,12 @@
         <div class="membresia-1">
             <img src="imagenes-clientes/Planelite.png" alt="">
             <h3>Elite</h3>
-            <p> 
-             Este <a href="#Seccion1">plan mensual</a> de entrenamiento en el gimnasio ofrece una variedad de ejercicios
-              diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por 
-              un precio accesible de 55.000 pesos colombianos por mes. Maximiza tus resultados con 
-              un enfoque completo en tu bienestar físico y mental.
+            <p>
+                Este <a href="#Seccion1">plan mensual</a> de entrenamiento en el gimnasio ofrece una variedad de
+                ejercicios
+                diseñados para mejorar la fuerza, resistencia, hipertrofia y flexibilidad, todo por
+                un precio accesible de 55.000 pesos colombianos por mes. Maximiza tus resultados con
+                un enfoque completo en tu bienestar físico y mental.
             </p>
         </div>
     </div>
@@ -107,7 +111,7 @@
             var plan = document.getElementById('plan').value;
             var duracion;
 
-            switch(plan) {
+            switch (plan) {
                 case 'basico':
                     duracion = 7;
                     break;
@@ -124,7 +128,46 @@
 
             document.getElementById('fecha_fin').value = fin.toISOString().split('T')[0];
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Recuperar los valores de sessionStorage
+            var nombre = sessionStorage.getItem('nombre');
+            var identificacion = sessionStorage.getItem('identificacion');
+
+            // Mostrar los valores en el HTML
+            document.getElementById('numeroIdentificacion').value = identificacion ? identificacion : 'No disponible';
+            document.getElementById('nombre_input').value = nombre ? nombre : 'No disponible';
+            document.getElementById('identificacion_input').value = identificacion ? identificacion : 'No disponible';
+        });
+
+        function enviarFormulario(event) {
+            // Validar los campos
+            var fechaInicio = document.getElementById('fecha_inicio').value;
+            var plan = document.getElementById('plan').value;
+            var tarjeta = document.getElementById('tarjeta').value;
+
+            if (!fechaInicio || plan === 'seleccione-uno' || !tarjeta) {
+                event.preventDefault();
+                mostrarAlerta('Por favor, complete todos los campos.', 'warning');
+            } else {
+                mostrarAlerta('Membresía comprada con éxito.', 'success');
+            }
+        }
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var nombre = document.getElementById('nombre_input').value;
+        var identificacion = document.getElementById('identificacion_input').value;
+
+        sessionStorage.setItem('nombre', nombre);
+        sessionStorage.setItem('identificacion', identificacion);
+    });
+</script>
+
+
+   
+
 </body>
 
 </html>
