@@ -1,25 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modulo Administrador</title>
     <link rel="stylesheet" href="stylesss.css">
 </head>
+
 <body>
-    <h1>Cargar producto</h1>
-    <form action="cargar_producto.php" method="post">
-        <label for="nombre">Nombre del producto:</label><br>
-        <input type="text" id="nombre" name="nombre"><br>
-        <label for="precio">Precio:</label><br>
-        <input type="text" id="precio" name="precio"><br>
-        <label for="imagen">URL de la imagen:</label><br>
-        <input type="text" id="imagen" name="imagen"><br>
-        <label for="descripcion">Descripción:</label><br>
-        <textarea id="descripcion" name="descripcion"></textarea><br>
-        <label for="cantidad">Cantidad:</label><br>
-        <input type="number" id="cantidad" name="cantidad"><br>
-        <input type="submit" value="Cargar producto">
-    </form>
+    <header>
+        <div>
+            <img class="logo" src="images/logo.webp" alt="Logo de la empresa">
+        </div>
+        <h1 class="title">MODULO DE ADMINISTRADORES</h1>
+    </header>
+
+
+    <h2 style="text-align: center;">Bienvenido a la seccion de tienda</h2>
+
+    <div class="container">
+
+        <div class="container-busqueda">
+            <h3>Cargar producto</h3>
+            <form action="cargar_producto.php" method="post">
+                <label for="nombre">Nombre del producto:</label><br>
+                <input type="text" id="nombre" name="nombre"><br>
+                <label for="precio">Precio:</label><br>
+                <input type="text" id="precio" name="precio"><br>
+                <label for="imagen">URL de la imagen:</label><br>
+                <input type="text" id="imagen" name="imagen"><br>
+                <label for="descripcion">Descripción:</label><br>
+                <textarea id="descripcion" name="descripcion"></textarea><br>
+                <label for="cantidad">Cantidad:</label><br>
+                <input type="number" id="cantidad" name="cantidad"><br>
+                <input type="submit" value="Cargar producto">
+            </form>
+        </div>
+
+        <div class="container-mostrar">
+            <h3>Menú de búsqueda</h3>
+            <table id="tabla-productos" class="tabla-productos">
+                <!-- La tabla de productos se cargará aquí -->
+            </table>
+        </div>
+
+        <script>
+            // Función para cargar los productos
+            function cargarProductos() {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'mostrar_productos.php', true);
+                xhr.onload = function () {
+                    if (this.status == 200) {
+                        var productos = JSON.parse(this.responseText);
+                        var output = '<tr><th>Nombre</th><th>Precio</th><th>Imagen</th><th>Descripción</th><th>Cantidad</th></tr>';
+                        for (var i in productos) {
+                            output +=
+                                '<tr id="producto-' + productos[i].id + '">' +
+                                '<td id="nombre-' + productos[i].id + '">' + productos[i].nombre + '</td>' +
+                                '<td id="precio-' + productos[i].id + '">' + productos[i].precio + '</td>' +
+                                '<td id="imagen-' + productos[i].id + '"><img src="' + productos[i].imagen + '" alt="Imagen del producto"></td>' +
+                                '<td id="descripcion-' + productos[i].id + '">' + productos[i].descripcion + '</td>' +
+                                '<td id="cantidad-' + productos[i].id + '">' + productos[i].cantidad + '</td>'
+                                '</tr>';
+                        }
+                        document.getElementById('tabla-productos').innerHTML = output;
+                    }
+                }
+                xhr.send();
+            }
+
+            // Cargar los productos al cargar la página
+            window.onload = cargarProductos;
+        </script>
+
+    </div>
+
+
+    <div class="pie">
+        <footer>
+            <div class="contact-info">
+                <p>Teléfono: 123-456-789</p>
+                <p>Email: FitWeb@email.com</p>
+                <p>Dirección: XXXXXXXXXXXXXXX</p>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>

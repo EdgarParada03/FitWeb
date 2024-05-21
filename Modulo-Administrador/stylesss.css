@@ -503,3 +503,117 @@ select option {
 
 
 /*PAGINA ENTRENAMIENTO ENTRENADOR*/
+
+
+/*CSS SECCION TIENDA ADMINISTRADOR*/
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo para los contenedores de búsqueda y mostrar */
+.container-busqueda,
+.container-mostrar {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width:100%; 
+    height:500px;
+}
+
+/* Otros estilos según tus necesidades */
+.data-item {
+    margin-bottom: 10px;
+}
+
+.container-busqueda {
+    background-color: #f9f9f9;
+}
+
+.container-mostrar {
+    background-color: #ffffff;
+}
+
+.boton-descargar {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content {
+    text-align: center;
+    padding: 10px;
+}
+
+.content img {
+    max-width: 100px; /* Cambia este valor según el tamaño deseado */
+    height: auto; /* Esto mantiene la proporción original de la imagen */
+}
+
+/* Estilo para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f9f9f9;
+}
+
+h3{
+    text-align: center;
+    padding-left: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-right: 0%;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+
+/*CSS TABLA MOSTRAR PRODUCTOS (EDITAR Y ELIMINAR)*/
+
+/* Estilo para la tabla */
+.tabla-productos {
+    width: 100%;
+    max-height: 460px; /* Altura máxima para que la tabla no exceda el contenedor */
+    overflow: auto; /* Agrega barras de desplazamiento si el contenido excede el tamaño de la tabla */
+    border-collapse: collapse;
+    table-layout: auto; /* Permite que las columnas se ajusten al contenido */
+}
+
+.tabla-productos th, .tabla-productos td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    word-wrap: break-word; /* Ajusta el texto al ancho de la celda */
+}
+
+.tabla-productos th {
+    background-color: #f9f9f9;
+}
+
+.tabla-productos img {
+    max-width: 50%; /* Ajusta el tamaño de las imágenes al 50% del ancho de la celda */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+.tabla-productos button {
+    padding: 5px 10px; /* Ajusta el tamaño de los botones */
+    font-size: 0.8em; /* Ajusta el tamaño del texto en los botones */
+}
+
