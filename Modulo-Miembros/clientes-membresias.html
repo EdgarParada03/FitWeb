@@ -102,30 +102,6 @@
             }, 3000);
         }
 
-        function enviarFormulario(event) {
-            event.preventDefault(); // Prevenir el envío normal del formulario
-            var nombre = document.getElementById('nombre').value;
-            var numeroIdentificacion = document.getElementById('numero_identificacion').value;
-            var fechaInicio = document.getElementById('fecha_inicio').value;
-            var plan = document.getElementById('plan').value;
-            var tarjeta = document.getElementById('tarjeta').value;
-
-            if (!nombre || !numeroIdentificacion || !fechaInicio || plan === 'seleccione-uno' || !tarjeta) {
-                mostrarAlerta('Por favor, completa todos los campos', '');
-                return;
-            }
-
-            mostrarAlerta('Tu membresía fue comprada correctamente', 'success');
-            setTimeout(function () {
-                enviarDatosClientes(nombre, numeroIdentificacion);
-            }, 3000);
-        }
-
-        function enviarDatosClientes(nombre, numeroIdentificacion) {
-            // Redireccionar a la página de clientes con los datos en la URL
-            window.location.href = 'clientes.html?nombre=' + encodeURIComponent(nombre) + '&numero_identificacion=' + encodeURIComponent(numeroIdentificacion);
-        }
-
         function calcularFechaFin() {
             var inicio = new Date(document.getElementById('fecha_inicio').value);
             var plan = document.getElementById('plan').value;
@@ -148,19 +124,6 @@
 
             document.getElementById('fecha_fin').value = fin.toISOString().split('T')[0];
         }
-
-        window.onload = function () {
-            var urlParams = new URLSearchParams(window.location.search);
-            var nombre = urlParams.get('nombre');
-            var numeroIdentificacion = urlParams.get('numero_identificacion');
-            document.getElementById('nombre').value = nombre;
-            document.getElementById('numero_identificacion').value = numeroIdentificacion;
-            document.getElementById('numeroIdentificacion').value = numeroIdentificacion;
-
-            // Establecer la fecha mínima para la fecha de inicio
-            var today = new Date().toISOString().split('T')[0];
-            document.getElementById('fecha_inicio').setAttribute('min', today);
-        };
     </script>
 </body>
 

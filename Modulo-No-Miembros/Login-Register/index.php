@@ -42,7 +42,7 @@
                 <form action="/Modulo-No-Miembros/Login-Register/php/registrarUsuarios.php" method="POST" class="formulario__register" id="registroForm">
                     <h2>Registrarse</h2>
                     <input type="text" placeholder="Nombre Completo" name="nombre_completo" id="nombre_completo">
-                    <input type="text" placeholder="Número de identificación" name="numero_identificacion" required pattern="[0-9]+" id="numero_identificacion_registro">
+                    <input type="text" placeholder="Número de identificación" name="numero_identificacion" required pattern="[0-9]+" id="identificacion_input">
                     <input type="date" placeholder="Fecha nacimiento" name="fecha_nacimiento">
                     <input type="email" placeholder="Correo" name="correo">
                     <input type="text" placeholder="Teléfono" name="telefono">
@@ -54,22 +54,25 @@
                         <option value="no_decir">Prefiero no decirlo</option>
                     </select>
                     <input type="password" placeholder="Contraseña" name="contrasena">
-                    <input type="submit" value="Registrarse" name="registrar" onclick="enviarDatosRegistro(event)">
+                    <input type="submit" value="Registrarse" name="registrar">
                 </form>
             </div>
         </div>
     </main>
     <script src="/Modulo-No-Miembros/Login-Register/Todo/js/script.js"></script>
+    <script src="/Modulo-Miembros/clientes-membresias.html"></script>
 
     <script>
-        // Función para enviar datos del registro y redireccionar a la página de membresías
-        function enviarDatosRegistro(event) {
-            event.preventDefault(); // Prevenir el envío normal del formulario
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            // Obtener los valores del nombre y número de identificación
             var nombre = document.getElementById('nombre_completo').value;
-            var numeroIdentificacion = document.getElementById('numero_identificacion_registro').value;
-            // Redireccionar a la página de membresías con los datos en la URL
-            window.location.href = '/Modulo-Miembros/clientes-membresias.html?nombre=' + encodeURIComponent(nombre) + '&numero_identificacion=' + encodeURIComponent(numeroIdentificacion);
-        }
+            var identificacion = document.getElementById('identificacion_input').value;
+
+            // Redireccionar a la página del segundo formulario con los parámetros de nombre y número de identificación
+            window.location.href = '/Modulo-Miembros/clientes-membresias.html?nombre=' + encodeURIComponent(nombre) + '&identificacion=' + encodeURIComponent(identificacion);
+
+            
+        });
     </script>
 </body>
 
