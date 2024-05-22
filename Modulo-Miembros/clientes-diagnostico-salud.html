@@ -66,15 +66,25 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Obtener los valores de los parámetros
+            const nombre = urlParams.get('nombre');
+            const numeroIdentificacion = urlParams.get('numero_identificacion');
+
+            // Establecer los valores en los campos correspondientes
+            document.getElementById('nombre').value = nombre;
+            document.getElementById('numero_identificacion').value = numeroIdentificacion;
+            document.getElementById('documento').value = numeroIdentificacion;
+        });
+
         function enviarFormulario() {
             alert('Tus datos fueron guardados correctamente');
             window.history.back();
         }
     </script>
-
-<div class="contentT">
-    <a href="clientes.html" class="back-button"><img src="imagenes-clientes/retroceso-rapido.gif"></a>
-</div>
 
 <div class="pie-3">
     <footer>
@@ -86,4 +96,5 @@
     </footer>
 </div>
 </body>
+
 </html>

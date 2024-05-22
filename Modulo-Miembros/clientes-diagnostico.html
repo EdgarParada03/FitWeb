@@ -11,9 +11,7 @@
 <body>
     <header>
         <div>
-            <img class="logo"
-                src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
-                alt="Logo de la empresa">
+            <img class="logo" src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png" alt="Logo de la empresa">
         </div>
         <h1 class="title">SECCION DE DIAGNOSTICO</h1>
 
@@ -23,8 +21,7 @@
                     <input type="text" id="nombre_input" placeholder="Nombre" value="" readonly>
                 </div>
                 <div class="identification-input">
-                    <input type="text" id="identificacion_input" placeholder="Número de identificación" value=""
-                        readonly>
+                    <input type="text" id="identificacion_input" placeholder="Número de identificación" value="" readonly>
                 </div>
             </div>
         </div>
@@ -32,12 +29,10 @@
 
     <div class="general">
         <div class="contenedor-1">
-
-            <a href="clientes-diagnostico-salud.html">
+            <a href="clientes-diagnostico-salud.html" id="link-salud">
                 <button class="boton">
                     <div class="imagen">
-                        <img src="imagenes-clientes/SALUDSF.png" alt="Imagen del Botón 1"
-                            style="width:100%;height:100%;">
+                        <img src="imagenes-clientes/SALUDSF.png" alt="Imagen del Botón 1" style="width:100%;height:100%;">
                     </div>
                     <div class="texto">Salud</div>
                 </button>
@@ -45,7 +40,7 @@
         </div>
 
         <div class="contenedor-2">
-            <a href="clientes-diagnostico-IMC.html">
+            <a href="clientes-diagnostico-IMC.html" id="link-imc">
                 <button class="boton">
                     <div class="imagen">
                         <img src="imagenes-clientes/IMCSF.png" alt="Imagen del Botón 2" style="width:100%;height:100%;">
@@ -82,6 +77,19 @@
             // Establecer los valores en los campos correspondientes
             document.getElementById('nombre_input').value = nombre;
             document.getElementById('identificacion_input').value = numeroIdentificacion;
+
+            // Añadir los parámetros a los enlaces de los botones
+            const links = [
+                { id: 'link-salud', href: 'clientes-diagnostico-salud.html' },
+                { id: 'link-imc', href: 'clientes-diagnostico-IMC.html' }
+            ];
+
+            links.forEach(link => {
+                const element = document.getElementById(link.id);
+                if (element) {
+                    element.href = `${link.href}?nombre=${encodeURIComponent(nombre)}&numero_identificacion=${encodeURIComponent(numeroIdentificacion)}`;
+                }
+            });
         });
     </script>
 </body>

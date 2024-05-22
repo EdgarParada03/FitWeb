@@ -36,44 +36,31 @@
         <input type="submit" value="Buscar">
     </form>
 
-    <input type="submit" value="Clases" class="btn10" onclick="miFuncion()">
+    <input type="submit" value="Clases" class="btn10"  onclick="miFuncion()">
     <h1></h1>
-
+    
     <script>
-        function miFuncion() {
-            alert("Esta seccion se encuentra en construccion ");
-        }
-
         document.addEventListener('DOMContentLoaded', function () {
             // Obtener los parámetros de la URL
             const urlParams = new URLSearchParams(window.location.search);
-
-            // Obtener los valores de los parámetros
             const nombre = urlParams.get('nombre');
             const numeroIdentificacion = urlParams.get('numero_identificacion');
+
+            // Almacenar los valores en sessionStorage
+            sessionStorage.setItem('nombre', nombre);
+            sessionStorage.setItem('numeroIdentificacion', numeroIdentificacion);
 
             // Establecer los valores en los campos correspondientes
             document.getElementById('nombre').value = nombre;
             document.getElementById('numero_identificacion').value = numeroIdentificacion;
+            document.getElementById('documento').value = numeroIdentificacion;
 
-            // Añadir los parámetros a los enlaces de los botones
-            const links = [
-                { id: 'link-membresias', href: 'clientes-membresias-pagada.html' },
-                { id: 'link-diagnostico', href: 'clientes-diagnostico.html' },
-                { id: 'link-entrenamiento', href: 'clientes-entrenamiento.html' },
-                { id: 'link-tienda', href: 'clientes-tienda.html' }
-            ];
-
-            links.forEach(link => {
-                const element = document.getElementById(link.id);
-                element.href = `${link.href}?nombre=${encodeURIComponent(nombre)}&numero_identificacion=${encodeURIComponent(numeroIdentificacion)}`;
-            });
         });
-    </script>
 
-<div class="contentT">
-    <a href="clientes.html" class="back-button"><img src="imagenes-clientes/retroceso-rapido.gif"></a>
-</div>
+        function miFuncion() {
+            alert("Esta seccion se encuentra en construccion ");
+        }
+    </script>
 
 </body>
 </html>

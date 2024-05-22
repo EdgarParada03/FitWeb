@@ -45,6 +45,20 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Obtener los valores de los parámetros
+            const nombre = urlParams.get('nombre');
+            const numeroIdentificacion = urlParams.get('numero_identificacion');
+
+            // Establecer los valores en los campos correspondientes
+            document.getElementById('nombre').value = nombre;
+            document.getElementById('numero_identificacion').value = numeroIdentificacion;
+            document.getElementById('documento').value = numeroIdentificacion;
+        });
+
         function calcularIMC() {
             var peso = parseFloat(document.getElementById('peso').value);
             var altura = parseFloat(document.getElementById('altura').value) / 100; // Convertir a metros
