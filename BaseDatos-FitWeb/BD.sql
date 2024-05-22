@@ -179,6 +179,7 @@ CREATE TABLE gerente(
 );
 
 DELIMITER //
+USE fitweb;
 CREATE TRIGGER calcular_edad_gerente
 BEFORE INSERT ON gerente
 FOR EACH ROW
