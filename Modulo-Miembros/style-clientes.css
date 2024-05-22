@@ -415,6 +415,16 @@ th {
 .texto {
    font-size: 18px;
 }
+
+.contentT {
+    text-align: center;
+    padding: 10px;
+}
+
+.contentT img {
+    max-width: 100px; /* Cambia este valor según el tamaño deseado */
+    height: auto; /* Esto mantiene la proporción original de la imagen */
+}
 /* Fin del diseño seccion diagnostico */
 
 

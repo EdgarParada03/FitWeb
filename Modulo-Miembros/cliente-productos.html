@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo Cliente</title>
     <link rel="stylesheet" href="style-clientes.css">
 </head>
+
 <body>
+    <header>
+        <div>
+            <img class="logo"
+                src="https://static.vecteezy.com/system/resources/previews/018/795/372/original/fitness-and-gym-logo-free-png.png"
+                alt="Logo de la empresa">
+        </div>
+        <div>
+            <h1 class="title">MODULO DE MIEMBROS</h1>
+        </div>
+        <!-- Nuevo contenedor para el campo de texto y nombre -->
+        <div class="container-general-usuario">
+            <div class="row">
+                <div class="nombre-input">
+                    <input type="text" id="numero_identificacion" placeholder="Nombre" value="" readonly>
+                </div>
+                <div class="identification-input">
+                    <input type="text" id="nombre" placeholder="Número de identificación" value="" readonly>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <h1>Catálogo de Productos</h1>
     <div id="productos">
         <!-- Los productos se cargarán aquí -->
@@ -17,7 +41,7 @@
         function cargarProductos() {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'codigos-php/mostrar_productos.php', true);
-            xhr.onload = function() {
+            xhr.onload = function () {
                 if (this.status == 200) {
                     var productos = JSON.parse(this.responseText);
                     var output = '';
@@ -46,5 +70,19 @@
         // Cargar los productos al cargar la página
         window.onload = cargarProductos;
     </script>
+
+    <div class="contentT">
+        <a href="clientes.html" class="back-button"><img src="imagenes-clientes/retroceso-rapido.gif"></a>
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <p>Teléfono: 123-456-789</p>
+            <p>Email: FitWeb@email.com</p>
+            <p>Dirección: XXXXXXXXXXXXXXX</p>
+        </div>
+    </footer>
+
 </body>
+
 </html>
