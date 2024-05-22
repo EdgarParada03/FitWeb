@@ -506,14 +506,14 @@ select option {
 
 
 /*CSS SECCION TIENDA ADMINISTRADOR*/
-.container {
+.containerT {
     display: flex;
     justify-content: space-between;
 }
 
 /* Estilo para los contenedores de búsqueda y mostrar */
-.container-busqueda,
-.container-mostrar {
+.container-busquedaT,
+.container-mostrarT {
     width: 45%;
     padding: 20px;
     border: 1px solid #ccc;
@@ -529,15 +529,15 @@ select option {
     margin-bottom: 10px;
 }
 
-.container-busqueda {
+.container-busquedaT {
     background-color: #f9f9f9;
 }
 
-.container-mostrar {
+.container-mostrarT {
     background-color: #ffffff;
 }
 
-.boton-descargar {
+.boton-descargarT {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
@@ -548,12 +548,12 @@ select option {
     cursor: pointer;
 }
 
-.content {
+.contentT {
     text-align: center;
     padding: 10px;
 }
 
-.content img {
+.contentT img {
     max-width: 100px; /* Cambia este valor según el tamaño deseado */
     height: auto; /* Esto mantiene la proporción original de la imagen */
 }
