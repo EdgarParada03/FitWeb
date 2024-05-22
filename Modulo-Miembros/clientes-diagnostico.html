@@ -16,32 +16,45 @@
                 alt="Logo de la empresa">
         </div>
         <h1 class="title">SECCION DE DIAGNOSTICO</h1>
+
+        <div class="container-general-usuario">
+            <div class="row">
+                <div class="nombre-input">
+                    <input type="text" id="nombre_input" placeholder="Nombre" value="" readonly>
+                </div>
+                <div class="identification-input">
+                    <input type="text" id="identificacion_input" placeholder="Número de identificación" value=""
+                        readonly>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="general">
-    <div class="contenedor-1">
+        <div class="contenedor-1">
 
-        <a href="clientes-diagnostico-salud.html">
-            <button class="boton">
-                <div class="imagen">
-                    <img src="imagenes-clientes/SALUDSF.png" alt="Imagen del Botón 1" style="width:100%;height:100%;">
-                </div>
-                <div class="texto">Salud</div>
-            </button>
-        </a>
-    </div>
+            <a href="clientes-diagnostico-salud.html">
+                <button class="boton">
+                    <div class="imagen">
+                        <img src="imagenes-clientes/SALUDSF.png" alt="Imagen del Botón 1"
+                            style="width:100%;height:100%;">
+                    </div>
+                    <div class="texto">Salud</div>
+                </button>
+            </a>
+        </div>
 
-    <div class="contenedor-2">
-        <a href="clientes-diagnostico-IMC.html">
-            <button class="boton">
-                <div class="imagen">
-                    <img src="imagenes-clientes/IMCSF.png" alt="Imagen del Botón 2" style="width:100%;height:100%;">
-                </div>
-                <div class="texto">IMC</div>
-            </button>
-        </a>
+        <div class="contenedor-2">
+            <a href="clientes-diagnostico-IMC.html">
+                <button class="boton">
+                    <div class="imagen">
+                        <img src="imagenes-clientes/IMCSF.png" alt="Imagen del Botón 2" style="width:100%;height:100%;">
+                    </div>
+                    <div class="texto">IMC</div>
+                </button>
+            </a>
+        </div>
     </div>
-</div>
 
     <div class="pie-2">
         <footer>
@@ -52,6 +65,21 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Obtener los valores de los parámetros
+            const nombre = urlParams.get('nombre');
+            const numeroIdentificacion = urlParams.get('numero_identificacion');
+
+            // Establecer los valores en los campos correspondientes
+            document.getElementById('nombre_input').value = nombre;
+            document.getElementById('identificacion_input').value = numeroIdentificacion;
+        });
+    </script>
 </body>
 
 </html>

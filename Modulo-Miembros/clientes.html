@@ -34,36 +34,53 @@
     <!-- Contenedores para los botones -->
     <div class="container-botones">
         <div class="botones-container">
-            <a href="clientes-membresias-pagada.html" class="zoom-shadow"><img src="imagenes-clientes/MmbresiaSl.png"
+            <a href="clientes-membresias-pagada.html" id="link-membresias" class="zoom-shadow"><img src="imagenes-clientes/MmbresiaSl.png"
                     alt="Botón 1"></a>
         </div>
         <div class="botones-container">
-            <a href="clientes-diagnostico.html" class="zoom-shadow"><img src="imagenes-clientes/DiagnosticoSF.png"
+            <a href="clientes-diagnostico.html" id="link-diagnostico" class="zoom-shadow"><img src="imagenes-clientes/DiagnosticoSF.png"
                     alt="Botón 2"></a>
         </div>
         <div class="botones-container">
-            <a href="clientes-entrenamiento.html" class="zoom-shadow"><img src="imagenes-clientes/EntrenamientoSF.png"
+            <a href="clientes-entrenamiento.html" id="link-entrenamiento" class="zoom-shadow"><img src="imagenes-clientes/EntrenamientoSF.png"
                     alt="Botón 3"></a>
         </div>
         <div class="botones-container">
-            <a href="#" class="zoom-shadow"><img src="imagenes-clientes/TiendaSF.png" alt="Botón 4"
-                    onclick="miFuncion()"></a>
+            <a href="clientes-tienda.html" id="link-tienda" class="zoom-shadow"><img src="imagenes-clientes/TiendaSF.png"
+                    alt="Botón 4"></a>
         </div>
     </div>
 
-   
     <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            // Recuperar los valores de sessionStorage
-            var nombre = sessionStorage.getItem('nombre');
-            var identificacion = sessionStorage.getItem('identificacion');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const nombre = urlParams.get('nombre');
+            const numeroIdentificacion = urlParams.get('numero_identificacion');
 
-            // Mostrar los valores en el HTML
-            document.getElementById('nombre_input').value = nombre ? nombre : 'No disponible';
-            document.getElementById('identificacion_input').value = identificacion ? identificacion : 'No disponible';
+            // Almacenar los valores en sessionStorage
+            sessionStorage.setItem('nombre', nombre);
+            sessionStorage.setItem('numeroIdentificacion', numeroIdentificacion);
+
+            // Establecer los valores en los campos correspondientes
+            document.getElementById('nombre').value = nombre;
+            document.getElementById('numero_identificacion').value = numeroIdentificacion;
+
+            // Añadir los parámetros a los enlaces de los botones
+            const links = [
+                { id: 'link-membresias', href: 'clientes-membresias-pagada.html' },
+                { id: 'link-diagnostico', href: 'clientes-diagnostico.html' },
+                { id: 'link-entrenamiento', href: 'clientes-entrenamiento.html' },
+                { id: 'link-tienda', href: 'clientes-tienda.html' }
+            ];
+
+            links.forEach(link => {
+                const element = document.getElementById(link.id);
+                element.href = `${link.href}?nombre=${encodeURIComponent(nombre)}&numero_identificacion=${encodeURIComponent(numeroIdentificacion)}`;
+            });
         });
     </script>
-    
+
     <footer>
         <div class="contact-info">
             <p>Teléfono: 123-456-789</p>
