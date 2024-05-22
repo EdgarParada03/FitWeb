@@ -28,7 +28,7 @@
                 <!--Login-->
                 <form action="/Modulo-No-Miembros/Login-Register/php/iniciarSesion.php" method="POST" class="formulario__login" id="loginForm">
                     <h2>Iniciar Sesión</h2>
-                    <input type="text" id="numero_identificacion" name="numero_identificacion" placeholder="Número de identificación" required pattern="[0-9]+">
+                    <input type="text" id="numero_identificacion_login" name="numero_identificacion" placeholder="Número de identificación" required pattern="[0-9]+">
                     <input type="password" name="contrasena" placeholder="Contraseña" required>
                     <select name="rol" required>
                         <option value="">Seleccione su rol...</option>
@@ -62,17 +62,13 @@
         </div>
     </main>
     <script src="/Modulo-No-Miembros/Login-Register/Todo/js/script.js"></script>
-    <script src="/Modulo-Miembros/clientes-membresias.html"></script>
-
+    <!-- Script adicional para guardar datos en sessionStorage -->
     <script>
         document.getElementById('registroForm').addEventListener('submit', function(event) {
-            // Obtener los valores del nombre y número de identificación
-            var nombre = document.getElementById('nombre_completo').value;
-            var identificacion = document.getElementById('identificacion_input').value;
-
-            // Guardar los valores en sessionStorage
-            sessionStorage.setItem('nombre', nombre);
-            sessionStorage.setItem('identificacion', identificacion);
+            var name = document.getElementById('nombre_completo').value;
+            var idNumber = document.getElementById('identificacion_input').value;
+            sessionStorage.setItem('nombre_registro', name);
+            sessionStorage.setItem('identificacion_registro', idNumber);
         });
     </script>
 </body>

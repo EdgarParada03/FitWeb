@@ -95,6 +95,7 @@
 
     <div id="alerta" class="custom-alert"></div>
 
+   
     <script>
         function mostrarAlerta(mensaje, tipo) {
             var alerta = document.getElementById('alerta');
@@ -129,17 +130,6 @@
             document.getElementById('fecha_fin').value = fin.toISOString().split('T')[0];
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            // Recuperar los valores de sessionStorage
-            var nombre = sessionStorage.getItem('nombre');
-            var identificacion = sessionStorage.getItem('identificacion');
-
-            // Mostrar los valores en el HTML
-            document.getElementById('numeroIdentificacion').value = identificacion ? identificacion : 'No disponible';
-            document.getElementById('nombre_input').value = nombre ? nombre : 'No disponible';
-            document.getElementById('identificacion_input').value = identificacion ? identificacion : 'No disponible';
-        });
-
         function enviarFormulario(event) {
             // Validar los campos
             var fechaInicio = document.getElementById('fecha_inicio').value;
@@ -153,20 +143,19 @@
                 mostrarAlerta('Membresía comprada con éxito.', 'success');
             }
         }
+        // Recuperar datos de sessionStorage y establecerlos en los campos correspondientes
+        document.addEventListener('DOMContentLoaded', function () {
+            var nombre = sessionStorage.getItem('nombre_registro');
+            var identificacion = sessionStorage.getItem('identificacion_registro');
+            document.getElementById('nombre_input').value = nombre;
+            document.getElementById('identificacion_input').value = identificacion;
+            document.getElementById('numeroIdentificacion').value = identificacion;
+        });
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var nombre = document.getElementById('nombre_input').value;
-        var identificacion = document.getElementById('identificacion_input').value;
-
-        sessionStorage.setItem('nombre', nombre);
-        sessionStorage.setItem('identificacion', identificacion);
-    });
-</script>
 
 
-   
+
 
 </body>
 

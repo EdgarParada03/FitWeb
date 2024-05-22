@@ -16,6 +16,16 @@
                 alt="Logo de la empresa">
         </div>
         <h1 class="title">SECCION DE MEMBRESIAS</h1>
+        <div class="container-general-usuario">
+            <div class="row">
+                <div class="nombre-input">
+                    <input type="text" id="numero_identificacion" placeholder="Nombre" value="" readonly>
+                </div>
+                <div class="identification-input">
+                    <input type="text" id="nombre" placeholder="Número de identificación" value="" readonly>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="busqueda-section">
@@ -25,6 +35,22 @@
             <button type="submit" class="busqueda-btn">Buscar</button>
         </form>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener los valores de sessionStorage
+            const nombre = sessionStorage.getItem('nombre');
+            const numeroIdentificacion = sessionStorage.getItem('numeroIdentificacion');
+    
+            // Establecer los valores en los campos correspondientes
+            document.getElementById('nombre').value = numeroIdentificacion;
+            document.getElementById('numero_identificacion').value = nombre;
+            document.getElementById('numeroIdentificacion').value = numeroIdentificacion;
+
+        });
+    </script>
+    
+    
         
 </body>
 </html>

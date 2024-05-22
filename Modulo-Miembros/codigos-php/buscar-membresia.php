@@ -8,7 +8,7 @@ include 'conexion.php';
 $numeroIdentificacion = $_GET['numeroIdentificacion'];
 
 // Consulta SQL para buscar la información del usuario
-$sql = "SELECT fecha_inicio, fecha_fin, plan FROM membresiapagar WHERE numeroIdentificacion = '$numeroIdentificacion'";
+$sql = "SELECT fecha_inicio, fecha_fin, plan FROM membresiapagar WHERE id_miembro IN (SELECT id FROM Persona WHERE numeroIdentificacion = '$numeroIdentificacion')";
 
 $result = mysqli_query($conn, $sql);
 
